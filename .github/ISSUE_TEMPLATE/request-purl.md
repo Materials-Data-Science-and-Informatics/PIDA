@@ -7,7 +7,9 @@ assignees: ''
 
 ---
 
-**what is your resource prefix?**
+## Basic details
+**What is your resource prefix?**
+
 E.g., foaf as of [FOAF onoplogy](http://xmlns.com/foaf/spec/) 
 
 **What is the resource location on the Web (i.e. the URL)?**
@@ -16,10 +18,26 @@ The actual URL of the resource, i.e. a valid URL.
 **Do you want to enable content negotiation?**
 If yes, the proceed to the next section, otherwise skip and submit your issue.
 
-**Additional context**
-<details>
+## Advanced details
+To enabling [Content Negotiation](https://en.wikipedia.org/wiki/Content_negotiation),
+please repear the following items whenyou have more than one version  (or more generally, representations of a resource) of your resource.
+
+N.B. <details>
 <summary>Resource type:</summary>
 <br>
-RDF/XML, TTL, JSON/LD, OWL, N-triples, N3, or HTML
+Can be one of the following: 
+<ul>
+     <li> RDF/XML</li>
+     <li> TTL</li>
+     <li> OWL</li>
+     <li> N-triples</li>
+     <li> N3</li>
+     <li> HTML</li>
+</ul>
 </details>
-URL:
+ 
+| Resource type     | URL |
+| ---      | ---       |
+| 1.          |          |
+|  2.        |         |
+|  ...        |         |
