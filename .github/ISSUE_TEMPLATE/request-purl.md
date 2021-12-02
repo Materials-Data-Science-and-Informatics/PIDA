@@ -19,12 +19,10 @@ The actual URL of the resource, i.e. a valid URL.
 If yes, proceed to the next section otherwise, skip and submit your issue.
 
 ## Advanced details
-To enable [Content Negotiation](https://en.wikipedia.org/wiki/Content_negotiation), please fill in the following table if you have more than one version  (or more generally, representations of a resource) of your resource. Resource type can be
+To enable [Content Negotiation](https://en.wikipedia.org/wiki/Content_negotiation), please fill in the following table if you have more than one version  (or more generally, representations of a resource) of your resource. A resource type can be
 
 <details>
 <summary>Resource type:</summary>
-<br>
-Can be one of the following: 
 <ul>
      <li> RDF/XML</li>
      <li> TTL</li>
