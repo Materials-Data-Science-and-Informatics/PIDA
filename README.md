@@ -36,7 +36,7 @@ Pull Requests:
 
 * Provide your *contact info* (e.g. Name, email, affiliation ... etc) in the README.md or .htaccess  as comments.
 * *Test* your links and .htaccess syntax locally.
-* *Squash_ multiple commits** into one commit before a pull request 
+* *Squash multiple commits* into one commit before a pull request 
 * Provide a *descriptive commit details* (e.g. resource name, what changes made,... etc).
 
 
