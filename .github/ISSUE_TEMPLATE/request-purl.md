@@ -2,8 +2,8 @@
 name: Request PURL
 about: Request a  new PURL
 title: "[New PURL]"
-labels: ''
-assignees: ''
+labels: New PURL
+assignees: saidfathalla
 
 ---
 
