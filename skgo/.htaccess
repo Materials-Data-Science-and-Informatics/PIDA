@@ -1,0 +1,10 @@
+# https://purl.hmc-services.de/skgo
+
+Options +FollowSymLinks
+ 
+ 
+RewriteEngine on
+ 
+# Default Redirect
+RewriteRule ^$ https://github.com/saidfathalla/Science-knowledge-graph-ontologies  [R=303,L]
+ 
