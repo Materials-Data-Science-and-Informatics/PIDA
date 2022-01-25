@@ -1,6 +1,6 @@
 # Permanent Identifiers (PIDs)
 
-This repository provides a service for managing Permanent URLs (PURLs). We use per-directory Apache configuration files (.htaccess files) to redirect PURL requests to their real locations on the Web. 
+This repository provides a service for managing Permanent URLs (PURLs). Per-directory Apache configuration files (.htaccess files) are used to redirect PURL requests to their real locations on the Web. 
 
 ## Benefits
 Provide a long-lasting reference to a digital object (e.g., articles, datasets, videos, persons, instruments, organization) which remains constant for identifying that object regardless of changes to its location on the Web. As a result we grauntee:
