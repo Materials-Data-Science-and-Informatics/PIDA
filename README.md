@@ -1,4 +1,4 @@
-# Permanent Identifiers (PIDs) for HMC 
+# Permanent Identifiers (PIDs)
 
 This repository provides a service for managing Permanent URLs (PURLs). We use per-directory Apache configuration files (.htaccess files) to redirect PURL requests to their real locations on the Web. 
 
