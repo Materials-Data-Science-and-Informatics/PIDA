@@ -1,22 +1,47 @@
 # Permanent Identifiers (PIDs)
 
-This repository provides a service for managing Permanent URLs (PURLs). Per-directory Apache configuration files (.htaccess files) are used to redirect PURL requests to their real locations on the Web. 
+This repository provides a service for managing Permanent URLs (PURLs) with a root URL (https://purls.hmc.de/) as the resolver reference. Per-directory Apache configuration files (.htaccess files) are used to redirect PURL requests to their real locations on the Web. PURLs redirect HTTP clients using [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+
+
+
+## Content Negotiation 
+Our URL resolver on the supports HTTP [Content Negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). 
+In HTTP, content negotiation is the mechanism that is used for serving different representations of a resource to the same URI. This helps the user agent to specify which representation (e.g., document language, file format, or content encoding) is needed each time requesting the same URI. You can use this to request either HTML or RDF (with different [RDF serializations](https://en.wikipedia.org/wiki/Resource_Description_Framework#Serialization_formats)) representations.
+
+### Testing Content Negotiation 
+You can use the Linux curl command line utility to specify a particular representation of a resource to the same URI as follows:
+
+To request the HTML document describing the [scientific events ontology](https://saidfathalla.github.io/SEOontology/Documentation/SEO.html), the following command could be used
+
+`curl -L -H “Accept: text/html” https://purls.hmc.de/seo`
+
+To request the RDF file of the ontology, the following command could be used
+
+`curl -L -H “Accept: application/rdf+xml”  https://purls.hmc.de/seo`
+
+
+## Motivation
+After some time many URLs start decaying because e.g., the resource is moved to another location or the domain name of an organization changes – a process widely known as [Link Rot](https://en.wikipedia.org/wiki/Link_rot). Therefore, users receive a [`404 not found`](https://en.wikipedia.org/wiki/HTTP_404).
+
+## Main Goal
+Provide an open and reliable reference to digital resources thus enabling future access by both humans and machines.
 
 ## Benefits
-Provide a long-lasting reference to a digital object (e.g., articles, datasets, videos, persons, instruments, organization) which remains constant for identifying that object regardless of changes to its location on the Web. As a result we grauntee:
-- A resource can be reliably referenced for future access by humans and software.
-- Links to resources do not break.
-- Disambiguation of various entities, e.g. authors having the same name. 
-- Make researchers, their affiliations and their contributions more easily discoverable. 
-- A key element in FAIR data.
-
+Provide a long-lasting reference to a digital object (e.g., articles, datasets, videos, persons, organizations... etc) which remains constant for identifying that object regardless of changes to its location on the Web. 
+Therfore,
+- a resource can be reliably referenced for future access by humans and software.
+- links to resources do not break.
+- researchers, their affiliations and their contributions become more easily discoverable. 
+- achieve one of the key elements in [FAIR principles](https://www.go-fair.org/fair-principles/).
+- support disambiguating various entities, e.g. authors having the same name. 
 
 ## Status
 The service is under development.
 
 ## Adding / Updating PURLs
 
-Please use one of the following options to make add or update your PURLs 
+We provide means, to our user-community, to include new names in the root URL (e.g. https://purls.hmc.de/resource1).
+To do so, please use one of the following options to make add or update your PURLs 
 which wll be in the form `https://purl.hmc-services.de/[prefx]/[subdirectory]`:
 
 1. [Create a new issue](https://github.com/saidfathalla/PID-Service/issues/new?assignees=&labels=&template=request-purl.md&title=%5BNew+PURL%5D) describing the change you require.
