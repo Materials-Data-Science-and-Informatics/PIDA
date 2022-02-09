@@ -4,31 +4,43 @@
 
 This repository provides a service for managing Permanent URLs (PURLs) with a root URL (https://purls.hmc.de/) as the resolver reference. Per-directory Apache configuration files (.htaccess files) are used to redirect PURL requests to their real locations on the Web. PURLs redirect HTTP clients using [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 
+## Table of contents
+
+1. [Motivation](#motivation)
+2. [Objective](#Objective)
+3. [Content Negotiation](#Negotiation)
+    1. [Testing](#Testing)
+5. [Benefits](#Benefits)
+6. [Adding / Updating PURLs](#AddingUpdating)
+7. [Good practice](#Goodpractice)
 
 
-## Content Negotiation 
+## Motivation <a name="motivation"></a>
+After some time many URLs start decaying because e.g., the resource is moved to another location or the domain name of an organization changes – a process widely known as [Link Rot](https://en.wikipedia.org/wiki/Link_rot). Therefore, users receive a [`404 not found`](https://en.wikipedia.org/wiki/HTTP_404).
+
+## Objective <a name="Objective"></a>
+Provide an open and reliable reference to digital resources thus enabling future access by both humans and machines.
+
+## Content Negotiation <a name="Negotiation"></a>
 Our URL resolver on the supports HTTP [Content Negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). 
 In HTTP, content negotiation is the mechanism that is used for serving different representations of a resource to the same URI. This helps the user agent to specify which representation (e.g., document language, file format, or content encoding) is needed each time requesting the same URI. You can use this to request either HTML or RDF (with different [RDF serializations](https://en.wikipedia.org/wiki/Resource_Description_Framework#Serialization_formats)) representations.
 
-### Testing Content Negotiation 
+### Testing <a name="Testing"></a>
 You can use the Linux curl command line utility to specify a particular representation of a resource to the same URI as follows:
 
 To request the HTML document describing the [scientific events ontology](https://saidfathalla.github.io/SEOontology/Documentation/SEO.html), the following command could be used
-
-`curl -L -H “Accept: text/html” https://purls.hmc.de/seo`
+```bash
+curl -L -H “Accept: text/html” https://purls.hmc.de/seo
+```
 
 To request the RDF file of the ontology, the following command could be used
+```bash
+curl -L -H “Accept: application/rdf+xml”  https://purls.hmc.de/seo`
+```
 
-`curl -L -H “Accept: application/rdf+xml”  https://purls.hmc.de/seo`
 
 
-## Motivation
-After some time many URLs start decaying because e.g., the resource is moved to another location or the domain name of an organization changes – a process widely known as [Link Rot](https://en.wikipedia.org/wiki/Link_rot). Therefore, users receive a [`404 not found`](https://en.wikipedia.org/wiki/HTTP_404).
-
-## Main Goal
-Provide an open and reliable reference to digital resources thus enabling future access by both humans and machines.
-
-## Benefits
+## Benefits <a name="Benefits"></a>
 Provide a long-lasting reference to a digital object (e.g., articles, datasets, videos, persons, organizations... etc) which remains constant for identifying that object regardless of changes to its location on the Web. 
 Therfore,
 - a resource can be reliably referenced for future access by humans and software.
@@ -37,10 +49,8 @@ Therfore,
 - achieve one of the key elements in [FAIR principles](https://www.go-fair.org/fair-principles/).
 - support disambiguating various entities, e.g. authors having the same name. 
 
-## Status
-The service is under development.
 
-## Adding / Updating PURLs
+## Adding/Updating PURLs <a name="AddingUpdating"></a>
 
 We provide means, to our user-community, to include new names in the root URL (e.g. https://purls.hmc.de/resource1).
 To do so, please use one of the following options to make add or update your PURLs 
@@ -57,7 +67,7 @@ which wll be in the form `https://purl.hmc-services.de/[prefx]/[subdirectory]`:
 
 After submitting your Pull Request, the maintainers of this repository will then check your Pull Request and merge it into the main branch so that you can see your PURL in our repository and the resolution is ready.
 
-## Good practice when submitting requests via Pull requests
+## Good practice when submitting requests via Pull requests <a name="Goodpractice"></a>
 You could support the maintainers of the service by pursuing the following in your 
 Pull Requests:
 
