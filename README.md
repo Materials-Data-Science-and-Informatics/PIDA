@@ -1,4 +1,4 @@
-# Permanent Identifiers for Digital Assets
+# Permanent Identifiers for Digital Assets (PIDA)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/saidfathalla/PID-service) 
 ![status](https://img.shields.io/badge/status-down-green)
 
