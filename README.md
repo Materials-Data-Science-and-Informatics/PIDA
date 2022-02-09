@@ -47,14 +47,14 @@ Therfore,
 - links to resources do not break.
 - researchers, their affiliations and their contributions become more easily discoverable. 
 - achieve one of the key elements in [FAIR principles](https://www.go-fair.org/fair-principles/).
-- support disambiguating various entities, e.g. authors having the same name. 
+- support entities [disambiguation](https://en.wikipedia.org/wiki/Disambiguation_(disambiguation)), e.g. authors having the same name. 
 
 
 ## Adding/Updating PURLs <a name="AddingUpdating"></a>
 
 We provide means, to our user-community, to include new names in the root URL (e.g. https://purls.hmc.de/resource1).
 To do so, please use one of the following options to make add or update your PURLs 
-which wll be in the form `https://purl.hmc-services.de/[prefx]/[subdirectory]`:
+which wll be in the form `https://purl.hmc.de/[prefx]/[subdirectory]`:
 
 1. [Create a new issue](https://github.com/saidfathalla/PID-Service/issues/new?assignees=&labels=&template=request-purl.md&title=%5BNew+PURL%5D) describing the change you require.
 
