@@ -11,7 +11,7 @@ This repository provides a service for managing Permanent URLs (PURLs) with a ro
 3. [Content Negotiation](#Negotiation)
     1. [Testing](#Testing)
 5. [Benefits](#Benefits)
-6. [Adding / Updating PURLs](#AddingUpdating)
+6. [Adding/Updating PURLs](#AddingUpdating)
 7. [Good practice](#Goodpractice)
 
 
@@ -75,5 +75,22 @@ Pull Requests:
 * *Test* your links and .htaccess syntax locally.
 * *Squash multiple commits* into one commit before a pull request 
 * Provide a *descriptive commit details* (e.g. resource name, what changes made,... etc).
+## Copyright and Licence
 
+See [LICENSE](./LICENSE).
+
+
+## Acknowledgements
+
+<div>
+<img style="vertical-align: middle;" alt="HMC Logo" src="https://helmholtz-metadaten.de/storage/88/hmc_Logo.svg" width=50% height=50% />
+&nbsp;&nbsp;
+<img style="vertical-align: middle;" alt="FZJ Logo" src="https://upload.wikimedia.org/wikipedia/de/8/8b/J%C3%BClich_fz_logo.svg" width=30% height=30% />
+</div>
+<br />
+
+This project was developed at the Institute for Materials Data Science and Informatics
+(IAS-9) of the Jülich Research Center and funded by the Helmholtz Metadata Collaboration
+(HMC), an incubator-platform of the Helmholtz Association within the framework of the
+Information and Data Science strategic initiative.
 
