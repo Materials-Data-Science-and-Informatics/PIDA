@@ -35,7 +35,7 @@ curl -L -H “Accept: text/html” https://purls.hmc.de/seo
 
 To request the RDF file of the ontology, the following command could be used
 ```bash
-curl -L -H “Accept: application/rdf+xml”  https://purls.hmc.de/seo`
+curl -L -H “Accept: application/rdf+xml”  https://purls.hmc.de/seo
 ```
 
 
