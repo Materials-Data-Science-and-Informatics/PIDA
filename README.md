@@ -86,7 +86,8 @@ which wll be in the form `https://purl.hmc.de/[prefx]/[subdirectory]`:
 
 2. Forking this repository:
       * [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) me.
-      * Add or update a new redirect entry and [commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes.
+      * Prepare your [.htaccess](https://httpd.apache.org/docs/2.4/howto/htaccess.html) file (we recommend using [HTAGen tool](https://github.com/saidfathalla/HTAGen-tool) in this step).
+      * Add or update your entries and [commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes.
       * Submit a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) for your changes. 
  3. Send an e-mail: send a request to [purls@fz-juelich.de](mailto:purls@fz-juelich.de). 
     Make sure to include neccessary information (e.g. prefix, resource url, resource versions... etc).     
