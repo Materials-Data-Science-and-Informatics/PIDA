@@ -16,7 +16,7 @@ PURLs redirect HTTP clients using [HTTP status codes](https://en.wikipedia.org/w
 2. [Objective](#Objective)
 3. [Secured Communication](#Communication)
 4. [Content Negotiation](#Negotiation)
-    1. [Testing](#Testing)
+    - [Testing](#Testing)
 5. [Benefits](#Benefits)
 6. [Adding/Updating PURLs](#AddingUpdating)
 7. [Good practice](#Goodpractice)
@@ -64,8 +64,6 @@ To request the RDF file of the ontology, the following command could be used
 curl -L -H “Accept: application/rdf+xml”  https://purls.hmc.de/seo
 ```
 
-
-
 ## Benefits <a name="Benefits"></a>
 Provide a long-lasting reference to a digital object (e.g., articles, datasets, videos, persons, 
 organizations... etc) which remains constant for identifying that object regardless of changes to its location on the Web. 
@@ -104,6 +102,13 @@ Pull Requests:
 * *Test* your links and .htaccess syntax locally.
 * *Squash multiple commits* into one commit before a pull request 
 * Provide a *descriptive commit details* (e.g. resource name, what changes made,... etc).
+
+## Deployment using Docker
+To build a Docker image with a pre-configured setup of PIDA, you need to run:
+
+```
+docker build -t pida:purl .
+```
 
 ## License <a name="License"></a>
 The code is licensed under a [[MIT license](./LICENSE). Copyright © 2022. 
