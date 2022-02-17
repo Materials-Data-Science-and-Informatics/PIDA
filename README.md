@@ -6,7 +6,7 @@
 
 
 This repository provides a service for managing Permanent URLs (PURLs) with a root URL 
-(https://purls.hmc.de/) as the resolver reference. Per-directory Apache configuration files 
+(http://5.145.131.117/, domain name TBD) as the resolver reference. Per-directory Apache configuration files 
 (.htaccess files) are used to redirect PURL requests to their real locations on the Web. 
 PURLs redirect HTTP clients using [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 
