@@ -104,16 +104,8 @@ Pull Requests:
 * *Squash multiple commits* into one commit before a pull request 
 * Provide a *descriptive commit details* (e.g. resource name, what changes made,... etc).
 
-## Deployment using Docker
-To build a Docker image with a pre-configured setup of PIDA, you need to run:
-
-```
-docker build -t pida:purl .
-```
-
 ## License <a name="License"></a>
-The code is licensed under a [[MIT license](./LICENSE). Copyright © 2022. 
-
+The code is licensed under a [MIT license](./LICENSE). Copyright © 2022. 
 
 ## Acknowledgements <a name="Acknowledgements"></a>
 
