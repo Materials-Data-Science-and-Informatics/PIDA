@@ -41,6 +41,9 @@ This is pretty necessary for systems that require high levels of security, such 
 medical, and public infrastructure ones.
 
 ## Content Negotiation <a name="Negotiation"></a>
+ It is important o distinguish between URLs for Web documents and URIs for Semantic Web resources. 
+ Requests to Semantic Web resources should be redirected to RDF documents, 
+ while requests to plain Web resources are sent to HTML documents. 
 Our URL resolver supports [Content Negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). 
 In HTTP, content negotiation is the mechanism that is used for serving different representations 
 of a resource to the same URI. This helps the user agent to specify which representation (e.g., 
@@ -60,19 +63,17 @@ curl -L -H “Accept: text/html” https://purls.hmc.de/seo
 
 To request the RDF file of the ontology, the following command could be used
 ```bash
-curl -L -H “Accept: application/rdf+xml”  https://purls.helmholtz-metadaten.de/seo
+curl -L -H “Accept: text/html”  https://purls.helmholtz-metadaten.de/seo
 ```
 You will get results look like:
 ```console
-HTTP/1.1 200 OK
-Content-Length: 13746
-Content-Type: application/rdf+xml
-Last-Modified: Thu, 18 Jan 2007 10:27:22 GMT
-Accept-Ranges: bytes
-ETag: "bf3d723deb3ac71:54d"
-Server: Microsoft-IIS/6.0
-X-Powered-By: ASP.NET
-Date: Tue, 06 Feb 2007 10:52:51 GMT
+HTTP/1.1 303 See Other
+Date: Tue, 22 Feb 2022 14:18:54 GMT
+Server: Apache/2.4.29 (Ubuntu)
+Access-Control-Allow-Origin: *
+Location: Location: https://saidfathalla.github.io/SEOontology/Documentation/index.html
+Content-Type: text/html; charset=iso-8859-1
+
 ```
 
 Windows users can get cURL binaries from [here](http://curl.haxx.se/download.html#Win32).
