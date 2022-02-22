@@ -6,7 +6,7 @@
 
 
 This repository provides a service for managing Permanent URLs (PURLs) with a root URL 
-(http://5.145.131.117/, domain name TBD) as the resolver reference. Per-directory Apache configuration files 
+(http://purls.helmholtz-metadaten.de/) as the resolver reference. Per-directory Apache configuration files 
 (.htaccess files) are used to redirect PURL requests to their real locations on the Web. 
 PURLs redirect HTTP clients using [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 
@@ -78,31 +78,32 @@ Therfore,
 
 ## Adding/Updating PURLs <a name="AddingUpdating"></a>
 
-We provide means, to our user-community, to include new names in the root URL (e.g. https://purls.hmc.de/resource1).
+We provide means, to our user-community, to include new names in the root URL (e.g., http://purls.helmholtz-metadaten.de/).
 To do so, please use one of the following options to make add or update your PURLs 
 which wll be in the form `https://purl.hmc.de/[prefx]/[subdirectory]`:
 
-1. [Create a new issue](https://github.com/saidfathalla/PID-Service/issues/new?assignees=&labels=&template=request-purl.md&title=%5BNew+PURL%5D) describing the change you require.
+1. **Issue tracker**: [Create a new issue](https://github.com/saidfathalla/PID-Service/issues/new?assignees=&labels=&template=request-purl.md&title=%5BNew+PURL%5D) describing the change you require.
 
-2. Forking this repository:
-      * [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) me.
-      * Prepare your [.htaccess](https://httpd.apache.org/docs/2.4/howto/htaccess.html) file (we recommend using [HTAGen tool](https://github.com/saidfathalla/HTAGen-tool) in this step).
-      * Add or update your entries and [commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes.
-      * Submit a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) for your changes. 
- 3. Send an e-mail: send a request to [purls@fz-juelich.de](mailto:purls@fz-juelich.de). 
+2. **Forking this repository**:
+      i. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) me.
+      ii. Prepare your [.htaccess](https://httpd.apache.org/docs/2.4/howto/htaccess.html) file (we recommend using [HTAGen tool](https://github.com/saidfathalla/HTAGen-tool) in this step).
+      iii. Add or update your entries and [commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes.
+      iv. Submit a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) for your changes. 
+ 3. **E-mail**: send an email to [PIDA admin](mailto:purls@fz-juelich.de). 
     Make sure to include neccessary information (e.g. prefix, resource url, resource versions... etc).     
 
-After submitting your Pull Request, the maintainers of this repository will then check your Pull Request 
+After submitting your pull request, the maintainers of PIDA will then check your Pull Request 
 and merge it into the main branch so that you can see your PURL in our repository and the resolution is ready.
 
 ## Good practice when submitting requests via Pull requests <a name="Goodpractice"></a>
 You could support the maintainers of the service by pursuing the following in your 
 Pull Requests:
 
-* Provide your *contact info* (e.g. Name, email, affiliation ... etc) in the README.md or .htaccess  as comments.
-* *Test* your links and .htaccess syntax locally.
-* *Squash multiple commits* into one commit before a pull request 
-* Provide a *descriptive commit details* (e.g. resource name, what changes made,... etc).
+* Provide your *contact info* (e.g. Name, email, affiliation ... etc) in the *README.md* or *.htaccess*  as comments.
+* Test your links and .htaccess syntax locally.
+* [Squash](https://docs.gitlab.com/ee/user/project/merge_requests/squash_and_merge.html) multiple commits into one commit before a pull request. 
+  This helps to ensure a cleaner merge history. 
+* Provide a descriptive commit details (e.g. resource name, what changes made,... etc).
 
 ## License <a name="License"></a>
 The code is licensed under a [MIT license](./LICENSE). Copyright © 2022. 
