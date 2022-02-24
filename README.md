@@ -120,7 +120,7 @@ Pull Requests:
 * Provide a descriptive commit details (e.g. resource name, what changes made,... etc).
 
 ## License <a name="License"></a>
-The code is licensed under a [MIT license](./LICENSE). Copyright © 2022. 
+The code is licensed under the [MIT license](./LICENSE). Copyright © 2022. 
 
 ## Acknowledgments <a name="Acknowledgements"></a>
 
