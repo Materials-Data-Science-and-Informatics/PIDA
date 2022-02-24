@@ -18,7 +18,7 @@ PURLs redirect HTTP clients using [HTTP status codes](https://en.wikipedia.org/w
 4. [Content Negotiation](#Negotiation)
     - [Testing](#Testing)
 5. [Benefits](#Benefits)
-6. [Adding/Updating PURLs](#AddingUpdating)
+6. [Managing PURLs](#AddingUpdating)
 7. [Good practice](#Goodpractice)
 8. [License](#License)
 9. [Acknowledgments](#Acknowledgements)
@@ -90,20 +90,20 @@ Therefore,
   e.g., authors having the same name. 
 
 
-## Adding/Updating PURLs <a name="AddingUpdating"></a>
+## Managing PURLs <a name="AddingUpdating"></a>
 
 We provide means, to our user-community, to include new names in the root URL (e.g., https://purls.helmholtz-metadaten.de/).
-To do so, please use one of the following options to make add or update your PURLs 
+To do so, please use one of the following options to add or update your PURLs 
 which wll be in the form `https://purls.helmholtz-metadaten.de/[prefx]/[subdirectory]`:
 
-1. **Issue tracker**: [Create a new issue](https://github.com/saidfathalla/PID-Service/issues/new?assignees=&labels=&template=request-purl.md&title=%5BNew+PURL%5D) describing the change you require.
+1. **Issue tracker**: [Create a new issue](https://github.com/saidfathalla/PID-Service/issues/new?assignees=&labels=&template=request-purl.md&title=%5BNew+PURL%5D) (via *Request PURL* issue template) describing the PURL you want to register.
 
 2. **Forking this repository**:
       i. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) me.
       ii. Prepare your [.htaccess](https://httpd.apache.org/docs/2.4/howto/htaccess.html) file (we recommend using [HTAGen tool](https://github.com/saidfathalla/HTAGen-tool) in this step).
       iii. Add or update your entries and [commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes.
       iv. Submit a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) for your changes. 
- 3. **E-mail**: send an email to [PIDA admin](mailto:purls.hmc-services@fz-juelich.de?subject=Request%20a%20new%20PURL). 
+ 3. **E-mail**: To register a new PURL, you can send an email to [PIDA admin](mailto:purls.hmc-services@fz-juelich.de?subject=Request%20a%20new%20PURL). 
     Make sure to include necessary information (e.g., prefix, resource URL, resource versions... etc).     
 
 After submitting your pull request, the maintainers of PIDA will then check your pull request 
