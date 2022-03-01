@@ -103,8 +103,7 @@ which wll be in the form `https://purls.helmholtz-metadaten.de/[prefx]/[subdirec
       ii. Prepare your [.htaccess](https://httpd.apache.org/docs/2.4/howto/htaccess.html) file (we recommend using [HTAGen tool](https://github.com/saidfathalla/HTAGen-tool) in this step).
       iii. Add or update your entries and [commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes.
       iv. Submit a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) for your changes. 
- 3. **E-mail**: To register a new PURL, you can send an email to [PIDA admin](mailto:purls.hmc-services@fz-juelich.de?subject=Request%20a%20new%20PURL). 
-    Make sure to include necessary information (e.g., prefix, resource URL, resource versions... etc).     
+ 3. **E-mail**: To register a new PURL, you can send an email to [PIDA admin](mailto:purls.hmc-services@fz-juelich.de?subject=Request%20a%20new%20PURL) with [Request-a-new-PURL](./assets/Request-a-new-PURL-sheet.xlsx) spreadsheet attached to make sure the necessary information (e.g., prefix, resource URL, resource versions... etc) included.  
 
 After submitting your pull request, the maintainers of PIDA will then check your pull request 
 and merge it into the main branch so that you can see your PURL in our repository and the resolution is ready.
