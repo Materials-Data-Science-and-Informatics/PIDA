@@ -5,23 +5,22 @@
 ![GitHub](https://img.shields.io/github/license/saidfathalla/PID-Service)
 
 
-This repository provides a service for managing Permanent URLs (PURLs) with a root URL 
+PIDA is a service for managing Permanent URLs (PURLs) with a root URL 
 (http://purls.helmholtz-metadaten.de/) as the resolver reference. Per-directory Apache configuration files 
 (.htaccess files) are used to redirect PURL requests to their real locations on the Web. 
 PURLs redirect HTTP clients using [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 
 ## Table of contents
 
-1. [Motivation](#motivation)
-2. [Objective](#Objective)
-3. [Secured Communication](#Communication)
-4. [Content Negotiation](#Negotiation)
+1. [Motivation and Objective](#motivation)
+2. [Secured Communication](#Communication)
+3. [Content Negotiation](#Negotiation)
     - [Testing](#Testing)
-5. [Benefits](#Benefits)
-6. [Managing PURLs](#AddingUpdating)
-7. [Good practice](#Goodpractice)
-8. [License](#License)
-9. [Acknowledgments](#Acknowledgements)
+4. [Benefits](#Benefits)
+5. [Managing PURLs](#AddingUpdating)
+6. [Good practice](#Goodpractice)
+7. [License](#License)
+8. [Acknowledgments](#Acknowledgements)
 
 
 ## Motivation <a name="motivation"></a>
@@ -30,8 +29,7 @@ location or the domain name of an organization changes – a process widely know
 [Link Rot](https://en.wikipedia.org/wiki/Link_rot). Therefore, users receive a 
 [`404 not found`](https://en.wikipedia.org/wiki/HTTP_404).
 
-## Objective <a name="Objective"></a>
-Provide an open and reliable reference to digital resources thus enabling future access 
+The main objective is to provide an open and reliable reference to digital resources thus enabling future access 
 by both humans and machines.
 
 ## Secured Communication <a name="Communication"></a> (*in progress*)
@@ -41,7 +39,7 @@ This is pretty necessary for systems that require high levels of security, such 
 medical, and public infrastructure ones.
 
 ## Content Negotiation <a name="Negotiation"></a>
- It is important o distinguish between URLs for Web documents and URIs for Semantic Web resources. 
+ It is important to distinguish between URLs for Web documents and URIs for Semantic Web resources. 
  Requests to Semantic Web resources should be redirected to RDF documents, 
  while requests to plain Web resources are sent to HTML documents. 
 Our URL resolver supports [Content Negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation). 
