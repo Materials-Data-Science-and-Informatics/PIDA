@@ -23,7 +23,7 @@ PURLs redirect HTTP clients using [HTTP status codes](https://en.wikipedia.org/w
 8. [Acknowledgments](#Acknowledgements)
 
 
-## Motivation <a name="motivation"></a>
+## Motivation and Objective <a name="motivation"></a>
 After some time many URLs start decaying because may be e.g., the resource is moved to another 
 location or the domain name of an organization changes – a process widely known as 
 [Link Rot](https://en.wikipedia.org/wiki/Link_rot). Therefore, users receive a 
@@ -49,8 +49,7 @@ document language, file format, or content encoding) is needed each time request
 You can use this to request either HTML or RDF (with different [RDF serializations](https://en.wikipedia.org/wiki/Resource_Description_Framework#Serialization_formats)) representations.
 
 ### Testing <a name="Testing"></a>
-Content negotiation can be tested using the `curl` command line utility to specify a particular representation of a 
-resource to the same URI as follows:
+Content negotiation can be tested using the `curl` command-line utility to specify a particular representation of a resource to the same URI as follows:
 
 To request the HTML document describing the 
 [scientific events ontology](https://saidfathalla.github.io/SEOontology/Documentation/SEO.html), 
@@ -63,7 +62,7 @@ To request the RDF file of the ontology, the following command could be used
 ```bash
 curl -L -H “Accept: text/html”  https://purls.helmholtz-metadaten.de/seo
 ```
-You will get results look like:
+You will get results that look like:
 ```console
 HTTP/1.1 303 See Other
 Date: Tue, 22 Feb 2022 14:18:54 GMT
@@ -82,7 +81,7 @@ organizations... etc, which remains constant for identifying that object regardl
 Therefore,
 - a resource can be reliably referenced for future access by humans and software.
 - links to resources do not break.
-- researchers, their affiliations and their contributions become more easily discoverable. 
+- researchers, their affiliations, and their contributions become more easily discoverable. 
 - achieve one of the key elements in [FAIR principles](https://www.go-fair.org/fair-principles/).
 - support entities [disambiguation](https://en.wikipedia.org/wiki/Disambiguation_(disambiguation)), 
   e.g., authors having the same name. 
@@ -90,9 +89,8 @@ Therefore,
 
 ## Managing PURLs <a name="AddingUpdating"></a>
 
-We provide means, to our user-community, to include new names in the root URL (e.g., https://purls.helmholtz-metadaten.de/).
-To do so, please use one of the following options to add or update your PURLs 
-which wll be in the form `https://purls.helmholtz-metadaten.de/[prefx]/[subdirectory]`:
+We provide means, to our user community, to include new names in the root URL (e.g., https://purls.helmholtz-metadaten.de/).
+To do so, please use one of the following options to add or update your PURLs which will be in the form `https://purls.helmholtz-metadaten.de/[prefx]/[subdirectory]`:
 
 1. **Issue tracker**: [Create a new issue](https://github.com/saidfathalla/PID-Service/issues/new?assignees=&labels=&template=request-purl.md&title=%5BNew+PURL%5D) (via *Request PURL* issue template) describing the PURL you want to register.
 
@@ -110,11 +108,11 @@ and merge it into the main branch so that you can see your PURL in our repositor
 You could support the maintainers of the service by pursuing the following in your 
 Pull Requests:
 
-* Provide your contact info (e.g. Name, email, affiliation ... etc) in the *README.md* or *.htaccess*  as comments.
+* Provide your contact info (e.g. name, email, affiliation ... etc) in the *README.md* or *.htaccess*  as comments.
 * Test your links and .htaccess syntax locally.
 * [Squash](https://docs.gitlab.com/ee/user/project/merge_requests/squash_and_merge.html) multiple commits into one commit before a pull request. 
   This helps to ensure a cleaner merge history. 
-* Provide a descriptive commit details (e.g. resource name, what changes made,... etc).
+* Provide descriptive commit details (e.g. resource name, what changes made,... etc).
 
 ## License <a name="License"></a>
 The code is licensed under the [MIT license](./LICENSE). Copyright © 2022. 
@@ -129,6 +127,4 @@ The code is licensed under the [MIT license](./LICENSE). Copyright © 2022.
 <br />
 
 This project was developed at the Institute for Materials Data Science and Informatics
-(IAS-9) of the Jülich Research Center and funded by the Helmholtz Metadata Collaboration
-(HMC), an incubator-platform of the Helmholtz Association within the framework of the
-Information and Data Science strategic initiative.
+(IAS-9) of the Jülich Research Center and funded by the Helmholtz Metadata Collaboration (HMC), an incubator platform of the Helmholtz Association within the framework of the Information and Data Science strategic initiative.
