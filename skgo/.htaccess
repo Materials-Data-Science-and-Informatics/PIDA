@@ -6,5 +6,5 @@ Options +FollowSymLinks
 RewriteEngine on
  
 # Default Redirect
-RewriteRule ^$ https://github.com/saidfathalla/Science-knowledge-graph-ontologies  [R=303,L]
+RewriteRule ^$ https://bioportal.bioontology.org/ontologies/MODSCI  [R=303,L]
  
