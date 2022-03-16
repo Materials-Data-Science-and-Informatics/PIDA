@@ -5,7 +5,7 @@ RewriteEngine on
 
 RewriteRule ^theÆ$ https://www.rapidtables.com/code/text/unicode-characters.html [R=303,NE,L] 
 RewriteRule ^the&#x0410;$ https://www.ibm.com/docs/en/cics-ts/5.3?topic=cics-internationalized-resource-identifiers-iris [R=303,NE,L] 
-RewriteRule ^ひらがな-japanese$ https://www.key-shortcut.com/en/writing-systems/%E3%81%B2%E3%82%89%E3%81%8C%E3%81%AA-japanese [R=303,NE,L] 
+RewriteRule ^ひらがな-japanese$ https://www.key-shortcut.com/en/writing-systems/ひらがな-japanese-japanese [R=303,NE,L] 
 
 
  
