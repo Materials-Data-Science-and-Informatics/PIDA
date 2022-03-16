@@ -4,7 +4,7 @@ Options +FollowSymLinks
 RewriteEngine on
 
 RewriteRule ^theÆ$ https://www.rapidtables.com/code/text/unicode-characters.html [R=303,NE,L] 
-RewriteRule ^the&#x0410;$ https://www.rapidtables.com/code/text/unicode-characters.html [R=303,NE,L] 
+RewriteRule ^the&#x0410;$ https://www.ibm.com/docs/en/cics-ts/5.3?topic=cics-internationalized-resource-identifiers-iris [R=303,NE,L] 
 
  
 #default response test unicode chars
