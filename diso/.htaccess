@@ -1,25 +1,14 @@
-# https://purls.helmholtz-metadaten.de/diso
-
-
+# https://purl.hmc-services.de/diso
 Options +FollowSymLinks
-# Turn off MultiViews
-Options -MultiViews
-
-# Directive to ensure *.rdf files served as appropriate content type,
-# if not present in main apache config
-AddType application/rdf+xml .rdf
-AddType application/rdf+xml .owl
-
-RewriteEngine on
-
-
-#Rewrite rules for diso vocabulary 
-RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
-RewriteCond %{HTTP_ACCEPT} text/html [OR]
-RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
-RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
-RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.* [OR]
-RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.* 
-RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl  [R=303,NE,L]
  
+# Directive to ensure *.rdf files served as appropriate content type
+AddType application/rdf+xml .owl
+ 
+RewriteEngine on
+ 
+# Default Redirect
+RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl  [R=303,L]
+ 
+# Rewrite rule to serve OWL content from the vocabulary URI if requested 
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml 
+RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl  [R=303,L]
