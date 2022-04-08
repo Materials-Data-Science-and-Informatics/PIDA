@@ -1,4 +1,4 @@
-# https://purl.hmc-services.de/cdo
+# https://purls.helmholtz-metadaten.de/cdo
 Options +FollowSymLinks
  
 # Directive to ensure *.rdf files served as appropriate content type
