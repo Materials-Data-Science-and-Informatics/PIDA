@@ -7,8 +7,8 @@ AddType application/rdf+xml .owl
 RewriteEngine on
  
 # Default Redirect
-RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/crystallographic-defect-ontology.owl  [R=303,L]
+RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/crystallographic-defect-ontology/crystallographic-defect-ontology.owl  [R=303,L]
  
 # Rewrite rule to serve OWL content from the vocabulary URI if requested 
 RewriteCond %{HTTP_ACCEPT} application/rdf\+xml 
-RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/crystallographic-defect-ontology.owl  [R=303,L]
+RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/crystallographic-defect-ontology/crystallographic-defect-ontology.owl  [R=303,L]
