@@ -1,11 +1,11 @@
-# Permanent Identifiers for Digital Assets (PIDA)
+# Persistent Identifiers for Digital Assets (PIDA)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/saidfathalla/PID-Service) 
 ![status](https://img.shields.io/badge/status-down-green) 
 ![GitHub contributors](https://img.shields.io/github/contributors/saidfathalla/PID-Service) 
 ![GitHub](https://img.shields.io/github/license/saidfathalla/PID-Service)
 
 
-PIDA is a service for providing web resources [Permanent URLs (PURLs)](https://en.wikipedia.org/wiki/Persistent_uniform_resource_locator), to ensure reliable access to them.
+PIDA is a service for providing web resources [Persistent URLs (PURLs)](https://en.wikipedia.org/wiki/Persistent_uniform_resource_locator), to ensure reliable access to them.
 Therefore, they remain available for future access by both humans and machines.
 
 
