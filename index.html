@@ -1,131 +1,298 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <link rel="icon" href="HMCicon-32x32.png"/>
+    <title>Permanent Identifiers for Digital Assets (PIDA)</title>
+    <meta name="description" content="Permanent Identifiers for Digital Assets (PIDA)" />
+    <link rel="stylesheet" type="text/css" href="https://www.helmholtz.de/typo3temp/assets/compressed/merged-5479d28e837a5ddc33e3a039d39af791-3e1b88495c3ae1f90a7bd436a5adf856.css?1645798209" media="all" />
+    <link rel="stylesheet" type="text/css" href="PIDAstyle.css" media="all" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="PIDAscript.js"></script>
+  </head>
+  <body>
+    <div class="skip-nav"><a href="#main" class="skip-nav-btn">Jump directly to the page contents</a></div>
+    <header class="header header--default">
+      <div class="header__top">
+        <div class="header__top-inner">
+          <div class="header__logo">
+            <a href="https://purls.helmholtz-metadaten.de/">
+              <svg width="252.48" height="87.36" viewBox="0 0 252.48 87.36" xmlns="http://www.w3.org/2000/svg">
+                <title id="helmholtz-logo-header">PIDA - Persistent Identifiers for Digital Assets
+                </title>
+                <path
+                  fill="currentColor"
+                  d="M 289.35 88.35 L 267.45 88.35 L 311.4 0.15 L 340.95 0.15 L 384.75 88.35 L 361.65 88.35 L 352.8 69.3 L 299.1 69.3 L 289.35 88.35 Z M 228.15 88.35 L 160.05 88.35 L 160.05 12.15 L 158.55 0.15 L 228.15 0.15 A 79.604 79.604 0 0 1 234.868 0.415 Q 241.589 0.986 245.997 2.791 A 21.368 21.368 0 0 1 246.825 3.15 A 19.658 19.658 0 0 1 251.848 6.402 A 16.195 16.195 0 0 1 255.9 12.075 A 28.664 28.664 0 0 1 257.643 17.82 Q 258.45 21.872 258.45 26.85 L 258.45 61.5 A 54.007 54.007 0 0 1 258.109 67.757 Q 257.532 72.699 255.975 76.425 A 16.293 16.293 0 0 1 249.098 84.233 A 21.791 21.791 0 0 1 246.975 85.35 A 26.724 26.724 0 0 1 241.939 87.027 Q 236.318 88.35 228.15 88.35 Z M 21.3 88.35 L 1.5 88.35 L 1.5 12.15 L 0 0 L 66.45 0 A 58.815 58.815 0 0 1 72.047 0.249 Q 77.761 0.797 81.525 2.55 A 23.043 23.043 0 0 1 85.503 4.882 Q 88.066 6.776 89.625 9.225 Q 92.25 13.35 93 18 Q 93.75 22.65 93.75 26.85 L 93.75 35.7 A 26.889 26.889 0 0 1 93.519 39.116 Q 93.295 40.868 92.851 42.791 A 45.848 45.848 0 0 1 92.7 43.425 A 23.013 23.013 0 0 1 90.037 49.796 A 27.633 27.633 0 0 1 88.8 51.675 A 18.758 18.758 0 0 1 84.652 55.82 A 26.055 26.055 0 0 1 80.55 58.275 A 23.224 23.224 0 0 1 75.618 59.975 Q 73.179 60.539 70.308 60.759 A 50.483 50.483 0 0 1 66.45 60.9 L 51.15 60.9 Q 41.7 60.9 33.525 60.45 Q 27.266 60.106 23.425 59.849 A 297.122 297.122 0 0 1 21.3 59.7 L 21.3 88.35 Z M 179.85 14.55 L 179.85 73.95 L 226.95 73.95 A 18.17 18.17 0 0 0 231.44 73.445 Q 237.241 71.961 238.376 66.118 A 15.972 15.972 0 0 0 238.65 63.3 L 238.65 25.05 A 12.348 12.348 0 0 0 238.022 21.048 A 10.747 10.747 0 0 0 236.1 17.625 Q 233.643 14.662 227.425 14.554 A 27.396 27.396 0 0 0 226.95 14.55 L 179.85 14.55 Z M 134.55 88.35 L 114.75 88.35 L 114.75 0.15 L 134.55 0.15 L 134.55 88.35 Z M 21.3 14.4 L 21.3 46.5 L 62.1 46.5 A 21.552 21.552 0 0 0 65.346 46.274 Q 69.358 45.661 71.253 43.383 A 6.513 6.513 0 0 0 71.4 43.2 Q 73.95 39.9 73.95 35.25 L 73.95 25.8 A 15.008 15.008 0 0 0 73.462 21.887 A 11.784 11.784 0 0 0 71.4 17.7 A 7.451 7.451 0 0 0 68.258 15.387 Q 65.859 14.4 62.25 14.4 L 21.3 14.4 Z M 325.2 13.65 L 304.5 54.6 L 347.25 54.6 L 326.7 13.65 L 325.2 13.65 Z"
+                  vector-effect="non-scaling-stroke"
+                  />
+              </svg>
+              A PID Provider
+              <!--  hemlotz logo          
+                <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 737.4 100" xml:space="preserve" aria-labelledby="helmholtz-logo-header" role="img">
+                  <title id="helmholtz-logo-header">Helmholtz - Association of German Research Centres</title>
+                  <path fill="currentColor" d="M53.5 0h19.2v100H53.5V59.7H19.2V100H0V0h19.2v40.5h34.3V0zm50.1 0c-.9 0-1.7.4-2.3 1l-6.2 6.2c-.7.6-1 1.4-1 2.3v81.1c0 .9.3 1.7 1 2.3l6.2 6.2c.6.7 1.4 1 2.3 1h53.6V80.8h-43.9V59.7h38.1V40.5h-38.1V19.2h43.9V0h-53.6zm82.5 100h44.6V80.8h-34.9V0h-19.2v90.5c0 .9.3 1.7 1 2.3l6.2 6.2c.6.7 1.4 1 2.3 1zM374 40.5V0h-19.2v100H374V59.7h34.3V100h19.2V0h-19.2v40.5H374zm127.6 31c0 .9-.4 1.6-1 2.3l-6.1 6.1c-.7.7-1.5 1-2.4 1H475c-.8 0-1.5-.3-2.3-1l-6.1-6.1c-.7-.7-1-1.4-1-2.3V28.6c0-.9.3-1.7 1-2.3l6.1-6.2c.7-.6 1.4-1 2.3-1h17.2c.9 0 1.7.4 2.4 1l6.1 6.2c.6.6 1 1.4 1 2.3v42.9zm4.5-66.7C503 1.8 499 0 494.8 0h-22.4c-4.2 0-8.3 1.7-11.4 4.8l-9.9 9.9c-3 3-4.7 7.1-4.7 11.3v48c0 4.2 1.7 8.3 4.7 11.3l9.9 10c3 3.1 7.2 4.7 11.4 4.7h22.4c4.2 0 8.3-1.7 11.3-4.7l10-10c3-3 4.7-7.1 4.7-11.3V25.9c0-4.2-1.7-8.3-4.7-11.3l-10-9.8zm42.7 95.2h45.4V80.8h-35.7V0h-19.2v90.5c0 .9.3 1.7 1 2.3l6.2 6.2c.6.7 1.5 1 2.3 1zm67-80.8V100H635V19.2h26.5V0h-72.2v19.2h26.5zM730.2 1c-.6-.6-1.4-1-2.3-1h-56v19.2h39.6L670 84.8v5.8c0 .9.4 1.7 1 2.3l6.2 6.2c.6.7 1.4 1 2.3 1h57.3V80.8h-41.5l42-66.4v-5c0-.8-.4-1.7-1-2.3L730.2 1zM314.3 0l-26.7 46.2L260.9 0h-18.4v100h19.2V38.2L279 68c.6 1 1.6 1.6 2.8 1.6h11.8c1.1 0 2.2-.6 2.8-1.6l17.1-29.6V100h19.2V0h-18.4z" />
+                </svg>
+                -->
+              
 
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/cs/comingsoon_05/css/util.css">
-<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/cs/comingsoon_05/css/main.css">
-</head>
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-}
+            </a>
+          </div>
+          <a href="https://helmholtz-metadaten.de/">
+          <img alt="HMC Logo" src="https://helmholtz-metadaten.de/storage/88/hmc_Logo.svg" style="float: right; width: 65%; height: 65%;" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <!--TYPO3SEARCH_begin-->
+    <main id="main">
+      <!--DMAILER_SECTION_BOUNDARY_-->
+      <nav class="breadcrumb" aria-label="Your current position">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <span><mark>Home</mark></span>
+          </li>
+          <li class="breadcrumb__item">
+            <a href="technicalSpecs.html" class="breadcrumb__link"><span>Technical Specifications</span></a>
+          </li>
+          <li class="breadcrumb__item">
+            <a href="aboutpurls.html" class="breadcrumb__link"><span>About PURLS</span></a>
+          </li>
+          <li class="breadcrumb__item">
+            <a href="faq.html" class="breadcrumb__link"><span>FAQ</span></a>
+          </li>
+          <li class="breadcrumb__item">
+            <a href="https://github.com/saidfathalla/PIDA" class="breadcrumb__link"><span>GitHub Repository</span></a>
+          </li>
+          <li class="breadcrumb__item">
+            <a href="index2.html#contact-grid-48245" class="breadcrumb__link"><span>Contact us</span></a>
+          </li>
+        </ol>
+      </nav>
+      <div class="headline headline--line-left">
+        <h2 class="headline__heading">PIDA - Persistent Identifiers for Digital Assets
+        </h2>
+      </div>
+      <div class="introtext">
+        <p>We provide long-lasting references for digital assets accessible to humans and machine agents</p>
+      </div>
+      <br />
+      <div class="tcontainer">
+        <div>
+          <div class="title" style="float: left;">
+            <b>News&emsp;</b>
+          </div>
+          <marquee class="ticker-move" scrollamount="10" onmouseover="this.stop();" onmouseout="this.start();">
+            <div>
+              <span class="dot"></span> <a href="#" class="news-bar">Official PIDA launch was April 14,2022.</a> &emsp; &emsp; 
+              <span class="dot"></span> <a href="#" class="hvr-pop">Official PIDA launch was April 14,2022.</a> &emsp; &emsp;
+              <span class="dot"></span> <a href="#" class="hvr-pop">Official PIDA launch was April 14,2022.</a> &emsp; &emsp;
+            </div>
+          </marquee>
+        </div>
+      </div>
+      <!--DMAILER_SECTION_BOUNDARY_END-->
+      <!--DMAILER_SECTION_BOUNDARY_-->
+      <div id="c47865" class="textmedia textmedia--image-above">
+        <div class="textmedia__inner">
+          <div class="textmedia__image"></div>
+          <div class="textmedia__text">
+            <p>
+              PIDA is a service providing unique persistent URLs (PURLs) for referencing digital assets 
+              on the web. Using our service will help you to ensure that your digital assets remain 
+              findable and can be accessed reliably by both humans and machines in the long term. 
+              PIDA is a service offered by the <a href=" https://helmholtz-metadaten.de/en">Helmholtz Metadata Collaboration (HMC)</a> and the 
+               “<a href="https://fz-juelich.de/ias/ias-9/EN/Home/home_node.html"> Institute for Materials Data Science and Informatics (IAS-9)</a>”  at Forschungszentrum Jülich.
 
-.bgimg {
-  background-image: url('https://www.proptecheurasia.com/upload/image/forestbridge.jpg');
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 25px;
-}
+            </p>
+            <h4>Why using PIDs from PIDA for your digital assets</h4>
+            <p class="has-line-data" data-line-start="0" data-line-end="4">
+              
+              Web addresses and the stability of established links can decay over time – for example, 
+              if a digital resource is moved to another location or when the domain name of an organization 
+              changes. This process is often known as <a href="https://en.wikipedia.org/wiki/Link_rot">link rot</a>. 
+              When users try to access a decayed link, i.e. 
+              where the target has moved to a different location, they receive an ”<a href="https://en.wikipedia.org/wiki/HTTP_404"><code>404 not found</code></a>” error instead 
+              of the desired web page. This problem can be prevented by using persistent identifiers – such as those 
+              provided by PIDA. These long-lasting references to a digital object – such as an article, dataset, video, 
+              person, or organization – will persistently identify that object on the internet, regardless of its actual location.
+              <br>
+              <br>
+              Using a PURL provided by PIDA ensures that:
 
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
+              
+              
+            </p>
+            <ul>
+              <li>a resource can be reliably referenced for future access by humans and software</li>
+              <li>links to resources do not break</li>
+              <li>resources become more easily discoverable – for example, researchers, their affiliations, and their contributions</li>
+              <li>resources are findable – one of the key elements in the <a href="https://www.go-fair.org/fair-principles/">FAIR principles</a> of data management</li>
+              <li>entities can be identified <a href="https://en.wikipedia.org/wiki/Disambiguation_(disambiguation)">unambiguously </a> – for example, 
+                authors with the same name can be distinguished from one  another</li>
+            </ul>
+         
+            <h4>How to manage PIDs in PIDA </h4>
+            <p>Please use one of the following options to add or update your PIDs using our GitHub repository:</p>
+            <ul>
+              <li>
+                <b>Issue tracker</b>: <a href="https://github.com/saidfathalla/pid-service/issues/new?assignees=&amp;labels=&amp;template=request-purl.md&amp;title=%5bnew+purl%5d">create a new issue</a> (via <em>request PURL</em> issue
+                template) describing the PURL you want to register.
+              </li>
+              <li>
+                <b>Fork PIDA repository</b>: before using this method, please read the section <a href="#good-practice">Good practice when submitting requests via pull requests</a> 
+                in the <a href="technicalSpecs.html">technical specifications</a> page.
+                <ul style="list-style-type:none;">
+                  <p><b>1.</b> <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">Fork</a> the <a href="https://github.com/saidfathalla/pida">PIDA repository</a>.</p>
+                  <p><b>2.</b> prepare your <a href="https://httpd.apache.org/docs/2.4/howto/htaccess.html">.htaccess</a> file. we recommend using <a href="https://github.com/saidfathalla/htagen-tool">HTAGen tool</a>.</p>
+                  <p><b>3.</b> add or update your entries and <a href="https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project">commit</a> your changes.    </p>
+                  <p><b>4.</b> submit a <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">pull request</a> for your changes.
+                    The maintainers of PIDA will check your pull request and merge it into the main branch so that you can see your purl in our repository.
 
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
-}
+                  </p>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  <b>E-mail</b>: to register a new PURL, you can send an email to the PIDA maintainers (<a class="contact__link" href="javascript:linkTo_UnCryptMailto('ocknvq<rwtnu0joeBh|/lwgnkej0fg', 2);">purls.hmc<span>&#064;</span>fz-juelich.de</a> ) with the
+                  <a href="./assets/request-a-new-purl-sheet.xlsx">request-a-new-purl spreadsheet</a>  attached. 
+                  Please make sure you include all necessary information in the spreadsheet (e.g. prefix, resource URL, resource versions, etc.).
+                </p>
+              </li>
+            </ul>
+            <br>
+            
+            <h3>License</h3>
+            <p>The code is licensed under the <a href="https://github.com/saidfathalla/PIDA/blob/main/LICENSE">MIT license</a>. Copyright © 2022.</p>
+            
+            <h3>Acknowledgments</h3>
+            <br />
+            <p>
+              
+              PIDA is a service of  the <a href=" https://helmholtz-metadaten.de/en">Helmholtz Metadata Collaboration (HMC)</a>, an incubator-platform of the Helmholtz 
+              Association within the framework of the Information and Data Science strategic initiative. It is developed, 
+              maintained and offered to you by the "<a href="https://fz-juelich.de/ias/ias-9/EN/Home/home_node.html">Institute for Materials Data Science and Informatics (IAS-9)</a>” of the Forschungszentrum Jülich
+            </p>
+            <br />
+            <img alt="FZJ Logo" src="https://github.com/Materials-Data-Science-and-Informatics/Logos/raw/main/FZJ/FZJ.png" style="float: right; width: 40%; height: 40%;" />
+            <img alt="HMC Logo" src="https://github.com/Materials-Data-Science-and-Informatics/Logos/raw/main/HMC/HMC_Logo_M.png" style="float: left; width: 50%; height: 50%;" />
+          </div>
+        </div>
+      </div>
+      <!--DMAILER_SECTION_BOUNDARY_END-->
+    </main>
+    <!--TYPO3SEARCH_end-->
+    <footer class="footer">
+      <section id="c48245" class="contact contact--multiple-items" aria-labelledby="contact-grid-48245">
+        <div class="contact__grid">
+          <div class="contact__header">
+            <h2 id="contact-grid-48245">Contact</h2>
+          </div>
 
-.middle {
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-hr {
-  margin: auto;
-  width: 40%;
-}
-.center {
-margin: auto;
-width: 60%;
-border: 5px solid #FFFF00;
-padding: 10px;
-}
-</style>
-<body>
-
-<div class="bgimg">
-  <div class="topleft">
-    <h5>Helmholtz Metadata Collaboration Platform (HMC)</h5>
-  </div>
-  <div class="middle">
-      <h2> PIDA </h2>
-      <p>A Permanent Identifiers for Digital Assets</p>
-</br>
-    <h1>COMING SOON</h1>
-    <hr>
-    </br>
-    <h5>
-    <div class=" flex-c cd100 wsize0 bor1" >
-<div class="flex-col-c-m size2 bg0 bor2">
-<span id="dy" class="l1-txt3 p-b-7 days">0</span>
-<span class="s1-txt1">Days</span>
-</div>
-<div class="flex-col-c-m size2 bg0 bor2">
-<span  id="hr" class="l1-txt3 p-b-7 hours">0</span>
-<span class="s1-txt1">Hours</span>
-</div>
-<div class="flex-col-c-m size2 bg0 bor2">
-<span  id="min" class="l1-txt3 p-b-7 minutes">0</span>
-<span class="s1-txt1">Minutes</span>
-</div>
-<div class="flex-col-c-m size2 bg0">
-<span id="sec" class="l1-txt3 p-b-7 seconds">0</span>
-<span class="s1-txt1">Seconds</span>
-</div>
-    </h5>
-  </div>
-  <div class="bottomleft">
-    <h5>  Copoyright 2022 </h5>
-  </div>
-</div>
- <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Apr 15, 2022 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
- // document.getElementById("demo").innerHTML = days + " Days " + hours + " Hours "
- // + minutes + " min " + seconds + " sec ";
-  
-    document.getElementById("dy").innerHTML = days; 
-    document.getElementById("hr").innerHTML = hours; 
-    document.getElementById("min").innerHTML = minutes; 
-    document.getElementById("sec").innerHTML = seconds; 
-
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
-</body>
+          <div >
+            Contact us via email: <a class="contact__link" href="javascript:linkTo_UnCryptMailto('ocknvq<rwtnu0joeBh|/lwgnkej0fg', 2);">purls.hmc<span>&#064;</span>fz-juelich.de</a> - we are looking forward to hearing from you!
+         <!--    <div class="contact__col">
+              <div class="contact__image">
+                <img src="https://purls.helmholtz-metadaten.de/Said_Gray.png" alt="Said Fathalla" style="width: 220px; height: 250px;" />
+              </div>
+              <h3 class="contact__name is-h4">
+                Said Fathalla
+              </h3>
+              <p class="contact__block">
+                Semantic Data Engineer
+                <br/>
+                Helmholtz Metadata Collaboration &amp;
+               
+                 <br> Forschungszentrum J&uuml;lich
+              </p>
+              <ul class="contact__list">
+                <li><a class="contact__link" href="javascript:linkTo_UnCryptMailto('ocknvq<rwtnu0joeBh|/lwgnkej0fg', 2);">purls.hmc<span>&#064;</span>fz-juelich.de</a></li>
+                <li>
+                  <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" style="float: left;" width="16" height="16" />
+                  <a href="https://orcid.org/0000-0002-2818-5890" class="contact__link">0000-0002-2818-5890</a>
+                </li>
+               
+              </ul>
+            </div>
+            <div class="contact__col">
+              <div class="contact__image">
+                <img src="https://helmholtz-metadaten.de/storage/927/conversions/bw_Info_portrait_Coordinator_VolkerHofmann-sm.png" alt="Volker Hofmann" title="" style="width: 225px; height: 250px;" />
+              </div>
+              <h3 class="contact__name is-h4">
+                Volker Hofmann
+              </h3>
+              <p class="contact__block">
+                Hub Information Coordinator
+                <br />
+                Helmholtz Metadata Collaboration
+              </p>
+              <ul class="contact__list">
+                <li><a class="contact__link" href="javascript:linkTo_UnCryptMailto('ocknvq<x0jqhocppBh|/lwgnkej0fg', 2);">v.hofmann<span>&#064;</span>fz-juelich.de</a></li>
+                <li>
+                  <img alt="ORCID logo" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" style="float: left;" width="16" height="16" />
+                  <a href="https://orcid.org/0000-0002-5149-603X" class="contact__link">0000-0002-5149-603X</a>
+                </li>
+                
+              </ul>
+            </div> -->
+          </div> 
+        </div>
+      </section>
+      <div class="footer__inner">
+        <div class="footer__logos">
+          <div class="footer__claim"></div>
+        </div>
+        <nav class="footer__social-media-menu" aria-label="Social Media">
+          <ul class="footer__social-media-list">
+            <li class="footer__social-media-item">
+              <a href="https://twitter.com/helmholtz_hmc" target="_blank" class="btn" rel="noreferrer">
+                <svg class="svg-twitter" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16">
+                  <path
+                    fill="currentColor"
+                    d="M 19.99925,1.893426 C 19.263509,2.215172 18.472269,2.43192 17.642779,2.529418 18.490269,2.029925 19.141261,1.237935 19.447257,0.295196 18.654517,0.757941 17.776278,1.093936 16.841789,1.275434 16.094049,0.490194 15.026812,-3e-4 13.847077,-3e-4 11.19811,-3e-4 9.251134,2.43267 9.849627,4.958638 6.4401695,4.79064 3.4169573,3.18266 1.3927326,0.739191 0.317996,2.554918 0.8354896,4.929388 2.6617167,6.132373 1.9897251,6.111374 1.356733,5.929876 0.80399,5.62688 0.758991,7.498106 2.1217235,9.248584 4.0949488,9.63858 3.517456,9.793078 2.8852139,9.829077 2.241722,9.70758 2.7637155,11.31181 4.2786965,12.479545 6.0749241,12.512545 4.3499456,13.843777 2.1764728,14.43852 0,14.185773 1.8157273,15.331758 3.9734503,16 6.2901714,16 13.908576,16 18.212772,9.666329 17.952526,3.98515 18.754266,3.415157 19.450257,2.703416 20,1.894176 Z"
+                    ></path>
+                </svg>
+                <span>Twitter</span>
+              </a>
+            </li>
+            <li class="footer__social-media-item">
+              <a href="https://www.youtube.com/user/helmholtzTV/" target="_blank" class="btn" rel="noreferrer">
+                <svg class="svg-youtube" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16">
+                  <path
+                    fill="currentColor"
+                    transform="translate(-2.000000, -4.000000)"
+                    d="M18.3458333,4.65343552 C15.3425,4.44843838 8.65333333,4.4492717 5.65416667,4.65343552 C2.40666667,4.87509911 2.02416667,6.83673849 2,12 C2.02416667,17.154095 2.40333333,19.1240676 5.65416667,19.3465645 C8.65416667,19.5507283 15.3425,19.5515616 18.3458333,19.3465645 C21.5933333,19.1249009 21.9758333,17.1632615 22,12 C21.9758333,6.84590503 21.5966667,4.87593243 18.3458333,4.65343552 Z M9.5,15.333287 L9.5,8.66671303 L16.1666667,11.9941667 L9.5,15.333287 L9.5,15.333287 Z"
+                    ></path>
+                </svg>
+                <span>YouTube</span>
+              </a>
+            </li>
+            <li class="footer__social-media-item">
+              <a href="https://www.linkedin.com/company/helmholtz-association/" target="_blank" class="btn" rel="noreferrer">
+                <svg class="svg-linkedin" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                  <path
+                    fill="currentColor"
+                    d="M 15.833208,0 H 4.1667917 C 1.8659067,0 0,1.865907 0,4.166792 V 15.833208 C 0,18.134093 1.8659067,20 4.1667917,20 H 15.833208 C 18.134843,20 20,18.134093 20,15.833208 V 4.166792 C 20,1.865907 18.134843,0 15.833208,0 Z M 6.6671666,15.832458 H 4.1675416 V 6.666417 h 2.499625 z M 5.4169792,5.60972 c -0.8047098,0 -1.4579272,-0.658468 -1.4579272,-1.469927 0,-0.811459 0.6532174,-1.469926 1.4579272,-1.469926 0.8047097,0 1.4579271,0.658467 1.4579271,1.469926 0,0.811459 -0.6524674,1.469927 -1.4579271,1.469927 z M 16.666417,15.832458 h -2.499625 v -4.670016 c 0,-2.80636 -3.332834,-2.59412 -3.332834,0 v 4.670016 H 8.334333 V 6.666417 h 2.499625 v 1.470676 c 1.163192,-2.154642 5.833209,-2.314384 5.833209,2.063147 v 5.632218 z"
+                    ></path>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__bottom">
+          <nav class="footer__menu" aria-label="Footer">
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item is-smaller">
+                <!-- Piwik 
+                  <a href="/en/data-privacy-protection/" class="btn btn--underline"> </a>
+                  
+                   -->
+                <span>&copy; Forschungszentrum J&uuml;lich </span>
+              </li>
+              <li class="footer__menu-item is-smaller"></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
