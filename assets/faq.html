@@ -60,7 +60,7 @@
             <a href="faq.html" class="breadcrumb__link"><span><mark>FAQ</mark></span></a>
           </li>
           <li class="breadcrumb__item">
-            <a href="https://github.com/saidfathalla/PIDA" class="breadcrumb__link"><span>GitHub Repository</span></a>
+            <a href="https://github.com/saidfathalla/PIDA" class="breadcrumb__link" target="_blank"><span>GitHub Repository</span></a>
           </li>
           <li class="breadcrumb__item">
             <a href="https://purls.helmholtz-metadaten.de#contact-grid-48245" class="breadcrumb__link"><span>Contact us</span></a>
@@ -85,10 +85,10 @@
          
          
          <p><span class="dot"></span>
-            <b> What is a PID? and What does a PID do? </b>
+            <b>  What is a PID - and what does a PID do? </b>
          </p>
          <p class="textmedia__inner"> 
-            PID stands for "Persistent Identifier", which is functionally a URL/IRI. Instead of pointing directly to
+            PID stands for "Persistent Identifier", which is, in case of PIDA PIDs are functionally a URLs. Instead of pointing directly to
             the location of an Internet resource, a PID points to an intermediate resolution service. The resolution
             service associates the PID with the actual URL/IRI and returns that URL/IRI to the client, which can
             then complete the transaction in the normal fashion.          
@@ -97,8 +97,8 @@
          <p><span class="dot"></span>
           <b> Why do we need PURLs? </b>       </p>
          <p class="textmedia__inner"> 
-            <a href="https://en.wikipedia.org/wiki/Link_rot">Link rot</a> is a very common phenomenon - each and everyone
-             of us has experience the <a href="https://en.wikipedia.org/wiki/HTTP_404">“404-error”</a> on the web
+            <a href="https://en.wikipedia.org/wiki/Link_rot" target="_blank">Link rot</a> is a very common phenomenon - each and everyone
+             of us has experience the <a href="https://en.wikipedia.org/wiki/HTTP_404" target="_blank">“404-error”</a> on the web
             before: Sometimes URLs do not work because Internet resources move, change names or method of access.
             Once a URL fails, all instances that link to that URL (for example, links in a Web document or a
             bibliographic record) become invalid. By using an intermediate resolver - like PIDA - broken links can
@@ -116,20 +116,20 @@
          </p>
          <p class="textmedia__inner">
             PIDs look just like URLs because they are URLs. A PID has three parts:
-         <ul>
+         <ol>
             <li>Protocol - The protocol used to access the PURL resolver. Note: This protocol may differ from
              that used to access the resource associated with the PID.</li>
             <li>Resolver address - The IP address or domain name of the PURL resolver. This portion of the PID 
             is resolved by the Domain Name Server (DNS).</li>
             <li>Name - User-assigned name. Note: This name may differ from the name of the resource in the
              associated URL.</li>
-         </ul>
+         </ol>
          </p>
          <!---------------------- end of question ----------------------------------- -->   
          <p><span class="dot"></span>
            <b> How do I create a PID in PIDA? </b> </p>
          <p class="textmedia__inner"> There are three ways to create a new PID in PIDA - please refer 
-         to the instructions which can be found <a href="index2.html#AddingUpdating">here</a>.
+         to the instructions which can be found <a href="https://purls.helmholtz-metadaten.de#AddingUpdating">here</a>.
          </p>
          <!---------------------- end of question ----------------------------------- -->     
          <p><span class="dot"></span>
@@ -138,7 +138,7 @@
          <p class="textmedia__inner"> 
             Yes, your data is stored in the PIDA GitHub repository. Records for existing PIDs may be modified by
             modifying your resource entry in your .htaccess file in the
-            <a href="https://github.com/saidfathalla/PIDA">PIDA GitHub repository </a>.
+            <a href="https://github.com/saidfathalla/PIDA" target="_blank">PIDA GitHub repository </a>.
          </p>
          <!---------------------- end of question ----------------------------------- -->
          <p><span class="dot"></span>
@@ -155,7 +155,7 @@
          <p class="textmedia__inner"> 
             The root URL for all PIDA PIDs is <a>https://purls.helmholtz-metadaten.de/</a>. 
             Each PID has the form <a>https://purls.helmholtz-metadaten.de/[prefix]/[subdirectory]</a>. 
-            For example, <a href="https://purls.helmholtz-metadaten.de/seo">https://purls.helmholtz-metadaten.de/seo</a> 
+            For example, <a href="https://purls.helmholtz-metadaten.de/seo" target="_blank">https://purls.helmholtz-metadaten.de/seo</a> 
             is a PID for the scientific events ontology. 
          </p>
          <!---------------------- end of question ----------------------------------- -->
@@ -174,8 +174,8 @@
          <p class="textmedia__inner"> 
             All data is  is stored in the PIDA GitHub repository. The PIDA domain is hosted by a research 
             center of the Helmoltz Association. Both of these infrastructures are highly reliable. We have
-            considerable knowledge and experience in building IRI services. We commit to maintain this service
-            as it grows over the next 20 years. In the highly unlikely event that PIDA will have to close operations,
+            considerable knowledge and experience in building PID services. We commit to maintain this service
+            as it grows over the next 10+ years. In the highly unlikely event that PIDA will have to close operations,
             we guarantee that we will migrate all content to other suitable repositories so that your data will not
             be affected.
          </p>
@@ -194,7 +194,7 @@
          </p>
          <p class="textmedia__inner"> 
             The PIDA service is open to everyone. It is intended to support and facilitate the findability and
-            accessibility of research data on the Web. We reserve the right to reject registered IRIs when used
+            accessibility of research data from within the Helmholtz Association on the Web. We reserve the right to reject registered IRIs when used
             inappropriately.
          </p>
          <!---------------------- end of question ----------------------------------- -->
@@ -209,10 +209,10 @@
             <b>  Who is maintaining PIDA?</b>
          </p>
          <p class="textmedia__inner"> 
-            PIDA is provided to you and maintained by the <a href="https://www.fz-juelich.de/ias/ias-9/EN/Home/home_node.html">
-				 Institute for Materials Data Science and Informatics (IAS-9)</a> of the <a href="https://www.fz-juelich.de/portal/DE/Home/home_node.html">Forschungszentrum
-             Jülich GmbH</a> on behalf of the <a href="https://helmholtz-metadaten.de/"> Helmholtz Metadata
-            Collaboration (HMC)</a>. For questions and suggestions you can contact us via <a href="index2.html#contact-grid-48245" >
+            PIDA is provided to you and maintained by the <a href="https://www.fz-juelich.de/ias/ias-9/EN/Home/home_node.html" target="_blank">
+				 Institute for Materials Data Science and Informatics (IAS-9)</a> of the <a href="https://www.fz-juelich.de/portal/DE/Home/home_node.html" target="_blank">Forschungszentrum
+             Jülich GmbH</a> on behalf of the <a href="https://helmholtz-metadaten.de/" target="_blank"> Helmholtz Metadata
+            Collaboration (HMC)</a>. For questions and suggestions you can contact us via <a href="https://purls.helmholtz-metadaten.de/#contact-grid-48245" >
             <span>Contact us</span>
             </a>.
          </p>

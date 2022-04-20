@@ -60,7 +60,7 @@
             <a href="faq.html" class="breadcrumb__link"><span>FAQ</span></a>
           </li>
           <li class="breadcrumb__item">
-            <a href="https://github.com/saidfathalla/PIDA" class="breadcrumb__link"><span>GitHub Repository</span></a>
+            <a href="https://github.com/saidfathalla/PIDA" class="breadcrumb__link" target="_blank"><span>GitHub Repository</span></a>
           </li>
           <li class="breadcrumb__item">
             <a href="https://purls.helmholtz-metadaten.de#contact-grid-48245" class="breadcrumb__link"><span>Contact us</span></a>
@@ -85,7 +85,7 @@
           <h3> <b>Technical Specifications</b></h3>
 
           <h4>Secured Communication</h4>
-          <p>PIDA uses <a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS communication protocol</a> to protect the
+          <p>PIDA uses <a href="https://en.wikipedia.org/wiki/HTTPS" target="_blank">HTTPS communication protocol</a> to protect the
             integrity and confidentiality of data
             between clients and the service. This is especially important for systems and applications that
             require high levels of security, for example when managing biomedical datasets.
@@ -97,7 +97,7 @@
           In PIDA content negotiation for a given PID can be enabled by the user through adding the
           required information to the submitted .htaccess file.
           <br>
-          PIDA supports <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation">content
+          PIDA supports <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation" target="_blank">content
             negotiation</a>
           to deliver different representations of a resource from a single uniform ressource identifier (URI).
           When a user or agent requests a URI, content negotiation allows them to specify which representation they
@@ -108,7 +108,7 @@
 
           For enabled content negotiation, requests to PIDs that are coming from non-semantic web applications will be
           redirected to HTML documents,
-          while that are coming from designated sematnic web applications will be redirected to RDF documents.
+          while those that are coming from designated sematnic web applications will be redirected to RDF documents.
 
           <h4>Testing</h4>
           <p>Content negotiation can be tested using the <code>curl</code> command-line utility to specify a particular
@@ -116,7 +116,7 @@
           </p>
 
           <p>To request the HTML document describing the <a
-              href="https://saidfathalla.github.io/SEOontology/Documentation/SEO.html">scientific events ontology</a>:
+              href="https://saidfathalla.github.io/SEOontology/Documentation/SEO.html" target="_blank">scientific events ontology</a>:
           </p>
           <pre><code class="lang-bash">curl -L -H “<span class="hljs-string">Accept:</span> text<span class="hljs-regexp">/html” https:/</span><span class="hljs-regexp">/purls.helmholtz-metadaten.de/</span>seo
 					</code></pre>
@@ -132,25 +132,19 @@
             Location: https://saidfathalla.github.io/.../index.html
             Content-Type: text/html; charset=iso-8859-1
 					</code></pre>
-          <p>Windows users can get cURL binaries from <a href="http://curl.haxx.se/download.html#Win32">here</a>.</p>
-          <a name="AddingUpdating"></a>
+          <p>Windows users can get cURL binaries from <a href="http://curl.haxx.se/download.html#Win32" target="_blank">here</a>.</p>
+          
 
-          <h4>Good practice when submitting requests via pull requests </h4>
+          <h4 id="good-practice">Good practice when submitting requests via pull requests </h4>
           Please help us to issue PURLs from PIDA effectively by following these points when submitting requests:
           <ul>
             <li>provide your contact info (e.g. name, email, affiliation, etc.) in the <em>readme.md</em> or in the <em>.htaccess</em> file as comments.</li>
             <li>test your links and .htaccess syntax locally.</li>
-            <li><a href="https://docs.gitlab.com/ee/user/project/merge_requests/squash_and_merge.html">squash</a> multiple 
+            <li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges" target="_blank">squash</a> multiple 
               commits into one commit before a pull request. This helps to ensure a cleaner merge history.
             </li>
             <li>provide descriptive commit details (e.g. resource name, what changes made, etc.).</li>
           </ul> 
-
-
-
-
-
-
 
         </div>
       </div>
