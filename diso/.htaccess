@@ -5,9 +5,9 @@ Options +FollowSymLinks
 AddType application/rdf+xml .owl
 AddType application/rdf+xml .rdf
 AddType text/turtle .ttl
-AddType text/n3 .ttl
+AddType text/n3 .n3
 AddType application/n-triples .nt
-AddType application/ld+json .json
+AddType application/ld+json .jsonld
  
 RewriteEngine on
  
