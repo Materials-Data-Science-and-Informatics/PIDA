@@ -11,16 +11,11 @@ AddType application/ld+json .jsonld
  
 RewriteEngine on
  
-RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
-RewriteCond %{HTTP_ACCEPT} text/html [OR]
-RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
-RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-
 # Rewrite rule to serve RDF/XML content
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl [R=303,NE,L]
+RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl [R=303,L]
 
 # Rewrite rule to serve TTL content 
 RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
@@ -41,7 +36,6 @@ RewriteCond %{HTTP_ACCEPT} ^.*application/n-triples.*
 RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/diso.nt  [R=303,L]
 
 # HTML
-RewriteRule ^$ https://www.internationaldataspaces.org/ [R=303]
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
