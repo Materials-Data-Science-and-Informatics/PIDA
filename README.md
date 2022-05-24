@@ -1,6 +1,6 @@
 # Persistent Identifiers for Digital Assets (PIDA)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/saidfathalla/PID-Service) 
-![status](https://img.shields.io/badge/status-down-green) 
+![status](https://img.shields.io/badge/status-up-green) 
 ![GitHub contributors](https://img.shields.io/github/contributors/saidfathalla/PID-Service) 
 ![GitHub](https://img.shields.io/github/license/saidfathalla/PID-Service)
 
