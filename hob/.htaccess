@@ -1,0 +1,14 @@
+# https://purls.helmholz-metadaten.de/hob
+# https://purls.helmholz-metadaten.de/hob/hdo
+
+Options +FollowSymLinks
+ 
+ 
+RewriteEngine on
+ 
+# Redirect for hob
+RewriteRule ^$  https://gitlab.hzdr.de/hmc/hmc-public/hob  [R=303,L]
+
+# Redirect for hob/hdo
+RewriteRule ^hdo$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl  [R=303,L]
+ 
