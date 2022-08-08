@@ -13,5 +13,5 @@ RewriteRule ^$  https://gitlab.hzdr.de/hmc/hmc-public/hob  [R=303,L]
 RewriteRule ^hdo$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl  [R=303,L]
 
 # redirects hdo imports
-RewriteRule ^hob/hdo/imports/(.*)$ https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/tree/main/src/ontology/imports/$1 [R=301,NC,L]
+RewriteRule ^hob/hdo/imports/(.*)$ https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/src/ontology/imports/$1 [R=301,NC,L]
  
