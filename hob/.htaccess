@@ -7,7 +7,7 @@ Options +FollowSymLinks
 RewriteEngine on
  
 # Redirect for hob
-RewriteRule ^HDO_/\d{8}/$  https://gitlab.hzdr.de/hmc/hmc-public/hob  [R=303,L]
+RewriteRule ^HDO_[0-9]+$  https://gitlab.hzdr.de/hmc/hmc-public/hob  [R=303,L]
 
 # Redirect for hob/hdo
 RewriteRule ^hdo$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl  [R=303,L]
