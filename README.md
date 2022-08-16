@@ -99,7 +99,7 @@ and merge it into the main branch so that you can see your PURL in our repositor
 ### Good practice when submitting requests via pull requests <a name="Goodpractice"></a>
 Please help the maintainers of PIDA by ensuring you do the following in your pull requests:
 
-* Provide your contact info (e.g. name, email, affiliation ... etc) in the *README.md* or *.htaccess*  as comments.
+* Provide your contact info (e.g. name, email, affiliation ... etc) in the *htaccess*  as comments (cf. [seo](./seo/.htaccess)).
 * Test your links and .htaccess syntax locally.
 * [Squash](https://docs.gitlab.com/ee/user/project/merge_requests/squash_and_merge.html) multiple commits into one commit before a pull request. 
   This helps to ensure a cleaner merge history. 
