@@ -8,7 +8,6 @@
 PIDA is a service for providing web resources [Persistent URLs (PURLs)](https://en.wikipedia.org/wiki/Persistent_uniform_resource_locator), to ensure reliable access to them.
 Therefore, they remain available for future access by both humans and machines.
 
-
 ## Table of contents
 
 1. [Why use PIDA?](#motivation)
@@ -20,6 +19,8 @@ Therefore, they remain available for future access by both humans and machines.
 4. [Good practice](#Goodpractice)
 5. [License](#License)
 6. [Acknowledgments](#Acknowledgements)
+
+https://user-images.githubusercontent.com/21238109/190993847-e6e52f30-fd50-43d8-964e-b19aeba27c89.mp4
 
 ## Why use PIDA? <a name="motivation"></a>
 
