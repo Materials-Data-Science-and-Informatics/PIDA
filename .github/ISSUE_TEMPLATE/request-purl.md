@@ -7,6 +7,8 @@ assignees: saidfathalla
 
 ---
 ## Contact details
+*This information will appear a comments in the htaccess file of your prefix as comments*
+
 **Contact person name:**
 
 **Contact Email:**
