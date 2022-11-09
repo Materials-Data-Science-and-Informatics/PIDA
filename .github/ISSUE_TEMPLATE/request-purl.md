@@ -6,6 +6,11 @@ labels: New PURL
 assignees: saidfathalla
 
 ---
+## Contact details
+**Contact person name:**
+
+**Contact Email:**
+
 
 ## Basic details
 **What is your resource prefix?**
