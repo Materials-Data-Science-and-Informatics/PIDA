@@ -14,11 +14,10 @@ assignees: saidfathalla
 
 ## Basic details
 **What is your resource prefix?**
-The prefix will appear directly next to the base URL (i.e. https://purl.hmc-services.de/)
 E.g., foaf as of [FOAF onoplogy](http://xmlns.com/foaf/spec/) 
 
 **Where is the resource located on the Web (i.e. the URL)?**
-The actual URL of the resource, i.e. a valid URL.
+The actual URL of the resource, i.e. a functional URL.
 
 **Do you want to enable content negotiation?**
 If yes, proceed to the next section otherwise, skip and submit your issue.
