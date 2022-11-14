@@ -1,0 +1,11 @@
+# contact name: Ilia Bagov
+# email: ilia.bagov@kit.edu
+
+
+Options +FollowSymLinks
+ 
+ 
+RewriteEngine on
+ 
+# Default Redirect
+RewriteRule ^$  https://www.iam.kit.edu/zm/  [R=303,L]
