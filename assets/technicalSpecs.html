@@ -78,14 +78,14 @@
           </p>
 
           <h4>Content Negotiation</h4>
-          PIDs from PIDA can redirect to any kind of resources on the web (i.e. HTML or else).
-          However PIDA is capable of content negotiation to be used in semantic web contexts.
-          In PIDA content negotiation for a given PID can be enabled by the user through adding the
+          PIDs from PIDA can redirect to any kind of resource on the web (i.e. HTML or else).
+          However, PIDA is capable of content negotiation to be used in semantic web contexts.
+          In PIDA content negotiation for a given PID can be enabled by the user by adding the
           required information to the submitted .htaccess file.
           <br>
           PIDA supports <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation" target="_blank">content
             negotiation</a>
-          to deliver different representations of a resource from a single uniform ressource identifier (URI).
+          to deliver different representations of a resource from a single uniform resource identifier (URI).
           When a user or agent requests a URI, content negotiation allows them to specify which representation they
           require (e.g. document language,
           file format, or content encoding). Using a PIDA PID, clients can request either HTML or RDF (with
@@ -94,7 +94,7 @@
 
           For enabled content negotiation, requests to PIDs that are coming from non-semantic web applications will be
           redirected to HTML documents,
-          while those that are coming from designated sematnic web applications will be redirected to RDF documents.
+          while those that are coming from designated semantic web applications will be redirected to RDF documents.
 
           <h4>Testing</h4>
           <p>Content negotiation can be tested using the <code>curl</code> command-line utility to specify a particular
@@ -109,7 +109,7 @@
           <p>To request the RDF file of the ontology, the following command could be used</p>
           <pre><code class="lang-bash">curl -L -H “<span class="hljs-string">Accept:</span> text<span class="hljs-regexp">/html”  https:/</span><span class="hljs-regexp">/purls.helmholtz-metadaten.de/</span>seo
 					</code></pre>
-          <p>You will get results look like:</p>
+          <p>You will get results that look like:</p>
           <pre>
             <code class="lang-console">HTTP/ 1.1  303  See Other
             Date:  Tue, 22 Feb 2022 14:18:54 GMT
