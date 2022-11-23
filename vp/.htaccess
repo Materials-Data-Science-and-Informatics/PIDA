@@ -16,4 +16,4 @@ RewriteCond %{HTTP_ACCEPT} application/ld\+json
 RewriteRule ^(cupgrin-41249667-vp)(.*)$ https://gitlab.com/publish-vocabs/vocabulary-cup-grinding-v3/-/raw/main/SKOS_Cup_Grinding_v3.jsonld  [R=303,L]
 
 # Default Redirect
-RewriteRule ^$  https://app.vocpopuli.com  [R=303,L]
+RewriteRule ^$  https://app.vocpopuli.com/  [R=303,L]
