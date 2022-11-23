@@ -6,6 +6,14 @@ Options +FollowSymLinks
  
  
 RewriteEngine on
- 
+
+RewriteRule ^(.*)\/(.*)$ https://app.vocpopuli.com/public_view_term/$1/$2 [R=303,L]
+
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^(cupgrin-41249667-vp)(.*)$ https://gitlab.com/publish-vocabs/vocabulary-cup-grinding-v3/-/raw/main/SKOS_Cup_Grinding_v3.ttl  [R=303,L]
+
+RewriteCond %{HTTP_ACCEPT} application/ld\+json
+RewriteRule ^(cupgrin-41249667-vp)(.*)$ https://gitlab.com/publish-vocabs/vocabulary-cup-grinding-v3/-/raw/main/SKOS_Cup_Grinding_v3.jsonld  [R=303,L]
+
 # Default Redirect
-RewriteRule ^$  https://www.iam.kit.edu/zm/  [R=303,L]
+RewriteRule ^$  https://app.vocpopuli.com  [R=303,L]
