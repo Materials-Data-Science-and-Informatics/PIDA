@@ -8,5 +8,5 @@ Options +FollowSymLinks
 RewriteEngine on
  
 # Redirect for evoks/MatWerkAcronyms terms (e.g. evoks/MatWerkAcronyms/aai)
-RewriteRule ^MatWerkAcronyms$  http://matwerk.datamanager.kit.edu:8001/MatWerkAcronyms-1/en/    [R=303,L]
+RewriteRule ^MatWerkAcronyms/(.*)$  http://matwerk.datamanager.kit.edu:8001/MatWerkAcronyms-1/en/page/$1    [R=303,L]
 
