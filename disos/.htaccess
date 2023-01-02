@@ -14,6 +14,7 @@ AddType application/ld+json .jsonld
 RewriteEngine on
 
 # DISO ontology
+#==============
 # Rewrite rule to serve RDF/XML content
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
@@ -44,9 +45,15 @@ RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
 RewriteCond %{HTTP_ACCEPT} \*/\*
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
 RewriteRule ^diso$ https://materials-data-science-and-informatics.github.io/dislocation-ontology/index.html [R=303,L]
 
+# Default response
+# Rewrite rule to serve the RDF/XML content from the diso IRI by default
+RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl [R=303,L]
+
 # CDO ontology
+#==============
 # Rewrite rule to serve RDF/XML content
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
@@ -54,13 +61,15 @@ RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
 RewriteRule ^cdo$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/crystallographic-defect-ontology/crystallographic-defect-ontology.owl [R=303,L]
 
 # CSO ontology
+#==============
 # Rewrite rule to serve RDF/XML content
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
 RewriteRule ^cso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/crystal-structure-ontology/crystal-structure-ontology.owl [R=303,L]
 
-
+# DISOs suite home
+#==============
 RewriteRule ^$ https://github.com/Materials-Data-Science-and-Informatics/dislocation-ontology [R=303,L]
 
 
