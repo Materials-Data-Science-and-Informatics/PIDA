@@ -50,7 +50,7 @@ RewriteRule ^diso$ https://materials-data-science-and-informatics.github.io/disl
 
 # Default response
 # Rewrite rule to serve the RDF/XML content from the diso IRI by default
-RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl [R=303,L]
+RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl [R=303,L]
 
 # CDO ontology
 #==============
