@@ -29,29 +29,29 @@ RewriteRule ^diso$ https://materials-data-science-and-informatics.github.io/disl
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl [R=303,L]
+RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/DISO/dislocation-ontology.owl [R=303,L]
 
 # Rewrite rule to serve TTL content 
 RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
 RewriteCond %{HTTP_ACCEPT} \*/turtle 
-RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.ttl  [R=303,L]
+RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/DISO/dislocation-ontology.ttl  [R=303,L]
 
 # JSON-LD
 RewriteCond %{HTTP_ACCEPT} ^.*application/ld\+json.*
-RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.jsonld  [R=303,L]
+RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/DISO/dislocation-ontology.jsonld  [R=303,L]
 
 # N3
 RewriteCond %{HTTP_ACCEPT} ^.*text/n3.*
-RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.n3  [R=303,L]
+RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/DISO/dislocation-ontology.n3  [R=303,L]
 
 # N-TRIPLES
 RewriteCond %{HTTP_ACCEPT} ^.*application/n-triples.*
-RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.nt  [R=303,L]
+RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/DISO/dislocation-ontology.nt  [R=303,L]
 
 # Default response
 # Rewrite rule to serve the RDF/XML content from the diso IRI by default
-RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/dislocation-ontology.owl [R=303,L]
+RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/DISO/dislocation-ontology.owl [R=303,L]
 
 # CDO ontology
 #==============
@@ -59,7 +59,7 @@ RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^cdo$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/crystallographic-defect-ontology/crystallographic-defect-ontology.owl [R=303,L]
+RewriteRule ^cdo$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/CDO/crystallographic-defect-ontology.owl [R=303,L]
 
 # CSO ontology
 #==============
@@ -67,11 +67,11 @@ RewriteRule ^cdo$ https://raw.githubusercontent.com/Materials-Data-Science-and-I
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^cso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/crystal-structure-ontology/crystal-structure-ontology.owl [R=303,L]
+RewriteRule ^cso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/CSO/crystal-structure-ontology.owl [R=303,L]
 
 # DISOs suite home
 #==============
-RewriteRule ^$ https://github.com/Materials-Data-Science-and-Informatics/dislocation-ontology [R=303,L]
+RewriteRule ^$ https://github.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite [R=303,L]
 
 
  
