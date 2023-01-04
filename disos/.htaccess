@@ -59,7 +59,7 @@ RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^cdo$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/CDO/crystallographic-defect-ontology.owl [R=303,L]
+RewriteRule ^cdo$ https://materials-data-science-and-informatics.github.io/Dislocation-Ontology-Suite/CDO/index-en.html [R=303,L]
 
 # CSO ontology
 #==============
@@ -67,7 +67,7 @@ RewriteRule ^cdo$ https://raw.githubusercontent.com/Materials-Data-Science-and-I
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^cso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/CSO/crystal-structure-ontology.owl [R=303,L]
+RewriteRule ^cso$ https://materials-data-science-and-informatics.github.io/Dislocation-Ontology-Suite/CSO/index-en.html [R=303,L]
 
 # DISOs suite home
 #==============
