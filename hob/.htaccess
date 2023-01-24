@@ -7,8 +7,7 @@ Options +FollowSymLinks
 RewriteEngine on
  
 # Redirect for hdo terms (e.g. hob/HDO_00004001)
-# RewriteRule ^HDO_[0-9]+$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl   [R=303,L]
-RewriteRule ^HDO_[0-9]+$ https://codebase.helmholtz.cloud/hmc/hmc-public/hob/hdo/-/raw/steinm01-main-patch-90156/hdo.owl [R=303,L]
+RewriteRule ^HDO_[0-9]+$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl   [R=303,L]
 RewriteRule ^$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl   [R=303,L]
 
 # Redirect for hob/hdo
