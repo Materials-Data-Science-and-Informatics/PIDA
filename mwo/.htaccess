@@ -1,0 +1,14 @@
+# Contact person name: Said Fathalla
+# Contact person email: s.fathalla@fz-juelich.de 
+
+Options +FollowSymLinks
+Options -MultiViews
+
+# Directive to ensure *.rdf files served as appropriate content type
+AddType application/rdf+xml .owl
+ 
+RewriteEngine on
+
+# Default response
+# Rewrite rule to serve the RDF/XML content from the diso IRI by default
+RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/ontology/mwo.owl [R=303,L]
