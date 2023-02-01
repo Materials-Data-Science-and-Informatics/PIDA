@@ -9,4 +9,9 @@ RewriteRule ^$ https://orcid.org/0000-0002-2818-5890 [R=303,L]
 RewriteRule ^gs$  https://scholar.google.de/citations?user=JOI-7d0AAAAJ&hl=de  [R=303,L]
 
 # Twitter Redirect
-RewriteRule ^tw$  https://twitter.com/sm_fathalla 
+RewriteRule ^tw$  https://twitter.com/sm_fathalla [R=303,L]
+
+# Web profile pic Redirect
+RewriteRule ^pic$  https://purls.helmholtz-metadaten.de/Said_Gray.png  [R=303,L]
+
+
