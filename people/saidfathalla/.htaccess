@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+ 
+ 
+RewriteEngine on
+ 
+# Default Redirect
+RewriteRule ^gs$  https://scholar.google.de/citations?user=JOI-7d0AAAAJ&hl=de  [R=303,L]
+
+RewriteRule ^tw$  https://twitter.com/sm_fathalla [R=303,L]
