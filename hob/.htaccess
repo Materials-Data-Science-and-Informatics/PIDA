@@ -2,11 +2,13 @@
 # https://purls.helmholtz-metadaten.de/hob/hdo
 
 Options +FollowSymLinks
- 
+ AddType application/rdf+xml .rdf .owl
  
 RewriteEngine on
  
 # Redirect for hdo terms (e.g. hob/HDO_00004001)
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml [OR]
+RewriteCond %{HTTP_ACCEPT} application/owl\+xml
 RewriteRule ^HDO_[0-9]+$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl   [R=303,L]
 RewriteRule ^$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl   [R=303,L]
 
