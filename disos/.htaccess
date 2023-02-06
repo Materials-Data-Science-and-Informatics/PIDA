@@ -69,6 +69,10 @@ RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
 RewriteRule ^cso$ https://materials-data-science-and-informatics.github.io/Dislocation-Ontology-Suite/CSO/index-en.html [R=303,L]
 
+# sample data
+#==============
+RewriteRule ^rdfdata$ https://github.com/Materials-Data-Science-and-Informatics/dislocation-ontology/blob/master/data/modelib-microstructure/modelib-nickel-microstructure.ttl [R=303,L]
+
 # DISOs suite home
 #==============
 RewriteRule ^$ https://github.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite [R=303,L]
