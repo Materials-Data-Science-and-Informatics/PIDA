@@ -71,7 +71,7 @@ RewriteRule ^cso$ https://materials-data-science-and-informatics.github.io/Dislo
 
 # sample data
 #==============
-RewriteRule ^rdfdata$ https://github.com/Materials-Data-Science-and-Informatics/dislocation-ontology/blob/master/data/modelib-microstructure/modelib-nickel-microstructure.ttl [R=303,L]
+RewriteRule ^rdfdata$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/data/modelib-microstructure/modelib-nickel-microstructure.ttl [R=303,L]
 
 # DISOs suite home
 #==============
