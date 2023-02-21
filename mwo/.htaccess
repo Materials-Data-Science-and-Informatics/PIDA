@@ -1,9 +1,9 @@
 # Contact person name: Said Fathalla
 # Contact person email: s.fathalla@fz-juelich.de 
 
-Options -FollowSymLinks
+Options +FollowSymLinks
 Options -MultiViews
-Options -Indexes
+ 
 
 # Directive to ensure *.rdf files served as appropriate content type
 AddType application/rdf+xml .owl
