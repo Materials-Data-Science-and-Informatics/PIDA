@@ -3,7 +3,7 @@
 
 Options +FollowSymLinks
 Options -MultiViews
-Options -Indexes
+Options +Indexes
 
 # Directive to ensure *.rdf files served as appropriate content type
 AddType application/rdf+xml .owl
