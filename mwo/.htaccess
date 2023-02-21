@@ -18,7 +18,7 @@ RewriteCond %{HTTP_ACCEPT} text/\* [OR]
 RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
 RewriteRule ^(.+) https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/doc/  [R=303,NE,L]
-RewriteRule ^$ https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/doc/$  [R=303,NE,L]
+RewriteRule ^$ https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/doc$  [R=303,NE,L]
 
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
 RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/ontology/mwo.owl [R=303,L]
