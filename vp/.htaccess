@@ -20,7 +20,7 @@ RewriteCond %{HTTP_ACCEPT} text/turtle
 RewriteRule ^(kitmtxx-41732562-vp)$ https://gitlab.com/linked-tribological-data/vocabulary-materials-tribology-lab-at-kit/-/raw/main/SKOS_Vocabulary_Materials_Tribology_Lab_at_KIT.ttl  [R=303,L]
 
 # Human-readable (.ttl) representaion of the entire vocabulary:
-RewriteRule ^(kitmtxx-41732562-vp)$ https://gitlab.com/linked-tribological-data/vocabulary-materials-tribology-lab-at-kit/-/raw/main/Individual_Terms/$2.ttl  [R=303,L]
+RewriteRule ^(kitmtxx-41732562-vp)$ https://gitlab.com/linked-tribological-data/vocabulary-materials-tribology-lab-at-kit/-/blob/main/SKOS_Vocabulary_Materials_Tribology_Lab_at_KIT.ttl  [R=303,L]
 
 # Default Redirect
 RewriteRule ^(.*)\/(.*)$ https://app.vocpopuli.com/public_view_term/$1/$2 [R=303,L]
