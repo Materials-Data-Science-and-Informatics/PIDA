@@ -1,12 +1,14 @@
 
 # Contact person name: Gulzaure Abdildina
 # Contact person email: gulzaure.abdildina@kit.edu
+# Ontologies:
+# Ontology Names: EVOKS
 
 Options +FollowSymLinks
- 
- 
+
+
 RewriteEngine on
- 
+
 # Redirect for evoks/MatWerkAcronyms terms (e.g. evoks/MatWerkAcronyms/aai)
 RewriteRule ^MatWerkAcronyms/$  https://matwerk.datamanager.kit.edu/evoks/MatWerkAcronyms-1/en    [R=303,L]
 RewriteRule ^MatWerkAcronyms/(.*)$  https://matwerk.datamanager.kit.edu/evoks/MatWerkAcronyms-1/en/page/$1    [R=303,L]

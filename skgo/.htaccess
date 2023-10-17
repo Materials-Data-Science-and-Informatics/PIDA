@@ -1,12 +1,14 @@
 # https://purls.helmholtz-metadaten.de/skgo
+# Ontologies:
+# Ontology Names: Science Knowledge Graph Ontologies
 
 Options +FollowSymLinks
- 
- 
+
+
 RewriteEngine on
- 
+
 # Default Redirect
 RewriteRule ^$  https://github.com/saidfathalla/Science-knowledge-graph-ontologies  [R=303,L]
 
 RewriteRule ^physci$  https://raw.githubusercontent.com/saidfathalla/Science-knowledge-graph-ontologies/master/PhySci/physci.owl  [R=303,L]
- 
+

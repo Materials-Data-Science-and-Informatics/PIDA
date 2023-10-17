@@ -1,12 +1,11 @@
-
 # Contact person name: Abril Azocar Guzman
 # Contact person email: a.azocar.guzman@fz-juelich.de
+# Ontologies:
+# Ontology Names: Computational Material Sample Ontology
 
 Options +FollowSymLinks
- 
- 
+
 RewriteEngine on
- 
+
 # Redirect for cmso ontology
-RewriteRule ^$  https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/cmso-ontology/main/cmso.owl    [R=303,L]
- 
+RewriteRule ^$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/cmso-ontology/main/cmso.owl [R=303,L]

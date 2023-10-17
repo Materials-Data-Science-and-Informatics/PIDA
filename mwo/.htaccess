@@ -1,16 +1,18 @@
 # Contact person name: Said Fathalla
-# Contact person email: s.fathalla@fz-juelich.de 
+# Contact person email: s.fathalla@fz-juelich.de
+# Ontologies:
+# Ontology Name: MatWerk ontology
 
 Options +FollowSymLinks
 Options -MultiViews
- 
+
 
 # Directive to ensure *.rdf files served as appropriate content type
 AddType application/rdf+xml .owl
- 
+
 RewriteEngine on
 
-#Rewrite rules for semsur vocabulary 
+#Rewrite rules for semsur vocabulary
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]

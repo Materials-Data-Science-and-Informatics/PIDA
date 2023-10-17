@@ -1,5 +1,7 @@
 # Contact person name: Said Fathalla
-# Contact person email: s.fathalla@fz-juelich.de 
+# Contact person email: s.fathalla@fz-juelich.de
+# Ontologies: diso, cdo, cso
+# Ontology Names: Dislocation Ontology, Crystal Defect Ontology, Crystal Structure Ontology
 
 Options +FollowSymLinks
 
@@ -13,7 +15,7 @@ AddType text/turtle .ttl
 AddType text/n3 .n3
 AddType application/n-triples .nt
 AddType application/ld+json .jsonld
- 
+
 RewriteEngine on
 
 # DISO ontology
@@ -31,10 +33,10 @@ RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
 RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/DISO/dislocation-ontology.owl [R=303,L]
 
-# Rewrite rule to serve TTL content 
+# Rewrite rule to serve TTL content
 RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/turtle 
+RewriteCond %{HTTP_ACCEPT} \*/turtle
 RewriteRule ^diso$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/DISO/dislocation-ontology.ttl  [R=303,L]
 
 # JSON-LD
@@ -78,6 +80,6 @@ RewriteRule ^rdfdata$ https://raw.githubusercontent.com/Materials-Data-Science-a
 RewriteRule ^$ https://github.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite [R=303,L]
 
 
- 
 
- 
+
+
