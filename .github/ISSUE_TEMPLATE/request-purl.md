@@ -7,25 +7,32 @@ assignees: saidfathalla
 
 ---
 ## Contact details
-*This information will appear a comments in the htaccess file of your prefix as comments*
+*This information will appear in the `.htaccess` file of your prefix as comments:*
 
 **Contact person name:**
 
 **Contact Email:**
 
+## Overview in the README.md
+
+Could you please give a brief description of what this PID is being redirected to?
 
 ## Basic details
-**What is your resource prefix?**
-E.g., foaf as of [FOAF onoplogy](http://xmlns.com/foaf/spec/) 
+**What is your resource prefix(es)?**
+
+- E.g., foaf as of [FOAF onoplogy](http://xmlns.com/foaf/spec/) 
 
 **Where is the resource located on the Web (i.e. the URL)?**
-The actual URL of the resource, i.e. a functional URL.
+
+- The actual URL of the resource, i.e. a functional URL.
 
 **Do you want to enable content negotiation?**
+
 If yes, proceed to the next section otherwise, skip and submit your issue.
 
 ## Advanced details
-To enable [Content Negotiation](https://en.wikipedia.org/wiki/Content_negotiation), please fill in the following table if you have more than one version  (or more generally, representations of a resource) of your resource. A resource type can be
+To enable [Content Negotiation](https://en.wikipedia.org/wiki/Content_negotiation), please fill in the following table if you have more than one version  (or more generally, representations of a resource) of your resource.
+A resource type can be
 
 <details>
 <summary>Resource type:</summary>
@@ -36,6 +43,7 @@ To enable [Content Negotiation](https://en.wikipedia.org/wiki/Content_negotiatio
      <li> N-triples</li>
      <li> N3</li>
      <li> HTML</li>
+     <li> etc.</li>
 </ul>
 </details>
  
@@ -44,3 +52,4 @@ To enable [Content Negotiation](https://en.wikipedia.org/wiki/Content_negotiatio
 | 1.          |          |
 |  2.        |         |
 |  ...        |         |
+
