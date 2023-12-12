@@ -1,0 +1,11 @@
+# Contact person name: Abril Azocar Guzman
+# Contact person email: a.azocar.guzman@fz-juelich.de
+
+Options +FollowSymLinks
+ 
+ 
+RewriteEngine on
+ 
+# Redirect for cmso ontology
+RewriteRule ^asmo$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/cmso-ontology/main/ASMO/asmo.owl   [R=303,L]
+ 
