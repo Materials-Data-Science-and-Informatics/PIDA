@@ -1,0 +1,73 @@
+name: new PURL
+labels: ["new PURL", "help wanted"] 
+description: Request a new PURL
+title: "[NEW] "
+assignees:
+  - saidfathalla
+body:
+- type: input
+  id: pname
+  attributes:
+    label: Contact person name
+    description: The name of the contact person.
+  validations:
+    required: true
+- type: input
+  id: pemail
+  attributes:
+    label: Contact person email.
+    description: The email of the contact person.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Overview in the README.md
+    description: Could you please give a brief description of what this PID is being redirected to?
+    value: |
+     ### Resource name
+      The resource name goes here.
+     ### Overview
+      A general review or summary of the resource.
+
+     ### Reach out
+      More contact information: (e.g. website, Git repo, etc)
+  validations:
+    required: false
+- type: input
+  id: prefix
+  attributes:
+    label: What is your resource prefix?
+    description: |
+      Please submit a separate issue for each prefix, E.g., foaf as of FOAF ontology.
+    placeholder: foaf
+  validations:
+    required: true
+- type: input
+  id: url
+  attributes:
+    label: Where is the resource located on the Web (i.e. the URL)?
+    description: |
+      The actual URL of the resource, i.e. a functional URL.
+    placeholder: http://xmlns.com/foaf/0.1/
+  validations:
+    required: true
+- type: checkboxes
+  id: contentnego
+  attributes:
+    label: Do you want to enable content negotiation?
+    description: If yes, proceed to the next section otherwise, skip and submit your issue.
+    options:
+    - label: enable content negotiation
+- type: dropdown
+  id: Resourcetype
+  attributes:
+    label: Resource type
+    description: Please select all available representations of your resource
+    multiple: true
+    options:
+      - HTML
+      - RDF/XML
+      - TTL
+      - OWL
+      - N-triples
+      - N3
