@@ -1,8 +1,8 @@
 # https://purls.helmholtz-metadaten.de/hob
 # https://purls.helmholtz-metadaten.de/hob/hdo
 
-# Ontologies:
-# Ontology Names: HOB
+# Artifacts: hob
+# Artifact Names: HOB
 
 Options +FollowSymLinks
  AddType application/rdf+xml .rdf .owl

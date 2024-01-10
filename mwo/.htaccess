@@ -1,7 +1,7 @@
 # Contact person name: Said Fathalla
 # Contact person email: s.fathalla@fz-juelich.de
-# Ontologies:
-# Ontology Name: MatWerk ontology
+# Artifacts: mwo
+# Artifact Name: MatWerk ontology
 
 Options +FollowSymLinks
 Options -MultiViews

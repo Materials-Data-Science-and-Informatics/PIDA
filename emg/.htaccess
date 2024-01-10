@@ -1,7 +1,7 @@
 # Contact person name: Volker Hofmann
 # Contact person email: v.hofmann@fz-juelich.de
-# Ontologies:
-# Ontology Names: EM Glossary
+# Artifacts: emg
+# Artifact Names: EM Glossary
 
 Options +FollowSymLinks
 # Turn off MultiViews

@@ -1,7 +1,7 @@
 # Contact person name: Ahmad Z. Ihsan
 # Contact person email:  a.ihsan@fz-juelich.de
-# Ontologies:
-# Ontology Names: PRIMA
+# Artifacts: core, dal, dataset, experiment, complete
+# Artifact Names: PRIMA-Core, PRIMA-Data Analysis Lifecycle, PRIMA-Dataset, PRIMA-Experiment, PRIMA-Complete
 Options +FollowSymLinks
 
 # Turn off MultiViews
