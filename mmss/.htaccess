@@ -1,11 +1,13 @@
 # Contact person name: Abril Azocar Guzman
 # Contact person email: a.azocar.guzman@fz-juelich.de
+# Artefact: MMSS, ASMO
+# Artefact Name: Materials Modelling and Simulation Suite, Atomistic Simulation Methods Ontology
 
 Options +FollowSymLinks
  
  
 RewriteEngine on
  
-# Redirect for cmso ontology
-RewriteRule ^asmo$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/cmso-ontology/main/ASMO/asmo.owl   [R=303,L]
+# Redirect for ASMO ontology
+RewriteRule ^asmo$ https://raw.githubusercontent.com/OCDO/asmo/main/asmo.owl   [R=303,L]
  
