@@ -1,33 +1,34 @@
 # Contact person name: Said Fathalla
 # Contact person email: s.fathalla@fz-juelich.de 
 # Artifact name: mwo
+# Artefact Name: The NFDI MatWerk ontology
 
 Options +FollowSymLinks
 Options -MultiViews
- 
+
 
 # Directive to ensure *.rdf files served as appropriate content type
 AddType application/rdf+xml .owl
  
 RewriteEngine on
 
-#Rewrite rules for semsur vocabulary 
+#Rewrite rules for mwo vocabulary 
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
 RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^((.+)|/?)$ https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/doc/index.html#$2  [R=303,NE,L]
+RewriteRule ^((.+)|/?)$ https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/docs/index.html#$2  [R=303,NE,L]
 #RewriteRule ^$ https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/doc/  [R=303,NE,L]
 
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
-RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/ontology/mwo.owl [R=303,L]
+RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/mwo.owl [R=303,L]
 
 
 # Default response
-# Rewrite rule to serve the RDF/XML content from the diso IRI by default
-RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/ontology/mwo.owl [R=303,L]
+# Rewrite rule to serve the RDF/XML content from the mwo IRI by default
+RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/mwo.owl [R=303,L]
 
 
 
