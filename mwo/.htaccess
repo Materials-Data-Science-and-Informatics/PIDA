@@ -19,20 +19,18 @@ RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
 RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+
+# mwo v1.0.1
+RewriteRule ^1.0.1$  https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/releases/v1.0.1/mwo.owl  [R=303,L]
+
 RewriteRule ^((.+)|/?)$ https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/docs/index.html#$2  [R=303,NE,L]
 #RewriteRule ^$ https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/doc/  [R=303,NE,L]
 
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
 RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/mwo.owl [R=303,L]
 
-# mwo v1.0.1
-RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
-RewriteRule ^1.0.1/$  https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/releases/v1.0.1/mwo.owl  [R=303,L]
+
 
 # Default response
 # Rewrite rule to serve the RDF/XML content from the mwo IRI by default
 RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/mwo.owl [R=303,L]
-
-
-
-
