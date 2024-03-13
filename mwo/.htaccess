@@ -24,7 +24,7 @@ RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
 RewriteRule ^1.0.1$  https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/releases/v1.0.1/docs/  [R=303,L]
 
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
-RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/releases/v1.0.1/mwo.owl [R=303,L]
+RewriteRule ^1.0.1$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/releases/v1.0.1/mwo.owl [R=303,L]
 
 
 # mwo v2.0.0
