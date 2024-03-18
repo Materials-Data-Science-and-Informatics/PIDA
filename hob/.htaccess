@@ -22,7 +22,7 @@ RewriteRule ^(HDO_[0-9]+)$ https://materials-data-science-and-informatics.github
 RewriteCond %{HTTP_ACCEPT} application/rdf\+xml [OR]
 RewriteCond %{HTTP_ACCEPT} application/owl\+xml
 RewriteRule ^(HDO_[0-9]+)  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl   [R=303,L]
-RewriteRule ^$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl   [R=303,L]
+RewriteRule ^$ https://codebase.helmholtz.cloud/hmc/hmc-public/hob    [R=303,L]
 
 # Redirect for hob/hdo
 RewriteRule ^hdo$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl  [R=303,L]
