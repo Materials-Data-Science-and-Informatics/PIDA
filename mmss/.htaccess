@@ -7,7 +7,9 @@ Options +FollowSymLinks
  
  
 RewriteEngine on
- 
+
+# Redirect for MMSS ontology suite
+RewriteRule ^$ https://github.com/OCDO/mmss   [R=303,L]
+
 # Redirect for ASMO ontology
 RewriteRule ^asmo$ https://raw.githubusercontent.com/OCDO/asmo/main/asmo.owl   [R=303,L]
- 
