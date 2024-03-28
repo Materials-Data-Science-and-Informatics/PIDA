@@ -1,11 +1,31 @@
 # Contact person name: Volker Hofmann
 # Contact person email: v.hofmann@fz-juelich.de
+# Artifacts: emg
+# Artifacts Names: The EM Glossary
 
 Options +FollowSymLinks
 # Turn off MultiViews
 Options -MultiViews
 
+# Directive to ensure *.rdf files served as appropriate content type
+AddType application/rdf+xml .owl
+AddType application/rdf+xml .rdf
+AddType text/turtle .ttl
+
 RewriteEngine on
 
-#default response 
-RewriteRule ^$ https://codebase.helmholtz.cloud/em_glossary [R=303,NE,L]
+# HTML
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^$ https://em_glossary.pages.hzdr.de/em_glossary_owl/ [R=303,NE,L]
+
+# Rewrite rule to serve RDF/XML content
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
+RewriteRule ^$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/emg.owl [R=303,NE,L]
+
+
+
