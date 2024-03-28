@@ -1,7 +1,7 @@
 # Contact person name: Abril Azocar Guzman
 # Contact person email: a.azocar.guzman@fz-juelich.de
-# Artifacts: MMSS, ASMO
-# Artifacts Names: Materials Modelling and Simulation Suite, Atomistic Simulation Methods Ontology
+# Artifacts: MMSS, ASMO, D3SIM
+# Artifacts Names: Materials Modelling and Simulation Suite, Atomistic Simulation Methods Ontology, Dislocation Simulation and Model Ontology
 
 Options +FollowSymLinks
  
@@ -13,3 +13,6 @@ RewriteRule ^$ https://github.com/OCDO/mmss   [R=303,L]
 
 # Redirect for ASMO ontology
 RewriteRule ^asmo$ https://raw.githubusercontent.com/OCDO/asmo/main/asmo.owl   [R=303,L]
+
+# Redirect for D3SIM ontology
+RewriteRule ^d3sim$ https://raw.githubusercontent.com/OCDO/D3SIM/main/dislocation-sim-model-ontology.owl   [R=303,L]
