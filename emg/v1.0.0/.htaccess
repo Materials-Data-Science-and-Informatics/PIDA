@@ -11,4 +11,4 @@ RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
-RewriteRule ^(EMG_[0-9]+)$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/emg.owl [R=303,L]
+RewriteRule ^$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/emg.owl [R=303,L]
