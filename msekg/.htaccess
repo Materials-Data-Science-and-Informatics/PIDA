@@ -14,9 +14,13 @@ AddType application/rdf+xml .rdf
  
 RewriteEngine on
 
-# DISOs suite home
+# lodview
 #==============
-RewriteRule ^$ https://demo.fiz-karlsruhe.de/matwerk/ [R=303,L]
+RewriteRule ^matwerk/(.*)$ https://msekg-nfdi-matwerk-02.web.vulcanus.otc.coscine.dev/matwerk/$1 [R=303,L]
+
+# sparql
+#==============
+RewriteRule ^sparql$ https://sparql-nfdi-matwerk-02.web.vulcanus.otc.coscine.dev/sparql [R=303,L]
 
 
  
