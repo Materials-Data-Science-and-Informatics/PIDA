@@ -1,0 +1,26 @@
+# Contact person name: Said Fathalla
+# Contact person email: s.fathalla@fz-juelich.de 
+# Artifacts: msekg
+# Artifacts Names: MSE Knowledge Graph
+
+Options +FollowSymLinks
+
+# Turn off MultiViews
+Options -MultiViews
+
+# Directive to ensure *.rdf files served as appropriate content type
+AddType application/rdf+xml .owl
+AddType application/rdf+xml .rdf
+ 
+RewriteEngine on
+
+
+
+# sparql
+#==============
+RewriteRule ^$ https://sparql-nfdi-matwerk-02.web.vulcanus.otc.coscine.dev/sparql [R=303,L]
+
+
+ 
+
+ 
