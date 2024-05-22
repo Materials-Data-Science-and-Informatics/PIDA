@@ -21,7 +21,7 @@ RewriteRule ^matwerk$ https://msekg-nfdi-matwerk-02.web.vulcanus.otc.coscine.dev
 
 # lodview terms dereferncing (e.g https://purls.helmholtz-metadaten.de/msekg/matwerk/E117622813)
 #==============
-RewriteRule ^matwerk/(.*)$ https://msekg-nfdi-matwerk-02.web.vulcanus.otc.coscine.dev/matwerk/$1 [R=303,L]
+RewriteRule ^(.*)$ https://msekg-nfdi-matwerk-02.web.vulcanus.otc.coscine.dev/matwerk/$1 [R=303,L]
 
 # sparql
 #==============
