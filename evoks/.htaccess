@@ -22,5 +22,5 @@ RewriteRule ^rdvc/$   https://matwerk.datamanager.kit.edu/evoks/RefDataSetVocCre
 RewriteRule ^rdvc/(.*)$  https://matwerk.datamanager.kit.edu/evoks/RefDataSetVocCreep-1/en/page/$1    [R=303,L]
 
 # Redirect for evoks/MDMC-NEP Glossary of Terms  
-RewriteRule ^mng/$  http://metarepo.nffa.eu:9001/MDMC_NEP_Glossary-1/en/    [R=303,L]
-RewriteRule ^mng/(.*)$   http://metarepo.nffa.eu:9001/MDMC_NEP_Glossary-1/en/page/$1    [R=303,L]
+RewriteRule ^mng/$  https://metarepo.nffa.eu/evoks/MDMC_NEP_Glossary-1/en/    [R=303,L]
+RewriteRule ^mng/(.*)$   https://metarepo.nffa.eu/evoks/MDMC_NEP_Glossary-1/en/page/$1    [R=303,L]
