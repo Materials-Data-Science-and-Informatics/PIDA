@@ -1,5 +1,8 @@
-# https://purls.helmholtz-metadaten.de/hob
-# https://purls.helmholtz-metadaten.de/hob/hdo
+# Contact person name: Said Fathalla
+# Contact person email: s.fathalla@fz-juelich.de 
+# Artifacts: hdo
+# Artifacts Names: The Helmholtz Digitisation Ontology
+# Resource location: https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl
 
 Options +FollowSymLinks
  AddType application/rdf+xml .rdf .owl
