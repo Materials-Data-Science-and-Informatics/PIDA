@@ -1,7 +1,8 @@
 # Contact person name: Said Fathalla
 # Contact person email: s.fathalla@fz-juelich.de 
 # Artifacts: diso, cdo, cso
-# Artifacts Names: Dislocation Ontology, Crystallographic Defect Ontology, Crystal Structure Ontology
+# Artifacts Names: Dislocation Ontology, Crystallographic Defect Ontology, Crystal Structure Ontology, sample data
+# Resource location: https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/Dislocation-Ontology-Suite/main/DISO/dislocation-ontology.owl, https://materials-data-science-and-informatics.github.io/Dislocation-Ontology-Suite/CDO/docs/index-en.html, https://materials-data-science-and-informatics.github.io/Dislocation-Ontology-Suite/CSO/docs/index-en.html, https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/dislocation-ontology/master/data/modelib-microstructure/modelib-nickel-microstructure.ttl 
 
 Options +FollowSymLinks
 
