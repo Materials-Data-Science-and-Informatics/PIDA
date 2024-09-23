@@ -1,0 +1,13 @@
+# Contact person name: Abril Azocar Guzman
+# Contact person email: a.azocar.guzman@fz-juelich.de
+# Artifacts: ASMO
+# Artifacts Names: Atomistic Simulation Methods Ontology
+
+Options +FollowSymLinks
+ 
+ 
+RewriteEngine on
+
+# Redirect for ASMO ontology
+RewriteRule ^asmo$ https://raw.githubusercontent.com/OCDO/asmo/main/asmo.owl   [R=303,L]
+
