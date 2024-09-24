@@ -9,5 +9,5 @@ Options +FollowSymLinks
 RewriteEngine on
 
 # Redirect for ASMO ontology
-RewriteRule ^asmo$ https://raw.githubusercontent.com/OCDO/asmo/main/asmo.owl   [R=303,L]
+RewriteRule ^$ https://raw.githubusercontent.com/OCDO/asmo/main/asmo.owl   [R=303,L]
 
