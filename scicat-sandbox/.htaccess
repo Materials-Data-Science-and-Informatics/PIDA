@@ -25,7 +25,7 @@ RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^scicat$ https://fs-ec.pages.desy.de/scicat/datamodel-sandbox/pizza/html/ [R=303,L]
+RewriteRule ^scicat$ https://fs-ec.pages.desy.de/scicat/datamodel-sandbox/scicat/html [R=303,L]
 
 # Rewrite rule to serve RDF/XML content
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
@@ -44,7 +44,7 @@ RewriteRule ^scicat$ https://fs-ec.pages.desy.de/scicat/datamodel-sandbox/scicat
 
 # Default response
 # Rewrite rule to serve the RDF/XML content from the diso IRI by default
-RewriteRule ^scicat$ https://fs-ec.pages.desy.de/scicat/datamodel-sandbox/pizza/html/ [R=303,L]
+RewriteRule ^scicat$ https://fs-ec.pages.desy.de/scicat/datamodel-sandbox/scicat/html [R=303,L]
  
  
 # pizza 
@@ -74,9 +74,7 @@ RewriteRule ^pizza$ https://fs-ec.pages.desy.de/scicat/datamodel-sandbox/pizza/p
 # Default response
 # Rewrite rule to serve the RDF/XML content from the diso IRI by default
 RewriteRule ^pizza$ https://fs-ec.pages.desy.de/scicat/datamodel-sandbox/pizza/html/ [R=303,L]
- 
- 
- 
+
  
 # sandbox home
 #==============
