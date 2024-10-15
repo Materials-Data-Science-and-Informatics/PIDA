@@ -1,4 +1,4 @@
-# Persistent Identifiers for Digital Assets
+# Persistent Identifiers for Semantic Artifacts
 [![status](https://img.shields.io/badge/status-up-green)](https://purls.helmholtz-metadaten.de/diso) 
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/saidfathalla/PID-Service) 
 ![GitHub contributors](https://img.shields.io/github/contributors/saidfathalla/PID-Service) 
@@ -8,7 +8,7 @@
 
 <img style="center-align: middle;" alt="Metador Logo" src="https://github.com/Materials-Data-Science-and-Informatics/Logos/blob/main/Pida/Pida_Logo_Text.png" width=30% height=30% /> 
 
-**P**ersistent **I**dentifiers for **D**igital **A**ssets
+**P**ersistent **ID**entifiers for Semantic **A**rtifacts
 
 PIDA is a service for providing web resources [Persistent URLs (PURLs)](https://en.wikipedia.org/wiki/Persistent_uniform_resource_locator), to ensure reliable access to them.
 Therefore, they remain available for future access by both humans and machines.
