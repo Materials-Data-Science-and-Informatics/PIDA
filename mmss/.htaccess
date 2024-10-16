@@ -2,6 +2,7 @@
 # Contact person email: a.azocar.guzman@fz-juelich.de
 # Artifacts: MMSS, ASMO, DSIM
 # Artifacts Names: Materials Modelling and Simulation Suite, Dislocation Simulation and Model Ontology
+# Resource location: https://raw.githubusercontent.com/OCDO/DSIM/main/dislocation-sim-model-ontology.owl
 
 Options +FollowSymLinks
  

@@ -2,6 +2,7 @@
 # Contact person email: s.fathalla@fz-juelich.de 
 # Artifact name: mwo
 # Artefact Name: The NFDI MatWerk ontology
+# Resource location: https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/mwo.owl
 
 Options +FollowSymLinks
 Options -MultiViews

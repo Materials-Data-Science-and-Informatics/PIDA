@@ -2,6 +2,7 @@
 # Contact person email: v.hofmann@fz-juelich.de
 # Artifacts: emg
 # Artifacts Names: The EM Glossary
+# Resource location: https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/emg.owl
 
 Options +FollowSymLinks
 Options -MultiViews

@@ -2,6 +2,7 @@
 # Contact person email: a.azocar.guzman@fz-juelich.de
 # Artifacts: CDCO, PODO, LDO, DISO, PLDO
 # Artifacts Names: Crystallographic Defect Core Ontology, Point Defect Ontology, Line Defect Ontology, Dislocation Ontology, Plane Defect Ontology
+# Resource location: https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl, https://raw.githubusercontent.com/OCDO/podo/main/podo.owl, https://raw.githubusercontent.com/OCDO/ldo/main/ldo.owl, https://raw.githubusercontent.com/OCDO/ldo/main/DISO/diso.owl, https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl
 
 Options +FollowSymLinks
 RewriteEngine on

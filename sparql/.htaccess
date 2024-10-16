@@ -2,6 +2,7 @@
 # Contact person email: s.fathalla@fz-juelich.de 
 # Artifacts: msekg
 # Artifacts Names: MSE Knowledge Graph
+# Resource location: https://sparql-nfdi-matwerk-02.web.vulcanus.otc.coscine.dev/sparql
 
 Options +FollowSymLinks
 

@@ -2,6 +2,7 @@
 # Contact person email: a.azocar.guzman@fz-juelich.de
 # Artifacts: ASMO
 # Artifacts Names: Atomistic Simulation Methods Ontology
+# Resource location: https://raw.githubusercontent.com/OCDO/asmo/main/asmo.owl
 
 Options +FollowSymLinks
  

@@ -2,6 +2,7 @@
 # Contact person email: a.azocar.guzman@fz-juelich.de
 # Artefact: CMSO
 # Artefact Name: Computational Material Sample Ontology
+# Resource location: https://raw.githubusercontent.com/OCDO/cmso-ontology/main/cmso.owl
 
 Options +FollowSymLinks
  

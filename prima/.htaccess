@@ -2,6 +2,7 @@
 # Contact person email:  a.ihsan@fz-juelich.de 
 # Artifacts: core, dal, dataset, experiment, complete
 # Artifacts Names: PRIMA-Core ontology, PRIMA-Data Analysis Lifecycle ontology, PRIMA-Dataset ontology, PRIMA-Experiment ontology, PRIMA-Complete ontology
+# Resource location:
 
 Options +FollowSymLinks
 
