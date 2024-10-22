@@ -15,8 +15,8 @@ RewriteRule ^MatWerkAcronyms/$  https://matwerk.datamanager.kit.edu/evoks/MatWer
 RewriteRule ^MatWerkAcronyms/(.*)$  https://matwerk.datamanager.kit.edu/evoks/MatWerkAcronyms-1/en/page/$1    [R=303,L]
 
 # Redirect for evoks/Sample Description Vocabulary terms (e.g. evoks/sampleDescription/aai)
-RewriteRule ^sdv/$   https://matwerk.datamanager.kit.edu/evoks/sampleDescription-1/en    [R=303,L]
-RewriteRule ^sdv/(.*)$  https://matwerk.datamanager.kit.edu/evoks/sampleDescription-1/en/page/$1    [R=303,L]
+RewriteRule ^sdv/$   https://matwerk.datamanager.kit.edu/evoks/SampleDescriptionVocabulary-1/en    [R=303,L]
+RewriteRule ^sdv/(.*)$  https://matwerk.datamanager.kit.edu/evoks/SampleDescriptionVocabulary-1/en/page/$1    [R=303,L]
 
 # Redirect for evoks/Reference Dataset Vocabulary – Creep terms  
 RewriteRule ^rdvc/$   https://matwerk.datamanager.kit.edu/evoks/RefDataSetVocCreep-1/en    [R=303,L]
