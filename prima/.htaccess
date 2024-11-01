@@ -170,3 +170,7 @@ RewriteRule ^use-case-1$ https://github.com/Materials-Data-Science-and-Informati
 # Use case 2 
 RewriteRule ^use-case-2$ https://github.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/tree/master/use-cases/Herbie-ELN [R=303,L]
 
+# Development 
+# ===========
+RewriteRule ^dev$ https://github.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/ [R=303,L]
+
