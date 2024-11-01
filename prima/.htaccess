@@ -2,7 +2,7 @@
 # Contact person email:  a.ihsan@fz-juelich.de 
 # Artifacts: core, dal, dataset, experiment, complete
 # Artifacts Names: PRIMA-Core ontology, PRIMA-Data Analysis Lifecycle ontology, PRIMA-Dataset ontology, PRIMA-Experiment ontology, PRIMA-Complete ontology
-# Resource location:
+# Resource location: https://github.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology
 
 Options +FollowSymLinks
 
@@ -161,3 +161,12 @@ RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-
 # Default response
 # Rewrite rule to serve the RDF/XML content from the PRIMA-Complete IRI by default
 RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/complete/ver_2_0/prima-complete.owl [R=303,L]
+
+# PRIMA Use Cases
+#================
+# Use case 1
+RewriteRule ^use-case-1$ https://github.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/tree/master/use-cases/STRAS-mapping [R=303,L]
+
+# Use case 2 
+RewriteRule ^use-case-2$ https://github.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/tree/master/use-cases/Herbie-ELN [R=303,L]
+
