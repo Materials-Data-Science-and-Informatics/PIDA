@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - add_ci_for_fe
 
 jobs:
   trigger_gitlab_ci:
