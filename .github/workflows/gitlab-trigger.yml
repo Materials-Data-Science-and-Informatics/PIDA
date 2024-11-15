@@ -1,0 +1,21 @@
+name: Trigger GitLab CI
+
+on:
+  push:
+    branches:
+      - main
+      - add_ci_for_fe
+
+jobs:
+  trigger_gitlab_ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger GitLab CI for Dev
+        env:
+          GITLAB_TRIGGER_URL_DEV: https://codebase.helmholtz.cloud/api/v4/projects/12722/ref/develop/trigger/pipeline
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TRIGGER_TOKEN }}
+        run: |
+          curl -X POST "$GITLAB_TRIGGER_URL_DEV" \
+            -F token="$GITLAB_TOKEN" \
+            -F ref=develop
