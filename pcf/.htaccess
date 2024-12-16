@@ -1,0 +1,51 @@
+# Contact person name: Tony Amende
+# Contact person email: tony.amende@gmail.com
+# Artifacts: pcf
+# Artifacts Names: Product Carbon Footprint Model
+# Resource location: https://healthtrack-x.github.io/pcf-model/ontology.owl
+
+Options +FollowSymLinks
+
+# Turn off MultiViews
+Options -MultiViews
+
+# Directive to ensure *.rdf files served as appropriate content type
+AddType application/rdf+xml .owl
+AddType application/rdf+xml .rdf
+AddType text/turtle .ttl
+AddType application/n-triples .nt
+AddType application/ld+json .jsonld
+ 
+RewriteEngine on
+
+# HTML
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^$ https://healthtrack-x.github.io/pcf-model/ [R=303,L]
+
+# Rewrite rule to serve RDF/XML content
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
+RewriteRule ^$ https://healthtrack-x.github.io/pcf-model/ontology.owl [R=303,L]
+
+# Rewrite rule to serve TTL content 
+RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
+RewriteCond %{HTTP_ACCEPT} text/\* [OR]
+RewriteCond %{HTTP_ACCEPT} \*/turtle 
+RewriteRule ^$ https://healthtrack-x.github.io/pcf-model/ontology.ttl  [R=303,L]
+
+# JSON-LD
+RewriteCond %{HTTP_ACCEPT} ^.*application/ld\+json.*
+RewriteRule ^$ https://healthtrack-x.github.io/pcf-model/ontology.jsonld  [R=303,L]
+
+# N-TRIPLES
+RewriteCond %{HTTP_ACCEPT} ^.*application/n-triples.*
+RewriteRule ^$ https://healthtrack-x.github.io/pcf-model/ontology.nt  [R=303,L]
+
+# Default response
+# Rewrite rule to serve the RDF/XML content from the diso IRI by default
+RewriteRule ^$ https://healthtrack-x.github.io/pcf-model/ontology.owl [R=303,L]
+
