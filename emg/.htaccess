@@ -28,6 +28,9 @@ RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
 RewriteRule ^v2.0.0/$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/emg.owl [R=303,L]
 RewriteRule ^v2.0.0/(EMG_[0-9]+)$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/emg.owl  [R=303,NE,L]
 
+# emg v1.0.0 docs
+RewriteRule ^v1.0.0$  https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/previous-versions/v1.0.0/emg.owl  [R=303,L]
+
 # emg previous versions owl
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
 RewriteRule ^v1.0.0$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/previous-versions/v1.0.0/emg.owl [R=303,L]
