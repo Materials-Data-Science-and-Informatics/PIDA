@@ -1,0 +1,24 @@
+# Contact person name: Said Fathalla
+# Contact person email: sm_fathalla@yahoo.com
+# Artifact name: Scientific Events Ontology
+# Resource location: https://raw.githubusercontent.com/saidfathalla/SEOontology/master/SEO.owl
+
+Options +FollowSymLinks
+# Turn off MultiViews
+Options -MultiViews
+
+# Directive to ensure *.rdf files served as appropriate content type,
+# if not present in main apache config
+ 
+
+RewriteEngine on
+
+
+#Gitlab project 
+ 
+RewriteRule ^$ https://codebase.helmholtz.cloud/hmc/hmc-public/hob/fdo-semantics  [R=303,NE,L]
+
+ 
+RewriteRule ^mappings$ https://codebase.helmholtz.cloud/hmc/hmc-public/hob/fdo-semantics/-/raw/main/mappings/FDO_map.sssom.tsv  [R=303,L]
+
+ 
