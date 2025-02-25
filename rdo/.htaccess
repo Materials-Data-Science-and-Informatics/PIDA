@@ -18,9 +18,9 @@ RewriteEngine on
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/iuc02/-/raw/main/Ontology%20Development/rdo_v1.rdf [R=303,L]
+RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/iuc02/-/raw/main/Ontology\%20Development/rdo_v1.rdf [R=303,L,NE]
  
 # Default response
 # Rewrite rule to serve the RDF/XML content from the diso IRI by default
-RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/iuc02/-/raw/main/Ontology%20Development/rdo_v1.rdf [R=303,L]
+RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/iuc02/-/raw/main/Ontology\%20Development/rdo_v1.rdf [R=303,L,NE]
 
