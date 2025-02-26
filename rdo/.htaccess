@@ -22,5 +22,5 @@ RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/iuc02/-/raw/main/Ontology
  
 # Default response
 # Rewrite rule to serve the RDF/XML content from the diso IRI by default
-RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/iuc02/-/raw/main/Ontology\%20Development/rdo_v1.rdf [R=303,L,NE]
+RewriteRule ^(.*)$ https://git.rwth-aachen.de/nfdi-matwerk/iuc02/-/raw/main/Ontology\%20Development/rdo_v1.rdf [R=303,L,NE]
 
