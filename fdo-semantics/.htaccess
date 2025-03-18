@@ -19,6 +19,6 @@ RewriteEngine on
 RewriteRule ^$ https://codebase.helmholtz.cloud/hmc/hmc-public/hob/fdo-semantics  [R=303,NE,L]
 
  
-RewriteRule ^mappings$ https://codebase.helmholtz.cloud/hmc/hmc-public/hob/fdo-semantics/-/raw/main/mappings/FDO_map.sssom.tsv  [R=303,L]
+RewriteRule ^mappings$ https://codebase.helmholtz.cloud/hmc/hmc-public/hob/fdo-semantics/-/raw/main/mappings/Helmholtz-KIP-mappings.tsv  [R=303,L]
 
  
