@@ -46,3 +46,10 @@ RewriteRule ^hdo/imports/(.*)$ https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/r
 RewriteRule ^hdo/releases/2024-08-14/hdo.owl$   https://codebase.helmholtz.cloud/hmc/hmc-public/hob/hdo/-/raw/main/releases/2024-08-14/hdo.owl [R=303,L]
 RewriteRule ^hdo/releases/2024-08-14/hdo-base.owl$   https://codebase.helmholtz.cloud/hmc/hmc-public/hob/hdo/-/raw/main/releases/2024-08-14/hdo-base.owl [R=303,L]
 RewriteRule ^hdo/releases/2024-08-14/hdo-full.owl$   https://codebase.helmholtz.cloud/hmc/hmc-public/hob/hdo/-/raw/main/releases/2024-08-14/hdo-full.owl [R=303,L]
+
+# rel 2025-03-20
+#RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^hdo/releases/2025-03-20/hdo.owl$   https://codebase.helmholtz.cloud/hmc/hmc-public/hob/hdo/-/raw/main/releases/2025-03-20/hdo.owl [R=303,L]
+RewriteRule ^hdo/releases/2025-03-20/hdo-base.owl$   https://codebase.helmholtz.cloud/hmc/hmc-public/hob/hdo/-/raw/main/releases/2025-03-20/hdo-base.owl [R=303,L]
+RewriteRule ^hdo/releases/2025-03-20/hdo-full.owl$   https://codebase.helmholtz.cloud/hmc/hmc-public/hob/hdo/-/raw/main/releases/2025-03-20/hdo-full.owl [R=303,L]
+
