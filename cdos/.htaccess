@@ -1,26 +1,124 @@
 # Contact person name: Abril Azocar Guzman
 # Contact person email: a.azocar.guzman@fz-juelich.de
-# Artifacts: CDCO, PODO, LDO, DISO, PLDO
+# Artifacts: CDCO, PODO, LDO, PLDO
 # Artifacts Names: Crystallographic Defect Core Ontology, Point Defect Ontology, Line Defect Ontology, Dislocation Ontology, Plane Defect Ontology
-# Resource location: https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl, https://raw.githubusercontent.com/OCDO/podo/main/podo.owl, https://raw.githubusercontent.com/OCDO/ldo/main/ldo.owl, https://raw.githubusercontent.com/OCDO/ldo/main/DISO/diso.owl, https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl
+# Resource location: https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl, https://raw.githubusercontent.com/OCDO/podo/main/podo.owl, https://raw.githubusercontent.com/OCDO/ldo/main/ldo.owl, https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl
 
 Options +FollowSymLinks
+Options -MultiViews
 RewriteEngine on
- 
-# Redirect for CDOS ontology
-RewriteRule ^$ https://github.com/OCDO/cdos   [R=303,L]
 
-# Redirect for CDCO ontology
-RewriteRule ^cdco$ https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl   [R=303,L]
+ # Directive to ensure *.rdf files served as appropriate content type
+AddType application/rdf+xml .owl
 
-# Redirect for PODO ontology
-RewriteRule ^podo$ https://raw.githubusercontent.com/OCDO/podo/main/podo.owl   [R=303,L]
+# Redirect for CDOS 
 
-# Redirect for LDO ontology
-RewriteRule ^ldo$ https://raw.githubusercontent.com/OCDO/ldo/main/ldo.owl  [R=303,L]
+RewriteRule ^$ https://cdos.readthedocs.io/   [R=303,L]
 
-# Redirect for LDO/DISO ontology
-RewriteRule ^ldo/diso$ https://raw.githubusercontent.com/OCDO/ldo/main/DISO/diso.owl   [R=303,L]
+# CDCO
 
-# Redirect for PLDO ontology
-RewriteRule ^pldo$ https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl   [R=303,L]
+# cdco v1.0.0 docs
+RewriteRule ^cdco/v1.0.0$  https://ocdo.github.io/cdco/  [R=303,L]
+RewriteRule ^cdco/v1.0.0/$  https://ocdo.github.io/cdco/  [R=303,L]
+RewriteRule ^cdco/v1.0.0/$ https://ocdo.github.io/cdco/#$1  [R=303,NE,L]
+
+# cdco v1.0.0 owl
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^cdco/v1.0.0$ https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl [R=303,L]
+RewriteRule ^cdco/v1.0.0/$ https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl [R=303,L]
+
+# Rewrite rule to serve HTML content - terms
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_ACCEPT} text/\* [OR]
+RewriteCond %{HTTP_ACCEPT} \*/\* [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^cdco/(.*)$ https://ocdo.github.io/cdco/#$1  [R=303,NE,L]
+
+# Rewrite rule to serve RDF/XML content
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
+RewriteRule ^cdco$ https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl [R=303,NE,L]
+
+# PODO
+
+# podo v1.0.0 docs
+RewriteRule ^podo/v1.0.0$  https://ocdo.github.io/podo/  [R=303,L]
+RewriteRule ^podo/v1.0.0/$  https://ocdo.github.io/podo/  [R=303,L]
+RewriteRule ^podo/v1.0.0/$ https://ocdo.github.io/podo/#$1  [R=303,NE,L]
+
+# podo v1.0.0 owl
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^podo/v1.0.0$ https://raw.githubusercontent.com/OCDO/podo/main/podo.owl [R=303,L]
+RewriteRule ^podo/v1.0.0/$ https://raw.githubusercontent.com/OCDO/podo/main/podo.owl [R=303,L]
+
+# Rewrite rule to serve HTML content - terms
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_ACCEPT} text/\* [OR]
+RewriteCond %{HTTP_ACCEPT} \*/\* [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^podo/(.*)$ https://ocdo.github.io/podo/#$1  [R=303,NE,L]
+
+# Rewrite rule to serve RDF/XML content
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
+RewriteRule ^podo$ https://raw.githubusercontent.com/OCDO/podo/main/podo.owl [R=303,NE,L]
+
+# LDO
+
+# ldo v1.0.0 docs
+RewriteRule ^ldo/v1.0.0$  https://ocdo.github.io/ldo/  [R=303,L]
+RewriteRule ^ldo/v1.0.0/$  https://ocdo.github.io/ldo/  [R=303,L]
+RewriteRule ^ldo/v1.0.0/$ https://ocdo.github.io/ldo/#$1  [R=303,NE,L]
+
+# ldo v1.0.0 owl
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^ldo/v1.0.0$ https://raw.githubusercontent.com/OCDO/ldo/main/ldo.owl [R=303,L]
+RewriteRule ^ldo/v1.0.0/$ https://raw.githubusercontent.com/OCDO/ldo/main/ldo.owl [R=303,L]
+
+# Rewrite rule to serve HTML content - terms
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_ACCEPT} text/\* [OR]
+RewriteCond %{HTTP_ACCEPT} \*/\* [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^ldo/(.*)$ https://ocdo.github.io/ldo/#$1  [R=303,NE,L]
+
+# Rewrite rule to serve RDF/XML content
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
+RewriteRule ^ldo$ https://raw.githubusercontent.com/OCDO/ldo/main/ldo.owl [R=303,NE,L]
+
+# PLDO
+
+# pldo v1.0.0 docs
+RewriteRule ^pldo/v1.0.0$  https://ocdo.github.io/pldo/  [R=303,L]
+RewriteRule ^pldo/v1.0.0/$  https://ocdo.github.io/pldo/  [R=303,L]
+RewriteRule ^pldo/v1.0.0/$ https://ocdo.github.io/pldo/#$1  [R=303,NE,L]
+
+# pldo v1.0.0 owl
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^pldo/v1.0.0$ https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl [R=303,L]
+RewriteRule ^pldo/v1.0.0/$ https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl [R=303,L]
+
+# Rewrite rule to serve HTML content - terms
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_ACCEPT} text/\* [OR]
+RewriteCond %{HTTP_ACCEPT} \*/\* [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^pldo/(.*)$ https://ocdo.github.io/pldo/#$1  [R=303,NE,L]
+
+# Rewrite rule to serve RDF/XML content
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
+RewriteRule ^pldo$ https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl [R=303,NE,L]
