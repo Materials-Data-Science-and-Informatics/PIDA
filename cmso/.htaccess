@@ -2,13 +2,36 @@
 # Contact person email: a.azocar.guzman@fz-juelich.de
 # Artefact: CMSO
 # Artefact Name: Computational Material Sample Ontology
-# Resource location: https://raw.githubusercontent.com/OCDO/cmso-ontology/main/cmso.owl
+# Resource location: https://raw.githubusercontent.com/OCDO/cmso/main/cmso.owl
 
 Options +FollowSymLinks
- 
- 
+Options -MultiViews
 RewriteEngine on
- 
-# Redirect for cmso ontology
-RewriteRule ^$  https://raw.githubusercontent.com/OCDO/cmso-ontology/main/cmso.owl    [R=303,L]
- 
+
+# Directive to ensure *.rdf files served as appropriate content type
+AddType application/rdf+xml .owl
+
+# cmso v1.0.0 docs
+RewriteRule ^v1.0.0$  https://ocdo.github.io/cmso/  [R=303,L]
+RewriteRule ^v1.0.0/$  https://ocdo.github.io/cmso/  [R=303,L]
+RewriteRule ^v1.0.0/$ https://ocdo.github.io/cmso/#$1  [R=303,NE,L]
+
+# cmso v1.0.0 owl
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^v1.0.0$ https://raw.githubusercontent.com/OCDO/cmso/main/cmso.owl [R=303,L]
+RewriteRule ^v1.0.0/$ https://raw.githubusercontent.com/OCDO/cmso/main/cmso.owl [R=303,L]
+
+# Rewrite rule to serve HTML content - terms
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_ACCEPT} text/\* [OR]
+RewriteCond %{HTTP_ACCEPT} \*/\* [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^(.*)$ https://ocdo.github.io/cmso/#$1  [R=303,NE,L]
+
+# Rewrite rule to serve RDF/XML content
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
+RewriteRule ^$ https://raw.githubusercontent.com/OCDO/cmso/main/cmso.owl [R=303,NE,L]
