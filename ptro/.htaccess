@@ -1,0 +1,22 @@
+# Contact person name: Olga Giraldo
+# Contact person email: olga.giraldo@dkfz-heidelberg.de
+# Artefact: PTRO  
+# Artefact Name: Preclinical Trials in Radiation Oncology
+# Resource location: https://raw.githubusercontent.com/DKFZ-E220/PTRO/main/PTRO.owl
+
+Options +FollowSymLinks
+Options -MultiViews
+RewriteEngine on
+
+# Directive to ensure *.rdf files served as appropriate content type
+AddType application/rdf+xml .owl
+
+
+# Rewrite rule to serve RDF/XML content
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
+RewriteRule ^$ https://raw.githubusercontent.com/DKFZ-E220/PTRO/main/PTRO.owl [R=303,NE,L]
+
+# Default response
+RewriteRule ^$ https://raw.githubusercontent.com/DKFZ-E220/PTRO/main/PTRO.owl [R=303,NE,L]
