@@ -29,9 +29,9 @@ RewriteRule ^$ https://codebase.helmholtz.cloud/hmc/hmc-public/hob    [R=303,L]
 
 # Redirect for hob/hdo
 RewriteRule ^hdo$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl  [R=303,L]
-RewriteRule ^hdo/hdo-full.owl$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo-full.owl  [R=303,L]
-RewriteRule ^hdo/hdo-base.owl$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo-base.owl  [R=303,L]
-RewriteRule ^hdo/hdo.owl$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl  [R=303,L]
+RewriteRule ^hdo-full.owl$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo-full.owl  [R=303,L]
+RewriteRule ^hdo-base.owl$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo-base.owl  [R=303,L]
+RewriteRule ^hdo.owl$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl  [R=303,L]
 
 
 # redirects hdo imports
