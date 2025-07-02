@@ -9,34 +9,27 @@ AddType application/rdf+xml .rdf .owl
  
 RewriteEngine on
 
-#latest release
-
-#Rewrite rules for hdo vocabulary (term dereferencing to docs)
-RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
-RewriteCond %{HTTP_ACCEPT} text/html [OR]
-RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
-RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
-RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^(HDO_[0-9]+)$ https://materials-data-science-and-informatics.github.io/Helmholtz-Digitisation-Ontology-Documentation/index-en.html#https://purls.helmholtz-metadaten.de/hob/$1  [R=303,NE,L]
-RewriteRule ^(hdo)$ https://materials-data-science-and-informatics.github.io/Helmholtz-Digitisation-Ontology-Documentation/index-en.html  [R=303,NE,L]
- 
-# Redirect for hdo terms (e.g. hob/HDO_00004001) and Redirect for hob/hdo
-RewriteCond %{HTTP_ACCEPT} application/rdf\+xml [OR]
-RewriteCond %{HTTP_ACCEPT} application/owl\+xml
-RewriteRule ^(HDO_[0-9]+)  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl   [R=303,L]
-RewriteRule ^(hdo)$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl  [R=303,L]
+# Latest release
+## Redirect for hdo terms (e.g. hob/HDO_00004001) and Redirect for hob/hdo
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml [NC,OR]
+RewriteCond %{HTTP_ACCEPT} text/turtle [NC,OR]
+RewriteCond %{HTTP_ACCEPT} application/ld\+json [NC]
+RewriteRule ^hdo$ https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl [R=303,L]
 RewriteRule ^hdo-full.owl$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo-full.owl  [R=303,L]
 RewriteRule ^hdo-base.owl$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo-base.owl  [R=303,L]
 RewriteRule ^hdo.owl$  https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/hdo.owl  [R=303,L]
 
+## HTML clients (browsers) 
+RewriteCond %{HTTP_ACCEPT} text/html [NC,OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [NC]
+RewriteRule ^hdo$ https://materials-data-science-and-informatics.github.io/Helmholtz-Digitisation-Ontology-Documentation/index-en.html [R=303,L]
 
-# redirects hdo imports
+## redirects hdo imports
 RewriteRule ^hdo/imports/(.*)$ https://gitlab.hzdr.de/hmc/hmc-public/hob/hdo/-/raw/main/src/ontology/imports/$1 [R=301,NC,L]
  
 #--------------------------------------------------------------
 
-#former releases
+# Former releases
  
 # rel 2024-08-14
 #RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
