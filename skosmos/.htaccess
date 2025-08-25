@@ -1,0 +1,27 @@
+
+# Contact person name: Gulzaure Abdildina
+# Contact person email: gulzaure.abdildina@kit.edu
+# Artifacts: MatWerkAcronyms, sdv, rdvc, mng
+# Artifacts Names: MatWerk Acronyms Vocabulary, Sample Description Vocabulary, Reference Dataset Vocabulary, MDMC-NEP Glossary of Terms
+# Resource location: https://metarepo.nffa.eu/skosmos/MDMC_NEP_Glossary-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/SampleDescriptionVocabulary-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/ReferenceDataSetVocCreep-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/MatWerkAcronyms-1/en/
+
+Options +FollowSymLinks
+ 
+ 
+RewriteEngine on
+ 
+# Redirect for skosmos/MatWerkAcronyms terms (e.g. skosmos/MatWerkAcronyms/aai)
+RewriteRule ^MatWerkAcronyms/$  https://matwerk.datamanager.kit.edu/skosmos/MatWerkAcronyms-1/en    [R=303,L]
+RewriteRule ^MatWerkAcronyms/(.*)$  https://matwerk.datamanager.kit.edu/skosmos/MatWerkAcronyms-1/en/page/$1    [R=303,L]
+
+# Redirect for skosmos/Sample Description Vocabulary terms (e.g. skosmos/sampleDescription/aai)
+RewriteRule ^sdv/$   https://matwerk.datamanager.kit.edu/skosmos/SampleDescriptionVocabulary-1/en    [R=303,L]
+RewriteRule ^sdv/(.*)$  https://matwerk.datamanager.kit.edu/skosmos/SampleDescriptionVocabulary-1/en/page/$1    [R=303,L]
+
+# Redirect for skosmos/Reference Dataset Vocabulary – Creep terms  
+RewriteRule ^rdvc/$   https://matwerk.datamanager.kit.edu/skosmos/ReferenceDataSetVocCreep-1/en    [R=303,L]
+RewriteRule ^rdvc/(.*)$  https://matwerk.datamanager.kit.edu/skosmos/ReferenceDataSetVocCreep-1/en/page/$1    [R=303,L]
+
+# Redirect for skosmos/MDMC-NEP Glossary of Terms  
+RewriteRule ^mng/$  https://metarepo.nffa.eu/skosmos/MDMC_NEP_Glossary-1/en/    [R=303,L]
+RewriteRule ^mng/(.*)$   https://metarepo.nffa.eu/skosmos/MDMC_NEP_Glossary-1/en/page/$1    [R=303,L]
