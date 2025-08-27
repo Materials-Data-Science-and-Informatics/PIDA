@@ -1,27 +1,12 @@
 
 # Contact person name: Gulzaure Abdildina
 # Contact person email: gulzaure.abdildina@kit.edu
-# Artifacts: MatWerkAcronyms, sdv, rdvc, mng
-# Artifacts Names: MatWerk Acronyms Vocabulary, Sample Description Vocabulary, Reference Dataset Vocabulary, MDMC-NEP Glossary of Terms
-# Resource location: https://metarepo.nffa.eu/evoks/MDMC_NEP_Glossary-1/en/ , https://matwerk.datamanager.kit.edu/evoks/SampleDescriptionVocabulary-1/en/ , https://matwerk.datamanager.kit.edu/evoks/ReferenceDataSetVocCreep-1/en/ , https://matwerk.datamanager.kit.edu/evoks/MatWerkAcronyms-1/en/
+# Redirect all URLs to new prefix
 
 Options +FollowSymLinks
  
  
 RewriteEngine on
  
-# Redirect for evoks/MatWerkAcronyms terms (e.g. evoks/MatWerkAcronyms/aai)
-RewriteRule ^MatWerkAcronyms/$  https://matwerk.datamanager.kit.edu/evoks/MatWerkAcronyms-1/en    [R=303,L]
-RewriteRule ^MatWerkAcronyms/(.*)$  https://matwerk.datamanager.kit.edu/evoks/MatWerkAcronyms-1/en/page/$1    [R=303,L]
-
-# Redirect for evoks/Sample Description Vocabulary terms (e.g. evoks/sampleDescription/aai)
-RewriteRule ^sdv/$   https://matwerk.datamanager.kit.edu/evoks/SampleDescriptionVocabulary-1/en    [R=303,L]
-RewriteRule ^sdv/(.*)$  https://matwerk.datamanager.kit.edu/evoks/SampleDescriptionVocabulary-1/en/page/$1    [R=303,L]
-
-# Redirect for evoks/Reference Dataset Vocabulary – Creep terms  
-RewriteRule ^rdvc/$   https://matwerk.datamanager.kit.edu/evoks/ReferenceDataSetVocCreep-1/en    [R=303,L]
-RewriteRule ^rdvc/(.*)$  https://matwerk.datamanager.kit.edu/evoks/ReferenceDataSetVocCreep-1/en/page/$1    [R=303,L]
-
-# Redirect for evoks/MDMC-NEP Glossary of Terms  
-RewriteRule ^mng/$  https://metarepo.nffa.eu/evoks/MDMC_NEP_Glossary-1/en/    [R=303,L]
-RewriteRule ^mng/(.*)$   https://metarepo.nffa.eu/evoks/MDMC_NEP_Glossary-1/en/page/$1    [R=303,L]
+# Redirect for evoks/* to new prefix skosmos/*
+RewriteRule ^(.*)$  https://purls.helmholtz-metadaten.de/skosmos/$1    [R=303,L]
