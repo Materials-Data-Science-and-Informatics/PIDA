@@ -3,9 +3,9 @@
 # Contact person email: rossella.aversa@kit.edu
 # Contact person name: Volker Hartmann (technical)
 # Contact person email: volker.hartmann@kit.edu
-# Artifacts: MatWerkAcronyms, sdv, rdvc, mng
-# Artifacts Names: MatWerk Acronyms Vocabulary, Sample Description Vocabulary, Reference Dataset Vocabulary, MDMC-NEP Glossary of Terms
-# Resource location: https://metarepo.nffa.eu/skosmos/Prima-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/SampleDescriptionVocabulary-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/ReferenceDataSetVocCreep-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/MatWerkAcronyms-1/en/
+# Artifacts: *
+# Artifacts Names: MatWerk Acronyms Vocabulary, Sample Description Vocabulary, Reference Dataset Vocabulary, PRIMA Glossary of Terms
+# Resource location: https://metarepo.nffa.eu/skosmos/Prima/en/ , https://matwerk.datamanager.kit.edu/skosmos/SampleDescriptionVocabulary-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/ReferenceDataSetVocCreep-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/MatWerkAcronyms-1/en/
 
 Options +FollowSymLinks
  
@@ -25,6 +25,12 @@ RewriteRule ^rdvc/$   https://matwerk.datamanager.kit.edu/skosmos/ReferenceDataS
 RewriteRule ^rdvc/(.*)$  https://matwerk.datamanager.kit.edu/skosmos/ReferenceDataSetVocCreep-1/en/page/$1    [R=303,L]
 
 # Redirect for skosmos/Prima - Vocabulary (PRovenance Information for MAterials science)   
-RewriteRule ^prima/$  https://metarepo.nffa.eu/skosmos/Prima-1/en/    [R=303,L]
-RewriteRule ^prima/(.*)$   https://metarepo.nffa.eu/skosmos/Prima-1/en/page/$1    [R=303,L]
+RewriteRule ^prima/$  https://matwerk.datamanager.kit.edu/skosmos/Prima/en/    [R=303,L]
+RewriteRule ^prima/(.*)$   https://matwerk.datamanager.kit.edu/skosmos/Prima/en/page/$1    [R=303,L]
+
+# This rule has to be the last one
+# Redirect for any vocabulary (e.g. skosmos/newVocabulary)
+RewriteRule ^([^/]+)$ https://matwerk.datamanager.kit.edu/skosmos/$1/en [R=303,L]
+# Redirect for a term of any vocabulary
+RewriteRule ^([^/]+)/(.*)$ https://matwerk.datamanager.kit.edu/skosmos/$1/en/page/$2 [R=303,L]
 
