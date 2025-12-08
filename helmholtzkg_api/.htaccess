@@ -7,6 +7,12 @@ Options +FollowSymLinks
 Options -MultiViews
 RewriteEngine on
 
+# dev API
+RewriteRule ^dev$ https://data.dev.unhide.helmholtz-metadaten.de/api/v0/raw/entity/ [R=303,L]
+
+# qa API
+RewriteRule ^qa$ https://data.qa.unhide.helmholtz-metadaten.de/api/v0/raw/entity/ [R=303,L]
+
 # default
 #==============
 RewriteRule ^$ https://data.unhide.helmholtz-metadaten.de/api/v0/raw/entity/ [R=303,L]
