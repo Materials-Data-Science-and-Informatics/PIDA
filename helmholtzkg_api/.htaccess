@@ -1,18 +1,19 @@
 # Contact person name: Volker Hofmann
 # Contact person email: v.hofmann@fz-juelich.de 
-# Artifact name: Storage API of Helmholtz KG
+# Artifact name: Storage API of Helmholtz KG including QA and DEV APIs
 # Resource location: https://data.unhide.helmholtz-metadaten.de/api/v0/raw/entity/
 
 Options +FollowSymLinks
+
+# Turn off MultiViews
 Options -MultiViews
 RewriteEngine on
 
-# dev API
-RewriteRule ^dev$ https://data.dev.unhide.helmholtz-metadaten.de/api/v0/raw/entity/ [R=303,L]
+# Redirect /dev/ to the dev API endpoint
+RewriteRule ^dev/?(.*)$ https://data.dev.unhide.helmholtz-metadaten.de/api/v0/raw/entity/$1 [R=301,L]
 
-# qa API
-RewriteRule ^qa$ https://data.qa.unhide.helmholtz-metadaten.de/api/v0/raw/entity/ [R=303,L]
+# Redirect /qa/ to the qa API endpoint
+RewriteRule ^qa/?(.*)$ https://data.qa.unhide.helmholtz-metadaten.de/api/v0/raw/entity/$1 [R=301,L]
 
-# default
-#==============
-RewriteRule ^$ https://data.unhide.helmholtz-metadaten.de/api/v0/raw/entity/ [R=303,L]
+# Redirect any sub-resource
+RewriteRule ^(.*)$ https://data.unhide.helmholtz-metadaten.de/api/v0/raw/entity/$1 [R=303,L]
