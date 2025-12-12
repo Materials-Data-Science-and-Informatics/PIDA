@@ -1,7 +1,7 @@
 # Contact person name: Said Fathalla
 # Contact person email: s.fathalla@fz-juelich.de 
 # Artifact name: Helmholtz KG
-# Resource location: https://sparql.unhide.helmholtz-metadaten.de/
+# Resource location: https://qlever.dev.unhide.helmholtz-metadaten.de/hkg/
 
 Options +FollowSymLinks
 
@@ -10,6 +10,6 @@ Options -MultiViews
 
 RewriteEngine on
 
-# default
-#==============
-RewriteRule ^$ https://sparql.unhide.helmholtz-metadaten.de/ [R=303,L]
+# redirect hashcodes of entities to the Qlever endpoint with SPARQL query
+RewriteRule ^(.*)$ "https://qlever.dev.unhide.helmholtz-metadaten.de/hkg/?query=PREFIX+schema\%3A+\%3Chttps\%3A\%2F\%2Fschema.org\%2F\%3E\%0ASELECT+\%3Fs+\%3Fp+\%3Fo+WHERE+\%7B\%0A++VALUES+\%3Fs+\%7B\%3C\/$1\%3E\%7D+\%2E\%0A++\%3Fs+\%3Fp+\%3Fo+\%2E\%0A\%7D&exec=true" [R=303,L,NE]
+
