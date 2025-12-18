@@ -10,5 +10,12 @@ Options -MultiViews
 
 RewriteEngine on
 
-# redirect hashcodes of entities to the Qlever endpoint with SPARQL query
-RewriteRule ^(.*)$ "https://qlever.dev.unhide.helmholtz-metadaten.de/hkg/?query=PREFIX+schema\%3A+\%3Chttps\%3A\%2F\%2Fschema.org\%2F\%3E\%0ASELECT+\%3Fs+\%3Fp+\%3Fo+WHERE+\%7B\%0A++VALUES+\%3Fs+\%7B\%3C\http://purls.helmholtz-metadaten.de/helmholtzkg/$1\%3E\%7D+\%2E\%0A++\%3Fs+\%3Fp+\%3Fo+\%2E\%0A\%7D&exec=true" [R=303,L,NE]
+# redirect hashcodes of entities to the PROD Qlever endpoint with SPARQL query
+RewriteRule ^(.*)$ "https://qlever.unhide.helmholtz-metadaten.de/hkg/?query=PREFIX+schema\%3A+\%3Chttps\%3A\%2F\%2Fschema.org\%2F\%3E\%0ASELECT+\%3Fs+\%3Fp+\%3Fo+WHERE+\%7B\%0A++VALUES+\%3Fs+\%7B\%3C\http://purls.helmholtz-metadaten.de/helmholtzkg/$1\%3E\%7D+\%2E\%0A++\%3Fs+\%3Fp+\%3Fo+\%2E\%0A\%7D&exec=true" [R=303,L,NE]
+
+# redirect hashcodes of entities to the DEV Qlever endpoint with SPARQL query
+RewriteRule ^(.*)$ "https://qlever.dev.unhide.helmholtz-metadaten.de/hkg/?query=PREFIX+schema\%3A+\%3Chttps\%3A\%2F\%2Fschema.org\%2F\%3E\%0ASELECT+\%3Fs+\%3Fp+\%3Fo+WHERE+\%7B\%0A++VALUES+\%3Fs+\%7B\%3C\http://purls.helmholtz-metadaten.de/helmholtzkg/dev/$1\%3E\%7D+\%2E\%0A++\%3Fs+\%3Fp+\%3Fo+\%2E\%0A\%7D&exec=true" [R=303,L,NE]
+
+
+# redirect hashcodes of entities to the QA Qlever endpoint with SPARQL query
+RewriteRule ^(.*)$ "https://qlever.qa.unhide.helmholtz-metadaten.de/hkg/?query=PREFIX+schema\%3A+\%3Chttps\%3A\%2F\%2Fschema.org\%2F\%3E\%0ASELECT+\%3Fs+\%3Fp+\%3Fo+WHERE+\%7B\%0A++VALUES+\%3Fs+\%7B\%3C\http://purls.helmholtz-metadaten.de/helmholtzkg/qa/$1\%3E\%7D+\%2E\%0A++\%3Fs+\%3Fp+\%3Fo+\%2E\%0A\%7D&exec=true" [R=303,L,NE]
