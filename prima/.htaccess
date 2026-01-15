@@ -1,7 +1,7 @@
 # Contact person name: Ahmad Z. Ihsan
 # Contact person email:  a.ihsan@fz-juelich.de 
-# Artifacts: core, dal, dataset, experiment, complete
-# Artifacts Names: PRIMA-Core ontology, PRIMA-Data Analysis Lifecycle ontology, PRIMA-Dataset ontology, PRIMA-Experiment ontology, PRIMA-Complete ontology
+# Artifacts: core, dal, dataset, experiment, computational, complete
+# Artifacts Names: PRIMA-Core module, PRIMA-Data Analysis Lifecycle module, PRIMA-Dataset module, PRIMA-Experiment module, PRIMA-Computational module, PRIMA-Complete module
 # Resource location: https://github.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology
 
 Options +FollowSymLinks
@@ -9,168 +9,203 @@ Options +FollowSymLinks
 # Turn off MultiViews
 Options -MultiViews
 
-# Directive to ensure *.rdf files served as appropriate content type
+# Directive to ensure files served as appropriate content type
 AddType application/rdf+xml .owl
 AddType application/rdf+xml .rdf
 AddType text/turtle .ttl
 AddType application/ld+json .jsonld
- 
+
 RewriteEngine on
 
-# PRIMA-Core ontology
-#==============
+# =========================================================
+# PRIMA-Core module (v3)
+# =========================================================
+
 # HTML
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^core$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/core/ver_2_0/index.html [R=303,L]
+RewriteRule ^core$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/core/ver_3_0/index.html [R=303,L]
 
-# Rewrite rule to serve RDF/XML content
+# RDF/XML
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
 RewriteRule ^core$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/core/ver_3_0/prima-core.owl [R=303,L]
 
-# Rewrite rule to serve TTL content 
+# TTL
 RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/turtle 
-RewriteRule ^core$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/core/ver_3_0/prima-core.ttl  [R=303,L]
+RewriteCond %{HTTP_ACCEPT} \*/turtle
+RewriteRule ^core$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/core/ver_3_0/prima-core.ttl [R=303,L]
 
 # JSON-LD
 RewriteCond %{HTTP_ACCEPT} ^.*application/ld\+json.*
-RewriteRule ^core$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/core/ver_3_0/prima-core.jsonld  [R=303,L]
+RewriteRule ^core$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/core/ver_3_0/prima-core.jsonld [R=303,L]
 
-# Default response
-# Rewrite rule to serve the RDF/XML content from the PRIMA-Core IRI by default
+# Default response (RDF/XML)
 RewriteRule ^core$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/core/ver_3_0/prima-core.owl [R=303,L]
 
-# PRIMA-Data Analysis Lifecycle ontology
-#==============
+# =========================================================
+# PRIMA-Data Analysis Lifecycle module (v3)
+# =========================================================
+
 # HTML
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^dal$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/data-analysis-lifecycle/ver_2_0/index.html [R=303,L]
+RewriteRule ^dal$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/data-analysis-lifecycle/ver_3_0/index.html [R=303,L]
 
-# Rewrite rule to serve RDF/XML content
+# RDF/XML
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^dal$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/data-analysis-lifecycle/ver_2_0/prima-data-analysis-lifecycle.owl [R=303,L]
+RewriteRule ^dal$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/data-analysis-lifecycle/ver_3_0/prima-data-analysis-lifecycle.owl [R=303,L]
 
-# Rewrite rule to serve TTL content 
+# TTL
 RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/turtle 
-RewriteRule ^dal$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/data-analysis-lifecycle/ver_2_0/prima-data-analysis-lifecycle.ttl  [R=303,L]
+RewriteCond %{HTTP_ACCEPT} \*/turtle
+RewriteRule ^dal$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/data-analysis-lifecycle/ver_3_0/prima-data-analysis-lifecycle.ttl [R=303,L]
 
 # JSON-LD
 RewriteCond %{HTTP_ACCEPT} ^.*application/ld\+json.*
-RewriteRule ^dal$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/dataset/ver_2_0/prima-dataset.jsonld  [R=303,L]
+RewriteRule ^dal$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/data-analysis-lifecycle/ver_3_0/prima-data-analysis-lifecycle.jsonld [R=303,L]
 
-# Default response
-# Rewrite rule to serve the RDF/XML content from the PRIMA-DAL IRI by default
-RewriteRule ^dal$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/data-analysis-lifecycle/ver_2_0/prima-data-analysis-lifecycle.owl [R=303,L]
+# Default response (RDF/XML)
+RewriteRule ^dal$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/data-analysis-lifecycle/ver_3_0/prima-data-analysis-lifecycle.owl [R=303,L]
 
-# PRIMA-Dataset ontology
-#==============
+# =========================================================
+# PRIMA-Dataset module (v3)
+# =========================================================
+
 # HTML
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^dataset$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/dataset/ver_2_0/index.html [R=303,L]
+RewriteRule ^dataset$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/dataset/ver_3_0/index.html [R=303,L]
 
-# Rewrite rule to serve RDF/XML content
+# RDF/XML
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^dataset$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/dataset/ver_2_0/prima-dataset.owl [R=303,L]
+RewriteRule ^dataset$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/dataset/ver_3_0/prima-dataset.owl [R=303,L]
 
-# Rewrite rule to serve TTL content 
+# TTL
 RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/turtle 
-RewriteRule ^dataset$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/dataset/ver_2_0/prima-dataset.ttl  [R=303,L]
+RewriteCond %{HTTP_ACCEPT} \*/turtle
+RewriteRule ^dataset$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/dataset/ver_3_0/prima-dataset.ttl [R=303,L]
 
 # JSON-LD
 RewriteCond %{HTTP_ACCEPT} ^.*application/ld\+json.*
-RewriteRule ^dataset$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/dataset/ver_2_0/prima-dataset.jsonld  [R=303,L]
+RewriteRule ^dataset$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/dataset/ver_3_0/prima-dataset.jsonld [R=303,L]
 
-# Default response
-# Rewrite rule to serve the RDF/XML content from the PRIMA-Dataset IRI by default
-RewriteRule ^dataset$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/dataset/ver_2_0/prima-dataset.owl [R=303,L]
+# Default response (RDF/XML)
+RewriteRule ^dataset$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/dataset/ver_3_0/prima-dataset.owl [R=303,L]
 
-# PRIMA-Experiment ontology
-#==============
+# =========================================================
+# PRIMA-Experiment module (v3)
+# =========================================================
+
 # HTML
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^experiment$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/experiment/ver_2_0/index.html [R=303,L]
+RewriteRule ^experiment$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/experiment/ver_3_0/index.html [R=303,L]
 
-# Rewrite rule to serve RDF/XML content
+# RDF/XML
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^experiment$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/experiment/ver_2_0/prima-experiment.owl [R=303,L]
+RewriteRule ^experiment$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/experiment/ver_3_0/prima-experiment.owl [R=303,L]
 
-# Rewrite rule to serve TTL content 
+# TTL
 RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/turtle 
-RewriteRule ^experiment$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/experiment/ver_2_0/prima-experiment.ttl [R=303,L]
+RewriteCond %{HTTP_ACCEPT} \*/turtle
+RewriteRule ^experiment$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/experiment/ver_3_0/prima-experiment.ttl [R=303,L]
 
 # JSON-LD
 RewriteCond %{HTTP_ACCEPT} ^.*application/ld\+json.*
-RewriteRule ^experiment$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/experiment/ver_2_0/prima-experiment.jsonld  [R=303,L]
+RewriteRule ^experiment$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/experiment/ver_3_0/prima-experiment.jsonld [R=303,L]
 
-# Default response
-# Rewrite rule to serve the RDF/XML content from the PRIMA-Experiment IRI by default
-RewriteRule ^experiment$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/experiment/ver_2_0/prima-experiment.owl [R=303,L]
+# Default response (RDF/XML)
+RewriteRule ^experiment$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/experiment/ver_3_0/prima-experiment.owl [R=303,L]
 
-# PRIMA-Complete
-#==============
+# =========================================================
+# PRIMA-Computational module (v3)
+# =========================================================
+
 # HTML
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^complete$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/complete/ver_2_0/index.html [R=303,L]
+RewriteRule ^computational$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/computational/ver_3_0/index.html [R=303,L]
 
-# Rewrite rule to serve RDF/XML content
+# RDF/XML
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
 RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/complete/ver_2_0/prima-complete.owl [R=303,L]
+RewriteRule ^computational$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/computational/ver_3_0/prima-computational.owl [R=303,L]
 
-# Rewrite rule to serve TTL content 
+# TTL
 RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
 RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/turtle 
-RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/complete/ver_2_0/prima-complete.ttl [R=303,L]
+RewriteCond %{HTTP_ACCEPT} \*/turtle
+RewriteRule ^computational$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/computational/ver_3_0/prima-computational.ttl [R=303,L]
 
 # JSON-LD
 RewriteCond %{HTTP_ACCEPT} ^.*application/ld\+json.*
-RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/complete/ver_2_0/prima-complete.jsonld  [R=303,L]
+RewriteRule ^computational$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/computational/ver_3_0/prima-computational.jsonld [R=303,L]
 
-# Default response
-# Rewrite rule to serve the RDF/XML content from the PRIMA-Complete IRI by default
-RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/complete/ver_2_0/prima-complete.owl [R=303,L]
+# Default response (RDF/XML)
+RewriteRule ^computational$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/computational/ver_3_0/prima-computational.owl [R=303,L]
 
+# =========================================================
+# PRIMA-Complete module (v3)
+# =========================================================
+
+# HTML
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^complete$ https://materials-data-science-and-informatics.github.io/MDMC-NEP-top-level-ontology/PRIMA/complete/ver_3_0/index.html [R=303,L]
+
+# RDF/XML
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
+RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/complete/ver_3_0/prima-complete.owl [R=303,L]
+
+# TTL
+RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
+RewriteCond %{HTTP_ACCEPT} text/\* [OR]
+RewriteCond %{HTTP_ACCEPT} \*/turtle
+RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/complete/ver_3_0/prima-complete.ttl [R=303,L]
+
+# JSON-LD
+RewriteCond %{HTTP_ACCEPT} ^.*application/ld\+json.*
+RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/complete/ver_3_0/prima-complete.jsonld [R=303,L]
+
+# Default response (RDF/XML)
+RewriteRule ^complete$ https://raw.githubusercontent.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/master/PRIMA/complete/ver_3_0/prima-complete.owl [R=303,L]
+
+# =========================================================
 # PRIMA Use Cases
-#================
+# =========================================================
+
 # Use case 1
 RewriteRule ^use-case-1$ https://github.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/tree/master/use-cases/STRAS-mapping [R=303,L]
 
-# Use case 2 
+# Use case 2
 RewriteRule ^use-case-2$ https://github.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/tree/master/use-cases/Herbie-ELN [R=303,L]
 
-# Development 
-# ===========
+# Development
 RewriteRule ^dev$ https://github.com/Materials-Data-Science-and-Informatics/MDMC-NEP-top-level-ontology/ [R=303,L]
-
