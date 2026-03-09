@@ -17,15 +17,21 @@ RewriteRule ^$ https://cdos.readthedocs.io/   [R=303,L]
 
 # CDCO
 
-# cdco v1.0.0 docs
-RewriteRule ^cdco/v1.0.0$  https://ocdo.github.io/cdco/  [R=303,L]
-RewriteRule ^cdco/v1.0.0/$  https://ocdo.github.io/cdco/  [R=303,L]
-RewriteRule ^cdco/v1.0.0/$ https://ocdo.github.io/cdco/#$1  [R=303,NE,L]
+# cdco v0.2.0 docs
+RewriteRule ^cdco/v0.2.0$  https://ocdo.github.io/cdco/  [R=303,L]
+RewriteRule ^cdco/v0.2.0/$  https://ocdo.github.io/cdco/  [R=303,L]
+RewriteRule ^cdco/v0.2.0/$ https://ocdo.github.io/cdco/#$1  [R=303,NE,L]
 
-# cdco v1.0.0 owl
+# cdco v0.2.0 owl
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
-RewriteRule ^cdco/v1.0.0$ https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl [R=303,L]
-RewriteRule ^cdco/v1.0.0/$ https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl [R=303,L]
+RewriteRule ^cdco/v0.2.0$ https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl [R=303,L]
+RewriteRule ^cdco/v0.2.0/$ https://raw.githubusercontent.com/OCDO/cdco/main/cdco.owl [R=303,L]
+
+# previous versions owl
+# cdco v0.0.1 owl
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^cdco/v0.0.1$ https://raw.githubusercontent.com/OCDO/cdco/refs/heads/main/previous-versions/cdco_v001.owl [R=303,L]
+RewriteRule ^cdco/v0.0.1/$ https://raw.githubusercontent.com/OCDO/cdco/refs/heads/main/previous-versions/cdco_v001.owl [R=303,L]
 
 # Rewrite rule to serve HTML content - terms
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
@@ -98,15 +104,26 @@ RewriteRule ^ldo$ https://raw.githubusercontent.com/OCDO/ldo/main/ldo.owl [R=303
 
 # PLDO
 
-# pldo v1.0.0 docs
-RewriteRule ^pldo/v1.0.0$  https://ocdo.github.io/pldo/  [R=303,L]
-RewriteRule ^pldo/v1.0.0/$  https://ocdo.github.io/pldo/  [R=303,L]
-RewriteRule ^pldo/v1.0.0/$ https://ocdo.github.io/pldo/#$1  [R=303,NE,L]
+# pldo v0.3.0 docs
+RewriteRule ^pldo/v0.3.0$  https://ocdo.github.io/pldo/  [R=303,L]
+RewriteRule ^pldo/v0.3.0/$  https://ocdo.github.io/pldo/  [R=303,L]
+RewriteRule ^pldo/v0.3.0/$ https://ocdo.github.io/pldo/#$1  [R=303,NE,L]
 
-# pldo v1.0.0 owl
+# pldo v0.3.0 owl
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
-RewriteRule ^pldo/v1.0.0$ https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl [R=303,L]
-RewriteRule ^pldo/v1.0.0/$ https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl [R=303,L]
+RewriteRule ^pldo/v0.3.0$ https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl [R=303,L]
+RewriteRule ^pldo/v0.3.0/$ https://raw.githubusercontent.com/OCDO/pldo/main/pldo.owl [R=303,L]
+
+# previous versions owl
+# pldo v0.2.0 owl
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^pldo/v0.2.0$ https://raw.githubusercontent.com/OCDO/pldo/refs/heads/main/previous-versions/pldo_v020.owl [R=303,L]
+RewriteRule ^pldo/v0.2.0/$ https://raw.githubusercontent.com/OCDO/pldo/refs/heads/main/previous-versions/pldo_v020.owl [R=303,L]
+
+# pldo v0.0.1 owl
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^pldo/v0.0.1$ https://raw.githubusercontent.com/OCDO/pldo/refs/heads/main/previous-versions/pldo_v001.owl [R=303,L]
+RewriteRule ^pldo/v0.0.1/$ https://raw.githubusercontent.com/OCDO/pldo/refs/heads/main/previous-versions/pldo_v001.owl [R=303,L]
 
 # Rewrite rule to serve HTML content - terms
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
