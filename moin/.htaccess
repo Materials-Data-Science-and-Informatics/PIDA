@@ -1,0 +1,77 @@
+# Contact person name: Linda Baldewein
+# Contact person email: linda.baldewein@hereon.de
+# Artifact name: Maintenance Ontology and audit log Integration Ontology
+# Resource location: https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/ontology/moin/1.0.0.ttl
+# http://purls.helmholtz-metadaten.de/moin
+Options +FollowSymLinks -Indexes
+AddType text/turtle .ttl
+RewriteEngine on
+
+# ==============================================================================
+# 1. CONFIGURATION
+# ==============================================================================
+# Note: SetEnvIf runs early and variables are accessible via %{ENV:VAR}
+SetEnvIf Request_URI "^" REPO=https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public
+SetEnvIf Request_URI "^" SHAPE_PATH=main/SHACL_shapes/shapes_moin
+SetEnvIf Request_URI "^" ONTOLOGY_FILE=main/ontology/moin/1.0.0.ttl
+
+# ==============================================================================
+# 2. GLOBAL VIEW STATE
+# ==============================================================================
+RewriteRule ^ - [E=GL_DIR_VIEW:tree,E=GL_FILE_VIEW:blob,E=GL_SUFFIX:]
+
+RewriteCond %{HTTP_ACCEPT} (text|application)/turtle [OR]
+RewriteCond %{HTTP_ACCEPT} application/x-turtle
+RewriteRule ^ - [E=GL_DIR_VIEW:raw,E=GL_FILE_VIEW:raw,E=GL_SUFFIX:/1.0.0.ttl]
+
+# ==============================================================================
+# 3. ROOT REDIRECTS
+# ==============================================================================
+RewriteCond %{ENV:GL_DIR_VIEW} raw
+RewriteRule ^$ %{ENV:REPO}/-/raw/%{ENV:ONTOLOGY_FILE} [R=303,L]
+RewriteRule ^$ %{ENV:REPO}/ [R=303,L]
+
+# ==============================================================================
+# 4. SHAPE LIST
+#    Registers folders to use the Main Logic below.
+# ==============================================================================
+
+#START_SHAPES
+RewriteRule ^shapes/cleaning(/|$) - [E=SHAPE_NAME:cleaning]
+RewriteRule ^shapes/featureOfInterest(/|$) - [E=SHAPE_NAME:featureOfInterest]
+RewriteRule ^shapes/installation(/|$) - [E=SHAPE_NAME:installation]
+RewriteRule ^shapes/material(/|$) - [E=SHAPE_NAME:material]
+RewriteRule ^shapes/memo(/|$) - [E=SHAPE_NAME:memo]
+RewriteRule ^shapes/organization(/|$) - [E=SHAPE_NAME:organization]
+RewriteRule ^shapes/person(/|$) - [E=SHAPE_NAME:person]
+RewriteRule ^shapes/plan(/|$) - [E=SHAPE_NAME:plan]
+RewriteRule ^shapes/platform(/|$) - [E=SHAPE_NAME:platform]
+RewriteRule ^shapes/removal(/|$) - [E=SHAPE_NAME:removal]
+RewriteRule ^shapes/returned(/|$) - [E=SHAPE_NAME:returned]
+RewriteRule ^shapes/sampler(/|$) - [E=SHAPE_NAME:sampler]
+RewriteRule ^shapes/sensor(/|$) - [E=SHAPE_NAME:sensor]
+RewriteRule ^shapes/shared(/|$) - [E=SHAPE_NAME:shared]
+#END_SHAPES
+
+# ==============================================================================
+# 5. MAIN LOGIC
+# ==============================================================================
+
+# A. Base Folder
+RewriteCond %{ENV:SHAPE_NAME} .
+RewriteRule ^shapes/[^/]+/?$ %{ENV:REPO}/-/%{ENV:GL_DIR_VIEW}/%{ENV:SHAPE_PATH}/%{ENV:SHAPE_NAME}%{ENV:GL_SUFFIX} [R=303,L]
+
+# B. Specific Version
+RewriteCond %{ENV:SHAPE_NAME} .
+RewriteRule ^shapes/[^/]+/1\.0\.0/?$ %{ENV:REPO}/-/%{ENV:GL_FILE_VIEW}/%{ENV:SHAPE_PATH}/%{ENV:SHAPE_NAME}/1.0.0.ttl [R=303,L]
+
+# C. Deep Links (Respects content negotiation via GL_FILE_VIEW)
+RewriteCond %{ENV:SHAPE_NAME} .
+RewriteRule ^shapes/[^/]+/(.*)$ %{ENV:REPO}/-/%{ENV:GL_FILE_VIEW}/%{ENV:SHAPE_PATH}/%{ENV:SHAPE_NAME}/$1 [R=303,L]
+
+# ==============================================================================
+# 6. FALLBACK
+# ==============================================================================
+RewriteCond %{ENV:GL_DIR_VIEW} raw
+RewriteRule .* %{ENV:REPO}/-/raw/%{ENV:ONTOLOGY_FILE} [R=303,L]
+RewriteRule .* %{ENV:REPO}/ [R=303,L]
