@@ -13,33 +13,31 @@ AddType application/rdf+xml .owl
  
 RewriteEngine on
 
-#Rewrite rules for mwo vocabulary 
-RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
-RewriteCond %{HTTP_ACCEPT} text/html [OR]
-RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
-RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+# mwo v2.0.0 (latest version)
 
-# mwo v1.0.1
-RewriteRule ^1.0.1$  https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/releases/v1.0.1/docs/  [R=303,L]
-
-RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
-RewriteRule ^1.0.1$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/releases/v1.0.1/mwo.owl [R=303,L]
-
-
-# mwo v2.0.0
 # Rewrite rule to serve RDF/XML content from the vocabulary URI if requested
 RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
 RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
 RewriteRule ^$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/mwo.owl [R=303,L]
 
-# Rewrite rule for latest version.
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
 RewriteRule ^((.+)|/?)$ https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/docs/index.html#$2  [R=303,NE,L]
-#RewriteRule ^$ https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/doc/  [R=303,NE,L]
 
+# mwo v1.0.1
+
+#Rewrite rules for mwo vocabulary 
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^1.0.1$  https://nfdi-matwerk.pages.rwth-aachen.de/ta-oms/mwo/releases/v1.0.1/docs/  [R=303,L]
+
+RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
+RewriteRule ^1.0.1$ https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/releases/v1.0.1/mwo.owl [R=303,L]
 
 # Default response
 # Rewrite rule to serve the RDF/XML content from the mwo IRI by default
