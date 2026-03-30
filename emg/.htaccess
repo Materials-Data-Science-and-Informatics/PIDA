@@ -11,7 +11,26 @@ RewriteEngine on
 # Directive to ensure *.rdf files served as appropriate content type
 AddType application/rdf+xml .owl
 
-#Rewrite rules for emg vocabulary 
+# HTML ontology docs
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^(EMG_[0-9]+)$ https://owl.emglossary.helmholtz-metadaten.de/index.html#$1  [R=303,NE,L]
+
+# Rewrite rule for /emg to serve HTML content
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^$ https://owl.emglossary.helmholtz-metadaten.de  [R=303,NE,L]
+
+# Rewrite rule for /emg to serve RDF/XML content
+RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
+RewriteRule ^$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/emg.owl [R=303,NE,L]
+
+# Rewrite rules for emg  v3.0 vocabulary docs
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
 RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
@@ -19,7 +38,6 @@ RewriteCond %{HTTP_ACCEPT} text/\* [OR]
 RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
 
-# emg v3.0.0 docs
 RewriteRule ^v3.0.0$  https://owl.emglossary.helmholtz-metadaten.de/  [R=303,L]
 RewriteRule ^v3.0.0/$  https://owl.emglossary.helmholtz-metadaten.de/  [R=303,L]
 RewriteRule ^v3.0.0/(EMG_[0-9]+)$ https://owl.emglossary.helmholtz-metadaten.de/index.html#$1  [R=303,NE,L]
@@ -37,36 +55,9 @@ RewriteRule ^v2.0.0$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_ow
 RewriteRule ^v2.0.0/$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/previous-versions/v2.0.0/emg.owl [R=303,L]
 RewriteRule ^v2.0.0/(EMG_[0-9]+)$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/previous-versions/v2.0.0/emg.owl  [R=303,NE,L]
 
-
 ## v1.0.0
 RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
 RewriteRule ^v1.0.0$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/previous-versions/v1.0.0/emg.owl [R=303,L]
 RewriteRule ^v1.0.0/$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/previous-versions/v1.0.0/emg.owl [R=303,L]
 RewriteRule ^v1.0.0/(EMG_[0-9]+)$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/previous-versions/v1.0.0/emg.owl  [R=303,NE,L]
-
-# HTML ontology docs
-RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
-RewriteCond %{HTTP_ACCEPT} text/html [OR]
-RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
-RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
-RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^(EMG_[0-9]+)$ https://owl.emglossary.helmholtz-metadaten.de/index.html#$1  [R=303,NE,L]
-
-# Rewrite rule for /emg to serve HTML content
-RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
-RewriteCond %{HTTP_ACCEPT} text/html [OR]
-RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
-RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
-RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^$ https://owl.emglossary.helmholtz-metadaten.de  [R=303,NE,L]
-
-# Rewrite rule for /emg to serve RDF/XML content
-RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
-RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
-RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^$ https://codebase.helmholtz.cloud/em_glossary/em_glossary_owl/-/raw/main/emg.owl [R=303,NE,L]
-
-
 
