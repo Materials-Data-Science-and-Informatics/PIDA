@@ -7,71 +7,480 @@ Options +FollowSymLinks -Indexes
 AddType text/turtle .ttl
 RewriteEngine on
 
-# ==============================================================================
-# 1. CONFIGURATION
-# ==============================================================================
-# Note: SetEnvIf runs early and variables are accessible via %{ENV:VAR}
-SetEnvIf Request_URI "^" REPO=https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public
-SetEnvIf Request_URI "^" SHAPE_PATH=main/SHACL_shapes/shapes_moin
-SetEnvIf Request_URI "^" ONTOLOGY_FILE=main/ontology/moin/1.0.0.ttl
+# =========================================================
+# ROOT REDIRECTS
+# =========================================================
+
+# HTML / UI View (Root)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/ [R=303,L]
+
+# Turtle (RDF) View (Root)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/ontology/moin/1.0.0.ttl [R=303,L]
+
+# Default response (Root)
+RewriteRule ^$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/ [R=303,L]
 
 # ==============================================================================
-# 2. GLOBAL VIEW STATE
-# ==============================================================================
-RewriteRule ^ - [E=GL_DIR_VIEW:tree,E=GL_FILE_VIEW:blob,E=GL_SUFFIX:]
-
-RewriteCond %{HTTP_ACCEPT} (text|application)/turtle [OR]
-RewriteCond %{HTTP_ACCEPT} application/x-turtle
-RewriteRule ^ - [E=GL_DIR_VIEW:raw,E=GL_FILE_VIEW:raw,E=GL_SUFFIX:/1.0.0.ttl]
-
-# ==============================================================================
-# 3. ROOT REDIRECTS
-# ==============================================================================
-RewriteCond %{ENV:GL_DIR_VIEW} raw
-RewriteRule ^$ %{ENV:REPO}/-/raw/%{ENV:ONTOLOGY_FILE} [R=303,L]
-RewriteRule ^$ %{ENV:REPO}/ [R=303,L]
-
-# ==============================================================================
-# 4. SHAPE LIST
-#    Registers folders to use the Main Logic below.
+# SHAPE LIST
 # ==============================================================================
 
 #START_SHAPES
-RewriteRule ^shapes/cleaning(/|$) - [E=SHAPE_NAME:cleaning]
-RewriteRule ^shapes/featureOfInterest(/|$) - [E=SHAPE_NAME:featureOfInterest]
-RewriteRule ^shapes/installation(/|$) - [E=SHAPE_NAME:installation]
-RewriteRule ^shapes/material(/|$) - [E=SHAPE_NAME:material]
-RewriteRule ^shapes/memo(/|$) - [E=SHAPE_NAME:memo]
-RewriteRule ^shapes/organization(/|$) - [E=SHAPE_NAME:organization]
-RewriteRule ^shapes/person(/|$) - [E=SHAPE_NAME:person]
-RewriteRule ^shapes/plan(/|$) - [E=SHAPE_NAME:plan]
-RewriteRule ^shapes/platform(/|$) - [E=SHAPE_NAME:platform]
-RewriteRule ^shapes/removal(/|$) - [E=SHAPE_NAME:removal]
-RewriteRule ^shapes/returned(/|$) - [E=SHAPE_NAME:returned]
-RewriteRule ^shapes/sampler(/|$) - [E=SHAPE_NAME:sampler]
-RewriteRule ^shapes/sensor(/|$) - [E=SHAPE_NAME:sensor]
-RewriteRule ^shapes/shared(/|$) - [E=SHAPE_NAME:shared]
+
+#SHAPE[cleaning]_START
+# =========================================================
+# cleaning Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/cleaning/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/cleaning [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/cleaning/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/cleaning/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/cleaning/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/cleaning/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/cleaning/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/cleaning/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/cleaning/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/cleaning [R=303,L]
+#SHAPE[cleaning]_END
+
+#SHAPE[featureOfInterest]_START
+# =========================================================
+# featureOfInterest Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/featureOfInterest/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/featureOfInterest [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/featureOfInterest/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/featureOfInterest/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/featureOfInterest/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/featureOfInterest/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/featureOfInterest/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/featureOfInterest/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/featureOfInterest/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/featureOfInterest [R=303,L]
+#SHAPE[featureOfInterest]_END
+
+#SHAPE[installation]_START
+# =========================================================
+# installation Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/installation/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/installation [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/installation/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/installation/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/installation/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/installation/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/installation/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/installation/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/installation/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/installation [R=303,L]
+#SHAPE[installation]_END
+
+#SHAPE[material]_START
+# =========================================================
+# material Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/material/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/material [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/material/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/material/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/material/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/material/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/material/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/material/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/material/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/material [R=303,L]
+#SHAPE[material]_END
+
+#SHAPE[memo]_START
+# =========================================================
+# memo Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/memo/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/memo [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/memo/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/memo/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/memo/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/memo/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/memo/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/memo/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/memo/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/memo [R=303,L]
+#SHAPE[memo]_END
+
+#SHAPE[organization]_START
+# =========================================================
+# organization Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/organization/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/organization [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/organization/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/organization/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/organization/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/organization/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/organization/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/organization/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/organization/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/organization [R=303,L]
+#SHAPE[organization]_END
+
+#SHAPE[person]_START
+# =========================================================
+# person Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/person/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/person [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/person/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/person/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/person/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/person/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/person/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/person/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/person/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/person [R=303,L]
+#SHAPE[person]_END
+
+#SHAPE[plan]_START
+# =========================================================
+# plan Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/plan/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/plan [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/plan/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/plan/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/plan/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/plan/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/plan/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/plan/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/plan/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/plan [R=303,L]
+#SHAPE[plan]_END
+
+#SHAPE[platform]_START
+# =========================================================
+# platform Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/platform/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/platform [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/platform/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/platform/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/platform/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/platform/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/platform/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/platform/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/platform/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/platform [R=303,L]
+#SHAPE[platform]_END
+
+#SHAPE[removal]_START
+# =========================================================
+# removal Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/removal/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/removal [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/removal/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/removal/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/removal/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/removal/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/removal/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/removal/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/removal/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/removal [R=303,L]
+#SHAPE[removal]_END
+
+#SHAPE[returned]_START
+# =========================================================
+# returned Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/returned/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/returned [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/returned/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/returned/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/returned/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/returned/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/returned/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/returned/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/returned/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/returned [R=303,L]
+#SHAPE[returned]_END
+
+#SHAPE[sampler]_START
+# =========================================================
+# sampler Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/sampler/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/sampler [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/sampler/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/sampler/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/sampler/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/sampler/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/sampler/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/sampler/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/sampler/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/sampler [R=303,L]
+#SHAPE[sampler]_END
+
+
+#SHAPE[sensor]_START
+# =========================================================
+# sensor Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/sensor/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/sensor [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/sensor/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/sensor/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/sensor/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/sensor/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/sensor/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/sensor/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/sensor/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/sensor [R=303,L]
+#SHAPE[sensor]_END
+
+#SHAPE[shared]_START
+# =========================================================
+# shared Shape
+# =========================================================
+
+# HTML / UI View
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/shared/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/shared [R=303,L]
+
+# HTML / UI View (Versioned)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^shapes/shared/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/blob/main/SHACL_shapes/shapes_moin/shared/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/shared/1\.0\.0/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/shared/1.0.0.ttl [R=303,L]
+
+# Turtle (RDF) View (Base)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule ^shapes/shared/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/SHACL_shapes/shapes_moin/shared/1.0.0.ttl [R=303,L]
+
+# Default response
+RewriteRule ^shapes/shared/?$ https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/tree/main/SHACL_shapes/shapes_moin/shared [R=303,L]
+#SHAPE[shared]_END
 #END_SHAPES
 
-# ==============================================================================
-# 5. MAIN LOGIC
-# ==============================================================================
+# =========================================================
+# FALLBACK
+# =========================================================
 
-# A. Base Folder
-RewriteCond %{ENV:SHAPE_NAME} .
-RewriteRule ^shapes/[^/]+/?$ %{ENV:REPO}/-/%{ENV:GL_DIR_VIEW}/%{ENV:SHAPE_PATH}/%{ENV:SHAPE_NAME}%{ENV:GL_SUFFIX} [R=303,L]
+# HTML / UI View (Fallback)
+RewriteCond %{HTTP_ACCEPT} !text/turtle
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule .* https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/ [R=303,L]
 
-# B. Specific Version
-RewriteCond %{ENV:SHAPE_NAME} .
-RewriteRule ^shapes/[^/]+/1\.0\.0/?$ %{ENV:REPO}/-/%{ENV:GL_FILE_VIEW}/%{ENV:SHAPE_PATH}/%{ENV:SHAPE_NAME}/1.0.0.ttl [R=303,L]
+# Turtle (RDF) View (Fallback)
+RewriteCond %{HTTP_ACCEPT} text/turtle
+RewriteRule .* https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/-/raw/main/ontology/moin/1.0.0.ttl [R=303,L]
 
-# C. Deep Links (Respects content negotiation via GL_FILE_VIEW)
-RewriteCond %{ENV:SHAPE_NAME} .
-RewriteRule ^shapes/[^/]+/(.*)$ %{ENV:REPO}/-/%{ENV:GL_FILE_VIEW}/%{ENV:SHAPE_PATH}/%{ENV:SHAPE_NAME}/$1 [R=303,L]
-
-# ==============================================================================
-# 6. FALLBACK
-# ==============================================================================
-RewriteCond %{ENV:GL_DIR_VIEW} raw
-RewriteRule .* %{ENV:REPO}/-/raw/%{ENV:ONTOLOGY_FILE} [R=303,L]
-RewriteRule .* %{ENV:REPO}/ [R=303,L]
+# Default response (Fallback)
+RewriteRule .* https://codebase.helmholtz.cloud/moin4herbie/moin4herbie-public/ [R=303,L]
