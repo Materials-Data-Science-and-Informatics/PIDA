@@ -17,4 +17,4 @@ jobs:
         run: |
           curl -X POST "$GITLAB_TRIGGER_URL_DEV" \
             -F token="$GITLAB_TOKEN" \
-            -F ref=develop
+            -F ref=main
