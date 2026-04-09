@@ -15,6 +15,9 @@ AddType text/turtle .ttl
 
 RewriteEngine on
 
+#default response owl
+RewriteRule ^$ https://raw.githubusercontent.com/saidfathalla/SEOontology/master/SEO.owl [R=303,NE,L]
+
 
 #Rewrite rules for semsur vocabulary 
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
@@ -32,7 +35,4 @@ RewriteRule ^$ https://raw.githubusercontent.com/saidfathalla/SEOontology/master
 RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
 RewriteCond %{HTTP_ACCEPT} \*/turtle 
 RewriteRule ^$ https://raw.githubusercontent.com/saidfathalla/SEOontology/master/SEO.ttl  [R=303,L]
-
-#default response owl
-RewriteRule ^$ https://raw.githubusercontent.com/saidfathalla/SEOontology/master/SEO.owl [R=303,NE,L]
 
