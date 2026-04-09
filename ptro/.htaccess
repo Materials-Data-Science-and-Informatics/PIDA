@@ -12,11 +12,17 @@ RewriteEngine on
 AddType application/rdf+xml .owl
 
 
+# Rewrite rule to serve HTML ontology docs
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^(DKFZ[0-9]+)$ https://dkfz-e220.github.io/PTRO/doc/index-en.html#$1  [R=303,NE,L]
+
 # Rewrite rule to serve RDF/XML content
-RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
-RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
-RewriteCond %{HTTP_ACCEPT} ^.*text/xml.*
-RewriteRule ^$ https://raw.githubusercontent.com/DKFZ-E220/PTRO/main/PTRO.owl [R=303,NE,L]
+RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
+RewriteRule ^$ https://raw.githubusercontent.com/DKFZ-E220/PTRO/refs/heads/main/PTRO.owl [R=303,NE,L]
 
 # Default response
-RewriteRule ^$ https://raw.githubusercontent.com/DKFZ-E220/PTRO/main/PTRO.owl [R=303,NE,L]
+RewriteRule ^$ https://raw.githubusercontent.com/DKFZ-E220/PTRO/refs/heads/main/PTRO.owl [R=303,NE,L]
