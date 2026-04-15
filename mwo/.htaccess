@@ -2,7 +2,7 @@
 # Contact person email: s.fathalla@fz-juelich.de 
 # Artifact name: mwo
 # Artefact Name: The NFDI MatWerk ontology
-# Resource location: https://git.rwth-aachen.de/nfdi-matwerk/ta-oms/mwo/-/raw/main/mwo.owl
+# Resource location: https://ise-fizkarlsruhe.github.io/mwo/ontology.owl 
 
 Options +FollowSymLinks
 Options -MultiViews
@@ -11,7 +11,6 @@ Options -MultiViews
 AddType application/rdf+xml .owl
  
 RewriteEngine on
-
 
 # Rewrite rule to serve HTML ontology docs
 RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
@@ -27,11 +26,38 @@ RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
 RewriteRule ^/?$ https://ise-fizkarlsruhe.github.io/mwo/  [R=303,NE,L]
 
-
 # Rewrite rule to serve RDF/XML content
 RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
 RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
 RewriteRule ^$ https://ise-fizkarlsruhe.github.io/mwo/ontology.owl [R=303,NE,L]
 
+#--------------------------------------------------------------------------------
+
+#  v3.0.0 owl
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^3.0.0$ https://ise-fizkarlsruhe.github.io/mwo/3.0.0/ontology.owl [R=303,L]
+
+# Rewrite rule to serve HTML ontology docs
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^3.0.0$ https://ise-fizkarlsruhe.github.io/mwo/3.0.0/  [R=303,NE,L]
+
+#------------------------------------------------------------------------------
+
+## v3.0.1
+
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^3.0.1$ https://ise-fizkarlsruhe.github.io/mwo/3.0.1/ontology.owl [R=303,L]
+
+# Rewrite rule to serve HTML ontology docs
+RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} text/html [OR]
+RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
+RewriteRule ^3.0.1$ https://ise-fizkarlsruhe.github.io/mwo/3.0.1/  [R=303,NE,L]
+
+#------------------------------------------------------------------------------
 # Default response
 RewriteRule ^$ https://ise-fizkarlsruhe.github.io/mwo/ontology.owl [R=303,NE,L]
