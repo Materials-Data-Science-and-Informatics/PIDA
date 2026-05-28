@@ -1,7 +1,7 @@
 # Contact person name: Lidia Valdes Llorente
 # Contact person email: lidia.valdes-llorente@unileoben.ac.at
-# Artefact: EEDO
-# Artefact Name:  Electrospinning Experiment Database Ontology
+# Artifacts: EEDO
+# Artifacts Names:  Electrospinning Experiment Database Ontology
 # Resource location: https://raw.githubusercontent.com/Lissvaldes/Electrospinning-data-management-/refs/heads/main/electrospinning_ontology.ttl
 
 Options +FollowSymLinks

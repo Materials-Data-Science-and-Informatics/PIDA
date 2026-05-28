@@ -1,7 +1,8 @@
 # Contact person name: Said Fathalla
 # Contact person email: sm_fathalla@yahoo.com
-# Artifact name: Scientific Events Ontology
-# Resource location: https://raw.githubusercontent.com/saidfathalla/SEOontology/master/SEO.owl
+# Artifacts: fdo-semantics  
+# Artifacts Names: FAIR Digital Objects Mappings
+# Resource location: https://codebase.helmholtz.cloud/hmc/hmc-public/hob/fdo-semantics/-/raw/main/mappings/Helmholtz-KIP-mappings.tsv
 
 Options +FollowSymLinks
 # Turn off MultiViews
@@ -9,7 +10,7 @@ Options -MultiViews
 
 # Directive to ensure *.rdf files served as appropriate content type,
 # if not present in main apache config
- 
+
 
 RewriteEngine on
 

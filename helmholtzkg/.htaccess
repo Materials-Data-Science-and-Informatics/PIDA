@@ -1,7 +1,8 @@
 # Contact person name: Said Fathalla
 # Contact person email: s.fathalla@fz-juelich.de 
-# Artifact name: Helmholtz KG
-# Resource location: https://qlever.dev.unhide.helmholtz-metadaten.de/hkg/
+# Artifact : hkg
+# Artifacts Names: Helmholtz KG
+# Resource location: https://qlever.unhide.helmholtz-metadaten.de/hkg/
 
 Options +FollowSymLinks
 
