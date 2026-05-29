@@ -3,9 +3,9 @@
 # Contact person email: rossella.aversa@kit.edu
 # Contact person name: Volker Hartmann (technical)
 # Contact person email: volker.hartmann@kit.edu
-# Artifacts: MatWerkAcronyms, sdv, rdvc, prima, *
-# Artifacts Names: MatWerk Acronyms Vocabulary, Sample Description Vocabulary, Reference Dataset Vocabulary, PRIMA Glossary of Terms, NEW_VOCABULARIES
-# Resource location: https://matwerk.datamanager.kit.edu/skosmos/MatWerkAcronyms-1/en/, https://matwerk.datamanager.kit.edu/skosmos/SampleDescriptionVocabulary-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/ReferenceDataSetVocCreep-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/prima/en/, https://matwerk.datamanager.kit.edu/skosmos/NEW_VOCABULARIES/en/
+# Artifacts: MatWerkAcronyms, sdv, rdvc, prima
+# Artifacts Names: MatWerk Acronyms Vocabulary, Sample Description Vocabulary, Reference Dataset Vocabulary, PRIMA Glossary of Terms
+# Resource location: https://matwerk.datamanager.kit.edu/skosmos/MatWerkAcronyms-1/en/, https://matwerk.datamanager.kit.edu/skosmos/SampleDescriptionVocabulary-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/ReferenceDataSetVocCreep-1/en/ , https://matwerk.datamanager.kit.edu/skosmos/prima/en/
 Options +FollowSymLinks
  
  
