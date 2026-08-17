@@ -1,0 +1,10 @@
+# Contact person name: Anahita Nafissi
+# Contact person email: anahita.nafissi@hereon.de
+# Artifact: mb repository
+# Artifact Name: The mb repository for the Institute of Metallic Biomaterials 
+# Resource location: https://codebase.helmholtz.cloud/hereon-mb/ontologies/mb
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^$ https://codebase.helmholtz.cloud/hereon-mb/ontologies/mb [R=302,L]
