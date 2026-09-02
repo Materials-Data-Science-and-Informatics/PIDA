@@ -1,0 +1,10 @@
+# Contact person name: Fabian Kirchner
+# Contact person email: fabian.kirchner@hereon.de
+# Artifact: mb repository
+# Artifact Name: The mb repository for the Institute of Metallic Biomaterials
+# Resource location: https://www.hereon.de/herbie
+
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^$ https://www.hereon.de/herbie [R=302,L]
