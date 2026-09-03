@@ -14,21 +14,15 @@ AddType text/turtle .ttl
 
 RewriteEngine on
 
-# HTML
-RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml)
+RewriteCond %{HTTP_ACCEPT} !application/rdf+xml.(text/html|application/xhtml+xml)
 RewriteCond %{HTTP_ACCEPT} text/html [OR]
-RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
-RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-RewriteRule ^(.*)$ https://connoss-project.github.io/vocab/ [R=303,L]
+RewriteCond %{HTTP_ACCEPT} application/xhtml+xml [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.
+RewriteRule ^(.*)$ https://connoss-project.github.io/vocab/$1 [R=303,L]
 
-# TTL
-# Rewrite rule to serve RDF/XML content
-RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*  [OR]
-RewriteCond %{HTTP_ACCEPT} ^.*application/xml.* [OR]
+RewriteCond %{HTTP_ACCEPT} ^.application/rdf+xml. [OR]
+RewriteCond %{HTTP_ACCEPT} ^.application/xml. [OR]
 RewriteCond %{HTTP_ACCEPT} text/turtle
-RewriteRule ^(.*)$ https://connoss-project.github.io/vocab/connoss_Software.ttl [R=303,NE,L]
+RewriteRule ^$ https://connoss-project.github.io/vocab/connoss_Software.ttl [R=303,NE,L]
 
-
-
-# Default Redirect
-RewriteRule ^$ https://connoss-project.github.io/vocab/  [R=303,L]
+RewriteRule ^(.*)$ https://connoss-project.github.io/vocab/$1 [R=303,L]
