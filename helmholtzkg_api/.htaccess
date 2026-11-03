@@ -2,7 +2,7 @@
 # Contact person email: v.hofmann@fz-juelich.de 
 # Artifacts: helmholtz_api
 # Artifacts names: Storage API of Helmholtz KG including Prod and Dev APIs
-# Resource location: https://data.unhide.helmholtz-metadaten.de/api/raw/entity/
+# Resource location: https://data.unhide.helmholtz-metadaten.de/api/health, https://data.unhide.helmholtz-metadaten.de/docs
 
 Options +FollowSymLinks
 
